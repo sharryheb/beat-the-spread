@@ -1,3 +1,5 @@
+require('dotenv').config();
+
 const express = require("express");
 const routes = require("./routes");
 const app = express();
@@ -15,9 +17,14 @@ const passport = require('passport');
 
 const PORT = process.env.PORT || 3001;
 
+// The JWT and Passport configuration
+require('./config/passport');
+
 // Define middleware here
+app.use(Cors());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
+app.use(logger('dev'));
 // Serve up static assets (usually on heroku)
 if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
