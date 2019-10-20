@@ -1,8 +1,19 @@
 const express = require("express");
 const routes = require("./routes");
 const app = express();
-const PORT = process.env.PORT || 3001;
+/*
+Code to implement NPM Passport with React (logging in to an application)
+on server-side - see:
+https://itnext.io/implementing-json-web-tokens-passport-js-in-a-javascript-application-with-react-b86b1f313436
+*/ 
+// HTTP request logger middleware for node.js
+const logger = require('morgan');
+// Enables CORS - https://en.wikipedia.org/wiki/Cross-origin_resource_sharing
+const Cors = require('cors');
+// Passport's sole purpose is to authenticate requests
+const passport = require('passport');
 
+const PORT = process.env.PORT || 3001;
 
 // Define middleware here
 app.use(express.urlencoded({ extended: true }));
