@@ -7,11 +7,14 @@
 
 h3{
     color: orange;
+}
+td{
+    
     padding:5px;
     margin:2%;
 }
 
 #dropdown-basic-button{
   display: inline-block;
- float:right;
+
 }

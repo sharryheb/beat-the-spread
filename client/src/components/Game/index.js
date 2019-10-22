@@ -8,13 +8,17 @@ function Game() {
     return (
         
         <Table className="gamecard">
-            <thead>
+            {/* <thead>
                 <tr>
                 <th>Game location</th>
                 <th>Game Date</th>
                 </tr>
-            </thead>
+            </thead> */}
             <tbody>
+                <tr>
+                    <td>Game location</td>
+                    <td>Game Date</td>
+                </tr>
                 <tr>
                     <td>
                         <div className = " ">
@@ -23,6 +27,16 @@ function Game() {
                     </td>
                     <td>
                         Team Name 1
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div className = " ">
+                        <Image src="holder.js/100px250" fluid /> 
+                        </div>
+                    </td>
+                    <td>
+                        Team Name 2
                     </td>
                 </tr>
                 <tr>Prediction</tr>
