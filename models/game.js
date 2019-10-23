@@ -3,16 +3,17 @@ module.exports = function(sequelize, DataTypes) {
     {
         weekNumber: { type: DataTypes.INTEGER, allowNull: false },
         gameTime: { type: DataTypes.DATE, allowNull: false },
-        homeTeamId: { type: DataTypes.INTEGER, allowNull: false },
-        awayTeamId: { type: DataTypes.INTEGER, allowNull: false },
-        preGameSpread: { type: DataTypes.INTEGER, allowNull: false },
-        favoredTeamId: { type: DataTypes.INTEGER, allowNull: false },
+        homeTeamCode: { type: DataTypes.STRING, allowNull: false },
+        awayTeamCode: { type: DataTypes.STRING, allowNull: false },
+        preGameSpread: { type: DataTypes.INTEGER, defaultValue: 0 },
+        favoredTeamId: { type: DataTypes.INTEGER, defaultValue: -1 },
+        spreadCovered: { type: DataTypes.INTEGER, defaultValue: 0 },
         winTeamScore: { type: DataTypes.INTEGER, defaultValue: 0 },
         loseTeamScore: { type: DataTypes.INTEGER, defaultValue: 0 },
         spreadCovered: { type: DataTypes.BOOLEAN, defaultValue: false }
     },
     {
-      timestamps: false
+        timestamps: false
     });
 
     return Game;
