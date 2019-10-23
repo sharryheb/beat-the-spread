@@ -2,6 +2,7 @@ require('dotenv').config();
 
 const express = require("express");
 const routes = require("./routes");
+const registerUserRoute = require('./routes/api/registerUser');
 const app = express();
 /*
 Code to implement NPM Passport with React (logging in to an application)
@@ -31,6 +32,7 @@ if (process.env.NODE_ENV === "production") {
 }
 
 app.use(routes);
+app.use(registerUserRoute);
 
 var db = require("./models");
 
