@@ -18,7 +18,7 @@ const passport = require('passport');
 const PORT = process.env.PORT || 3001;
 
 // The JWT and Passport configuration
-require('./config/passport');
+require('./authentication/passport');
 
 // Define middleware here
 app.use(Cors());
