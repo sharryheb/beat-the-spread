@@ -6,7 +6,7 @@ yarn-debug.log*
 yarn-error.log*
 
 # Machine Configs
-config/config.json
+config.json
 
 # Runtime data
 pids
@@ -62,6 +62,3 @@ typings/
 
 # next.js build output
 .next
-
-# Mac crap
-.DS_STORE

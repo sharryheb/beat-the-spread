@@ -1,7 +1,7 @@
 module.exports = function(sequelize, DataTypes) {
     var Prediction = sequelize.define("prediction",
     {
-        username: { type: DataTypes.STRING, allowNull: false },
+        userid: { type: DataTypes.STRING, allowNull: false },
         gameid: { type: DataTypes.STRING, allowNull: false },
         preGamePrediction: { type: DataTypes.BOOLEAN, allowNull: false },
         predictionCorrect: { type: DataTypes.BOOLEAN, defaultValue: false },

@@ -1,10 +1,9 @@
 /*
 *
 *
-*        TO POPULATE THE DATABASE WITH STATIC SEED DATA,
-*        RUN THE FOLLOWING COMMAND FROM THE PROJECT ROOT:
+*        TO POPULATE THE 'teams' TABLE, RUN THE FOLLOWING COMMAND FROM THE PROJECT ROOT:
 *
-*            npm run seed
+*            npm run-script seed
 *
 *
 */
@@ -15,9 +14,5 @@ var models = require("../models");
 models.sequelize.sync()
 .then(function()
 {
-    seed.loadFiles([
-        "./seeds/TeamsData.json",
-        "./seeds/GamesData.json",
-        ], models)
-    .then(()=>models.sequelize.close());
+    seed.loadFile("./seeds/nflTeamsCleanData.json", models);
 });
