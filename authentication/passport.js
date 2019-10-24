@@ -7,10 +7,12 @@ const BCRYPT_SALT_ROUNDS = 12;
 
 const passport = require('passport');
 const localStrategy = require('passport-local').Strategy;
-// Access MySQL table for Users
-const User = require('../models/user');
+// Access MySQL database
+const db = require("../models");
 const JWTstrategy = require('passport-jwt').Strategy;
 const ExtractJWT = require('passport-jwt').ExtractJwt;
+
+//console.log('inside authentication/passport.js db.user', db.user);
 
 passport.use(
   'register',
@@ -20,9 +22,9 @@ passport.use(
       passwordField: 'password',
       session: false
     },
-   (username, email, password, avatar, done) => {
+   (username, password, done) => {
      try {
-      User.findOne({
+      db.user.findOne({
         where: {
           username
         },
@@ -31,11 +33,11 @@ passport.use(
           return done(null, false, { message: 'username already taken' })
         } else {
           bcrypt.hash(password, BCRYPT_SALT_ROUNDS).then(hashedPassword => {
-            User.create({ 
+            db.user.create({ 
               username, 
-              email, 
+              email: 'test@example.com', 
               password: hashedPassword, 
-              avatar 
+              avatar: 'test.png'
             }).then(user => {
               return done(null, user);
             });
@@ -59,7 +61,7 @@ passport.use(
     },
     (username, password, done) => {
       try {
-        User.findOne({
+        db.user.findOne({
           where: {
             username: username,
           },
@@ -93,7 +95,7 @@ passport.use(
   'jwt', 
   new JWTstrategy(opts, (jwt_payload, done) => {
     try {
-      User.findOne({
+      db.user.findOne({
         where: {
           username: jwt_payload.id
         },

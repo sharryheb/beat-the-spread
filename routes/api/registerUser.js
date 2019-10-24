@@ -5,7 +5,8 @@ const router = require("express").Router();
 
 const registerUserController = require('../../controllers/registerUserController');
 
-router.post('/', (req, res, next) => {
+router.post('/registerUser', (req, res, next) => {
+  console.log('Hello');
   registerUserController.registerUser(req, res, next);
 });
 

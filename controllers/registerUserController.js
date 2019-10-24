@@ -3,6 +3,7 @@ const passport = require('passport');
 
 module.exports = {
   registerUser: (req, res, next) => {
+    console.log('ABOVE passport.authenticate');
     passport.authenticate('register', (err, user, info) => {
       if(err) {
         console.log(err);
@@ -18,7 +19,7 @@ module.exports = {
             avatar: req.body.avatar,
             favoriteTeamId: req.body.favoriteTeamId,
           };
-          db.User.findOne({
+          db.user.findOne({
             where: {
               username: data.username
             },
