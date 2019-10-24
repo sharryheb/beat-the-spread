@@ -31,8 +31,10 @@ if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
 }
 
-app.use(routes);
-app.use(registerUserRoute);
+app.use('/', routes);
+app.use('/api/registerUser', registerUserRoute);
+
+console.log(registerUserRoute);
 
 var db = require("./models");
 
