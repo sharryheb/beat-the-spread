@@ -12,7 +12,6 @@ const db = require("../models");
 const JWTstrategy = require('passport-jwt').Strategy;
 const ExtractJWT = require('passport-jwt').ExtractJwt;
 
-//console.log('inside authentication/passport.js db.user', db.user);
 passport.use(
   'register',
   new localStrategy(
@@ -39,7 +38,6 @@ passport.use(
               password: hashedPassword, 
               avatar: req.body.avatar,
             }).then(user => {
-              console.log(req);
               return done(null, user);
             });
           });
