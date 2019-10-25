@@ -13,16 +13,16 @@ const JWTstrategy = require('passport-jwt').Strategy;
 const ExtractJWT = require('passport-jwt').ExtractJwt;
 
 //console.log('inside authentication/passport.js db.user', db.user);
-
 passport.use(
   'register',
   new localStrategy(
     {
       usernameField: 'username',
       passwordField: 'password',
-      session: false
+      session: false,
+      passReqToCallback: true,
     },
-   (username, password, done) => {
+   (req, username, password, done) => {
      try {
       db.user.findOne({
         where: {
@@ -35,10 +35,11 @@ passport.use(
           bcrypt.hash(password, BCRYPT_SALT_ROUNDS).then(hashedPassword => {
             db.user.create({ 
               username, 
-              email: 'test@example.com', 
+              email: req.body.email, 
               password: hashedPassword, 
-              avatar: 'test.png'
+              avatar: req.body.avatar,
             }).then(user => {
+              console.log(req);
               return done(null, user);
             });
           });
