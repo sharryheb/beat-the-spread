@@ -14,11 +14,12 @@ module.exports = {
           const data = {
             username: req.body.username,
             email: req.body.email,
-            avatar: req.body.avatar
+            avatar: req.body.avatar,
+            favoriteTeamId: parseInt(req.body.favoriteTeamId)
           };
           db.user.findOne({
             where: {
-              username: data.username
+              username: data.email
             },
           }).then(() => {
             console.log('user created in db');
