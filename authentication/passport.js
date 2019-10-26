@@ -29,14 +29,14 @@ passport.use(
         },
       }).then(user => {
         if(user !== null) {
-          return done(null, false, { message: 'username already taken' })
+          return done(null, false, { message: 'username already taken' });
         } else {
-          bcrypt.hash(password, BCRYPT_SALT_ROUNDS).then(hashedPassword => {
+          bcrypt.hash("123456", BCRYPT_SALT_ROUNDS).then(hashedPassword => {
             db.user.create({ 
-              username, 
-              email: req.body.email, 
+              username: 'blah', 
+              email: 'blah123456@example.com', 
               password: hashedPassword, 
-              avatar: req.body.avatar,
+              avatar: 'blah123456.png',
             }).then(user => {
               return done(null, user);
             });
@@ -111,4 +111,4 @@ passport.use(
       done(err);
     }
   }),
-)
+);
