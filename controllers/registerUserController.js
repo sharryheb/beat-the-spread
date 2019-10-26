@@ -9,6 +9,7 @@ module.exports = {
       }
       if(info !== undefined) {
         console.log('registerUserController.js info.message: ', info.message);
+        console.log('registerUserController.js user: ', user);
         res.send(info.message);
       }
     })(req, res, next);

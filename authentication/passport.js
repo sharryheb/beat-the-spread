@@ -31,12 +31,12 @@ passport.use(
         if(user !== null) {
           return done(null, false, { message: 'username already taken' });
         } else {
-          bcrypt.hash("123456", BCRYPT_SALT_ROUNDS).then(hashedPassword => {
+          bcrypt.hash(password, BCRYPT_SALT_ROUNDS).then(hashedPassword => {
             db.user.create({ 
-              username: 'blah', 
-              email: 'blah123456@example.com', 
+              username: username,
+              email: req.body.email, 
               password: hashedPassword, 
-              avatar: 'blah123456.png',
+              avatar: req.body.avatar,
             }).then(user => {
               return done(null, user);
             });
@@ -87,7 +87,7 @@ passport.use(
 
 const opts = {
   jwtFromRequest: ExtractJWT.fromAuthHeaderWithScheme('JWT'),
-  secretOrKey: jwtSecret,
+  secretOrKey: jwtSecret
 };
 
 passport.use(
