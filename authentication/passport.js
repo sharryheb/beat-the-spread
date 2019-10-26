@@ -16,16 +16,16 @@ passport.use(
   'register',
   new localStrategy(
     {
-      usernameField: 'username',
+      usernameField: 'email',
       passwordField: 'password',
       session: false,
       passReqToCallback: true,
     },
-   (req, username, password, done) => {
+   (req, email, password, done) => {
      try {
       db.user.findOne({
         where: {
-          username
+          email
         },
       }).then(user => {
         if(user !== null) {
@@ -33,10 +33,11 @@ passport.use(
         } else {
           bcrypt.hash(password, BCRYPT_SALT_ROUNDS).then(hashedPassword => {
             db.user.create({ 
-              username: username,
-              email: req.body.email, 
+              username: req.body.username,
+              email: email, 
               password: hashedPassword, 
               avatar: req.body.avatar,
+              favoriteTeamId: parseInt(req.body.favoriteTeamId)
             }).then(user => {
               return done(null, user);
             });
