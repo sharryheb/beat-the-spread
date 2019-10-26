@@ -19,7 +19,7 @@ module.exports = {
           };
           db.user.findOne({
             where: {
-              username: data.email
+              email: data.email
             },
           }).then(() => {
             console.log('user created in db');
