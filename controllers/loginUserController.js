@@ -5,7 +5,9 @@ const passport = require('passport');
 
 module.exports = {
   loginUser: (req, res, next) => {
-    passport.authenticate('login', (err, user, info) => {
+    passport.authenticate('login', {
+      failureRedirect: '/SignUp'
+    }, (err, user, info) => {
       if(err) {
         console.log(err);
       }
@@ -24,7 +26,8 @@ module.exports = {
               auth: true,
               token: token,
               message: 'user found & logged in',
-            });
+            })
+              .location(`/profile/${user.id}`);
           });
         });
       }
