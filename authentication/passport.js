@@ -29,7 +29,7 @@ passport.use(
         },
       }).then(user => {
         if(user !== null) {
-          return done(null, false, { message: 'username already taken' });
+          return done(null, false, { message: 'email address already taken' });
         } else {
           bcrypt.hash(password, BCRYPT_SALT_ROUNDS).then(hashedPassword => {
             db.user.create({ 
