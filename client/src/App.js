@@ -8,26 +8,32 @@ import {
 
 
 
-
-
-// import 'bootstrap/dist/css/bootstrap.min.css';
-import Navme from "./components/Nav";
-import FanStanding from "./components/FanStanding";
-import Schedule from "./components/Schedule";
-
-
-function App() {
-  return (
+  import Home from "./pages/home";
+  // import SignIn from "./pages/SignIn";
+  // import SignUp from "./pages/SignUp";
+  // import Profile from "./pages/profile";
+  import About from "./pages/about";
+  
+  
+  function App() {
+    return (
+      <Router>
+      <div>
+        {/* <Nav/> */}
+        <Switch>
+               
+            <Route exact path="/" component={Home} />
+            {/*<Route exact path="/SignIn" component={SignIn} />
+            <Route exact path="/Profile" component={Profile} />
+    <Route exact path="/SignUp" component={SignUp} />*/}
+            <Route exact path="/About" component={About} />
     
-     
-      <div className="App">
-       <Navme />
-       <FanStanding />
-       <Schedule />
-       <p>Here I Am!</p>
+    
+          </Switch>
       </div>
+      </Router>
+    );
+  }
+  
+  export default App;
     
-  );
-}
-
-export default App;

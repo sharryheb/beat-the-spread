@@ -6,12 +6,12 @@ import "./style.css";
 
 function Navme() {
     return (
-      <Nav className="topbar" defaultActiveKey="/home" as="ul">
+      <Nav className="topbar" defaultActiveKey="/" as="ul">
         <Nav.Item as="li">
-          <Nav.Link className="topitems" href="/home">Beat-the-Spread</Nav.Link>
+          <Nav.Link className="topitems" href="/">Beat-the-Spread</Nav.Link>
         </Nav.Item>
         <Nav.Item as="li">
-          <Nav.Link className="topitems" href="/home">Home</Nav.Link>
+          <Nav.Link className="topitems" href="/">Home</Nav.Link>
         </Nav.Item>
         <Nav.Item as="li">
           <Nav.Link className="topitems" href="/profile">Sign In</Nav.Link>
@@ -20,7 +20,7 @@ function Navme() {
           <Nav.Link className="topitems" href="/signUp">Sign Up</Nav.Link>
         </Nav.Item>
         <Nav.Item as="li">
-          <Nav.Link className="topitems" eventKey="/about">About</Nav.Link>
+          <Nav.Link className="topitems" href="/about">About</Nav.Link>
         </Nav.Item>
       </Nav>
     );
