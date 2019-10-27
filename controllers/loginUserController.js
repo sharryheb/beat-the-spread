@@ -21,7 +21,10 @@ module.exports = {
               email: user.email
             },
           }).then(user => {
-            const token = jwt.sign({ id: user.email }, jwtSecret);
+            const token = jwt.sign({ 
+              id: user.id
+            }, jwtSecret);
+            req.body.token = token;
             res.status(200).send({
               auth: true,
               token: token,
