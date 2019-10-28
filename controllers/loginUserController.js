@@ -24,7 +24,10 @@ module.exports = {
             const token = jwt.sign({ 
               id: user.id
             }, jwtSecret);
-            req.body.token = token;
+            //req.body.token = token;
+          
+            res.cookie('jwtAuth', token, { maxAge: 900000, httpOnly: true });
+
             res.status(200).send({
               auth: true,
               token: token,

@@ -10,13 +10,23 @@ module.exports = {
     // let token = req.headers['x-access-token'] || req.headers['authorization'];
     // const decodedToken = jwt.verify(token, jwtSecret);
     // res.send(decodedToken);
-    passport.authenticate('jwt', { session: false }, (err, token) => {
-      if (error || !token) {
-        res.status(401).json({ message: 'Unauthorized' });
+    passport.authenticate('jwt', { session: false }, (err, user, info) => {
+      if (err) {
+        console.log(err);
       }
-      else {
-        res.send({ token });
-      } 
-    });
+      if(info !== undefined) {
+        console.log(info.message);
+        res.send(info.message);
+      } else {
+        console.log('user in DB from route');
+        res.status(200).send({
+          auth: true,
+          username: user.username,
+          email: user.email,
+          avatar: user.avatar
+        });
+      }
+
+    })(req, res, next);
   }
 };
