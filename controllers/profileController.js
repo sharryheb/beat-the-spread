@@ -7,9 +7,16 @@ module.exports = {
   profile: (req, res, next) => {
     // const token = req.headers.authorization || req.headers.Authorization;
     // const decodedToken = jwt.verify(token, jwtSecret);
-    let token = req.headers['x-access-token'] || req.headers['authorization'];
-    const decodedToken = jwt.verify(token, jwtSecret);
-    res.send(decodedToken);
-    
+    // let token = req.headers['x-access-token'] || req.headers['authorization'];
+    // const decodedToken = jwt.verify(token, jwtSecret);
+    // res.send(decodedToken);
+    passport.authenticate('jwt', { session: false }, (err, token) => {
+      if (error || !token) {
+        res.status(401).json({ message: 'Unauthorized' });
+      }
+      else {
+        res.send({ token });
+      } 
+    });
   }
 };
