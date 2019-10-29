@@ -31,7 +31,7 @@ function SignIn() {
                 </Col>
                 <Col>
            
-                    <Button variant="primary" type="submit">
+                    <Button href="/Profile" variant="primary" type="submit">
                         Sign in
                     </Button>
                 </Col>
