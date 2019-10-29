@@ -14,11 +14,11 @@ function SignUp() {
        
        <Container>
            <Row>
-           <Col md={{ span: 4, offset: 2 }}>
+           <Col md={{ span: 5, offset: 2 }}>
             <h1> Create a New Account</h1>
             <p style={{ color: 'blue' }}>Sign up for a user account to start making a game bet!</p>
        <Form>
-            <Form.Group controlId="formBasicEmail">
+            <Form.Group as={Col} controlId="formBasicEmail">
             <Form.Label>Username</Form.Label>  
             <Form.Control type="text" placeholder="Enter a username" />
                 
@@ -39,15 +39,6 @@ function SignUp() {
             <Form.Control type="password" placeholder="Re-type your password" />
             </Form.Group>
             
-
-            
-
-            
-
-            
-
-           
-
             <Button variant="primary" type="submit">
                 Sign Up
             </Button>
@@ -71,7 +62,7 @@ function SignUp() {
 
         
         <Row>
-        <Col md={{ span: 4, offset: 1 }}>
+        <Col md={{ span: 4, offset: 7 }}>
             <Image src="holder.js/171x180" roundedCircle />
             <Button variant="light" type="submit">
                 Upload Avatar Photo
@@ -84,6 +75,7 @@ function SignUp() {
                 </Dropdown.Toggle>
 
                 <Dropdown.Menu>
+                    for
                     <Dropdown.Item href="#/action-1">Team1</Dropdown.Item>
                     <Dropdown.Item href="#/action-2">Team2</Dropdown.Item>
                     <Dropdown.Item href="#/action-3">Team3</Dropdown.Item>
