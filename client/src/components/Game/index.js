@@ -6,7 +6,7 @@ import "./style.css";
 
 function Game() {
     return (
-        
+
         <Table className="gamecard">
             {/* <thead>
                 <tr>
@@ -22,7 +22,7 @@ function Game() {
                 <tr>
                     <td>
                         <div className = " ">
-                        <Image src="holder.js/100px250" fluid /> 
+                        <Image src="holder.js/100px250" fluid />
                         </div>
                     </td>
                     <td>
@@ -32,22 +32,22 @@ function Game() {
                 <tr>
                     <td>
                         <div className = " ">
-                        <Image src="holder.js/100px250" fluid /> 
+                        <Image src="holder.js/100px250" fluid />
                         </div>
                     </td>
                     <td>
                         Team Name 2
                     </td>
                 </tr>
-                <tr>Prediction</tr>
+                <tr><td>Prediction</td></tr>
             </tbody>
         </Table>
-        
+
         // <Container>
         // <Image src="holder.js/50px125" fluid />
         // <Card style={{ width: '18rem'}}>
-            
-            
+
+
         //     <ListGroup variant="flush">
         //     <ListGroup.Item>Time</ListGroup.Item>
         //     <ListGroup.Item>Location</ListGroup.Item>
@@ -57,6 +57,5 @@ function Game() {
         // </Container>
     );
   }
-  
+
   export default Game;
-  

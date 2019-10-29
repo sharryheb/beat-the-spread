@@ -1,5 +1,5 @@
 module.exports = function(sequelize, DataTypes) {
-    var Game = sequelize.define("game",
+    var Game = sequelize.define("Game",
     {
         weekNumber: { type: DataTypes.INTEGER, allowNull: false },
         gameTime: { type: DataTypes.DATE, allowNull: false },
