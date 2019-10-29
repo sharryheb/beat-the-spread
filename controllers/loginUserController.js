@@ -4,7 +4,7 @@ const jwt = require('jsonwebtoken');
 const passport = require('passport');
 
 module.exports = {
-  loginUser: (req, res, next) => {
+  loginUser: (req, res, next, session) => {
     passport.authenticate('login', {
       failureRedirect: '/SignUp'
     }, (err, user, info) => {
@@ -24,16 +24,16 @@ module.exports = {
             const token = jwt.sign({ 
               id: user.id
             }, jwtSecret);
-            //req.body.token = token;
-          
-            res.cookie('jwtAuth', token, { maxAge: 900000, httpOnly: true });
+            
+            const currentSession = req.session;
+            currentSession.token = token;
+            console.log(currentSession.token);
 
             res.status(200).send({
               auth: true,
               token: token,
               message: 'user found & logged in',
-            })
-              .location(`/profile/${user.id}`);
+            });
           });
         });
       }

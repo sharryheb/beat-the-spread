@@ -3,6 +3,8 @@ require('dotenv').config();
 const express = require("express");
 const routes = require("./routes");
 const app = express();
+const session = require('express-session');
+const sessionSecret = process.env.SESSION_SECRET;
 /*
 Code to implement NPM Passport with React (logging in to an application)
 on server-side - see:
@@ -26,6 +28,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(logger('dev'));
 app.use(passport.initialize());
+app.use(session({secret: sessionSecret}));
 // Serve up static assets (usually on heroku)
 if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
