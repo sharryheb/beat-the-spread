@@ -4,7 +4,7 @@ const jwt = require('jsonwebtoken');
 const passport = require('passport');
 
 module.exports = {
-  loginUser: (req, res, next, session) => {
+  loginUser: (req, res, next) => {
     passport.authenticate('login', {
       failureRedirect: '/SignUp'
     }, (err, user, info) => {
@@ -25,10 +25,6 @@ module.exports = {
               id: user.id
             }, jwtSecret);
             
-            const currentSession = req.session;
-            currentSession.token = token;
-            console.log(currentSession.token);
-
             res.status(200).send({
               auth: true,
               token: token,
