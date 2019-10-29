@@ -41,8 +41,6 @@ export default {
 
     /******************** GAMES API **********************/
     getGames: function() {
-        console.log("getGames (API.js)");
-
         return axios.get("/api/games");
     },
     getGame: function(id) {

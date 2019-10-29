@@ -16,15 +16,12 @@ import sharry from "./sharryScratchpad";
 function App() {
 sharry.loadGames();
   return (
-
-
     //   <div className="App">
     //    <Navme />
     //    <FanStanding />
     //    <Schedule />
        <p>Here I Am!</p>
     //   </div>
-
   );
 }
 
