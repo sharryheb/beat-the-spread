@@ -18,7 +18,6 @@ module.exports = {
           avatar: user.avatar
         });
       }
-
     })(req, res, next);
   }
 };

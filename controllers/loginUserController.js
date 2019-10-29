@@ -5,15 +5,13 @@ const passport = require('passport');
 
 module.exports = {
   loginUser: (req, res, next) => {
-    passport.authenticate('login', {
-      failureRedirect: '/SignUp'
-    }, (err, user, info) => {
+    passport.authenticate('login', (err, user, info) => {
       if(err) {
         console.log(err);
+        return res.redirect('/SignIn');
       }
       if(info !== undefined) {
-        console.log(info.message);
-        res.send(info.message);
+        return res.redirect('/SignIn');
       } else {
         req.logIn(user, err => {
           db.user.findOne({
@@ -21,15 +19,16 @@ module.exports = {
               email: user.email
             },
           }).then(user => {
-            const token = jwt.sign({ 
-              id: user.id
-            }, jwtSecret);
+            // const token = jwt.sign({ 
+            //   id: user.id
+            // }, jwtSecret);
             
-            res.status(200).send({
-              auth: true,
-              token: token,
-              message: 'user found & logged in',
-            });
+            // res.status(200).send({
+            //   auth: true,
+            //   token: token,
+            //   message: 'user found & logged in',
+            // });
+            return res.redirect('/api/profile/');
           });
         });
       }
