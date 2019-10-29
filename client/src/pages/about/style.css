@@ -1,0 +1,14 @@
+h2{
+   width:100%;
+   text-align: center; 
+   margin:5%;
+   color: darkblue;
+
+}
+
+textarea{
+   margin-left: 10%;
+   margin-right: 10%;
+   width: 80%;
+   color: purple;
+}
