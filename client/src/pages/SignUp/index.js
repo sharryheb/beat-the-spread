@@ -1,8 +1,10 @@
 import React from "react";
 import Navme from "../../components/Nav";
 import TeamsDataJson from "../../data/TeamsData";
-
+import axios from 'axios';
 import { Form, Button, Container, Row, Col, Dropdown, Image } from 'react-bootstrap';
+
+import API from '../../utils/API';
 
 //import DropdownButton from 'react-bootstrap/DropdownButton'
 
@@ -134,6 +136,30 @@ class SignUp extends Component {
     // };
     // console.log("the length:", TeamsDataJson.length);
     //console.log("Full name of first team: ", TeamsDataJson[0].data.FullName);
+
+    state = {
+        username: '',
+        email: '',
+        avatar: '',
+        favoriteTeamId: 1
+    };
+
+    handleChange = event => {
+        this.setState({
+            [event.target.name]: event.target.value
+        }); 
+    }
+
+    handleSubmitToSaveUser = event => {
+        event.preventDefault();
+        console.log(this.state);
+        API.registerUser(this.state)
+            .then(() => alert('User saved!'))
+            .catch(err => {
+                alert('Error: ', err);
+            });
+    }
+
     
     render() {
         return (
@@ -145,28 +171,37 @@ class SignUp extends Component {
              <h2> Create a New Account</h2>
              <p style={{ color: 'blue' }}>Sign up for a user account to start making a game bet!</p>
         <Form>
-             <Form.Group as={Col} controlId="formBasicEmail">
+             <Form.Group as={Col}>
              <Form.Label>Username</Form.Label>  
-             <Form.Control type="text" placeholder="Enter a username" />
-                
+             <Form.Control type="text" placeholder="Enter a username" name="username" onChange={this.handleChange} />
              </Form.Group>
 
              <Form.Group as={Col} controlId="formGridEmail">
              <Form.Label>Email</Form.Label>
-             <Form.Control type="email" placeholder="Enter an email" />
+             <Form.Control type="email" placeholder="Enter an email" name="email" onChange={this.handleChange} />
+             </Form.Group>
+
+             <Form.Group as={Col}>
+             <Form.Label>Avatar</Form.Label>
+             <Form.Control type="text" placeholder="Enter an avatar link" name="avatar" onChange={this.handleChange} />
+             </Form.Group>
+
+             <Form.Group as={Col}>
+             <Form.Label>Favorite Team (ID)</Form.Label>
+             <Form.Control type="number" placeholder="Favorite Team (ID)" name="favoriteTeamId" defaultValue="1" />
              </Form.Group>
 
              <Form.Group as={Col} controlId="formGridPassword">
              <Form.Label>Password</Form.Label>
-             <Form.Control type="password" placeholder="Enter your password" />
+             <Form.Control type="password" placeholder="Enter your password" name="password" onChange={this.handleChange} />
              </Form.Group>
 
-             <Form.Group as={Col} controlId="formGridPassword">
+             <Form.Group as={Col} controlId="formGridPassword2">
              <Form.Label>Confirm your password</Form.Label>
              <Form.Control type="password" placeholder="Re-type your password" />
              </Form.Group>
             
-             <Button variant="primary" type="submit">
+             <Button variant="primary" type="submit" onClick={this.handleSubmitToSaveUser}>
                  Sign Up
              </Button>
              <Form.Row>

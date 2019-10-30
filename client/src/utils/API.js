@@ -57,5 +57,10 @@ export default {
     },
     saveGame: function(gameData) {
         return axios.put("/api/games", gameData);
+    },
+
+    /******************** Authentication (signing in and out) **********************/
+    registerUser: function(userData) {
+        return axios.post('/api/registerUser', userData);
     }
 };

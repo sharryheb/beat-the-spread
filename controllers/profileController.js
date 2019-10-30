@@ -15,7 +15,8 @@ module.exports = {
           auth: true,
           username: user.username,
           email: user.email,
-          avatar: user.avatar
+          avatar: user.avatar,
+          favoriteTeamId: user.favoriteTeamId
         });
       }
     })(req, res, next);
