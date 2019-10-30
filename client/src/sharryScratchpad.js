@@ -62,5 +62,41 @@ export default {
 
         })
         .catch(err => console.log(err));
+    },
+
+    loadTeams: function()
+    {
+        API.getTeams()
+            .then(res =>
+            {
+                // do something with the data here
+                console.log(res.data);
+            })
+            .catch(err => console.log(err));
+    },
+
+    loadUsers: function()
+    {
+        API.getUsers()
+            .then(res =>
+            {
+                // do something with the data here
+                console.log(res.data);
+            })
+            .catch(err => console.log(err));
+    },
+
+    calculatePredictionResults: function()
+    {
+        this.updateSpreads()
+        .then(function()
+        {
+            API.getPredictions()
+            .then(res=>
+            {
+                console.log(res.data);
+            })
+            .catch(err => console.log(err));
+        });
     }
 }

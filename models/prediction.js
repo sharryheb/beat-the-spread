@@ -1,5 +1,5 @@
 module.exports = function(sequelize, DataTypes) {
-    var Prediction = sequelize.define("prediction",
+    var Prediction = sequelize.define("Prediction",
     {
         username: { type: DataTypes.STRING, allowNull: false },
         gameid: { type: DataTypes.STRING, allowNull: false },
@@ -8,7 +8,9 @@ module.exports = function(sequelize, DataTypes) {
         deadline: { type: DataTypes.DATE }
     },
     {
-      timestamps: false
+        timestamps: false,
+        freezeTableName: true,
+        tableName: 'predictions'
     });
 
     return Prediction;

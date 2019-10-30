@@ -2,8 +2,9 @@ const db = require("../models");
 
 module.exports = {
   getAll: function(req, res) {
+      console.log("calling mysql");
     db.User
-      .find()
+      .findAll({})
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },

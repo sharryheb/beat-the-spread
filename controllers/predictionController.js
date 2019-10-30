@@ -27,3 +27,12 @@ module.exports = {
       .catch(err => res.status(422).json(err));
   }
 };
+
+//  select users.username, users.avatar, users.favoriteTeamCode,
+// 	   games.*,
+//     predictions.preGamePrediction,
+//     predictions.predictionCorrect
+
+// from predictions
+//     join users on users.username = predictions.username
+//     join games on games.id = predictions.gameid

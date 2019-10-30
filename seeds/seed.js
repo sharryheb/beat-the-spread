@@ -16,8 +16,10 @@ models.sequelize.sync()
 .then(function()
 {
     seed.loadFiles([
+        "./seeds/UsersData.json",
         "./seeds/TeamsData.json",
         "./seeds/GamesData.json",
+        "./seeds/PredictionsData.json"
         ], models)
     .then(()=>models.sequelize.close());
 });

@@ -5,17 +5,16 @@ import {
   Switch
 } from "react-router-dom";
 
-
-
-
   import Home from "./pages/home";
   import SignIn from "./pages/SignIn";
   import SignUp from "./pages/SignUp";
   import Profile from "./pages/profile";
   import About from "./pages/about";
 
+  import sharry from "./sharryScratchpad";
 
   function App() {
+      sharry.loadGames();
     return (
       <Router>
       <div>

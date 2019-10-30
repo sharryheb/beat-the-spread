@@ -4,6 +4,7 @@ export default {
 
     /******************** USERS API ********************/
     getUsers: function() {
+        console.log("API.getUsers");
         return axios.get("/api/users");
     },
     getUser: function(id) {

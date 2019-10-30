@@ -1,5 +1,5 @@
 module.exports = function(sequelize, DataTypes) {
-    var Team = sequelize.define("team",
+    var Team = sequelize.define("Team",
     {
         Key: { type: DataTypes.STRING, allowNull: false },
         City: { type: DataTypes.STRING, allowNull: false },
@@ -19,7 +19,9 @@ module.exports = function(sequelize, DataTypes) {
         StadiumType: { type: DataTypes.STRING, allowNull: false }
     },
     {
-        timestamps: false
+        timestamps: false,
+        freezeTableName: true,
+        tableName: 'teams'
     });
 
     return Team;

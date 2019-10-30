@@ -1,8 +1,9 @@
 import React from "react";
 import Navme from "../../components/Nav";
-import TeamsDataJson from "../../data/TeamsData";
+//import TeamsDataJson from "../../data/TeamsData";
+//import API from "../../utils/API";  // use this to get Team data from DB
 
-import { Form, Button, Container, Row, Col, Dropdown, Image } from 'react-bootstrap';
+import { Form, Button, Container, Row, Col, Dropdown/*, Image*/ } from 'react-bootstrap';
 
 //import DropdownButton from 'react-bootstrap/DropdownButton'
 
@@ -18,7 +19,7 @@ function SignUp() {
     return (
      <div className="SignUp">
        <Navme />
-       
+
        <Container>
            <Row>
            <Col md={{ span: 5, offset: 2 }}>
@@ -26,9 +27,9 @@ function SignUp() {
             <p style={{ color: 'blue' }}>Sign up for a user account to start making a game bet!</p>
        <Form>
             <Form.Group as={Col} controlId="formBasicEmail">
-            <Form.Label>Username</Form.Label>  
+            <Form.Label>Username</Form.Label>
             <Form.Control type="text" placeholder="Enter a username" />
-                
+
             </Form.Group>
 
             <Form.Group as={Col} controlId="formGridEmail">
@@ -45,7 +46,7 @@ function SignUp() {
             <Form.Label>Confirm your password</Form.Label>
             <Form.Control type="password" placeholder="Re-type your password" />
             </Form.Group>
-            
+
             <Button variant="primary" type="submit">
                 Sign Up
             </Button>
@@ -64,13 +65,13 @@ function SignUp() {
             </Form.Row>
         </Form>
         </Col>
-        
-      
 
-        
-        
+
+
+
+
         <Col md={{ span: 4, offset: 7 }}>
-            <Image src="holder.js/171x180" roundedCircle />
+            {/* <Image src="holder.js/171x180" roundedCircle /> */}
             <Button variant="light" type="submit">
                 Upload Avatar Photo
             </Button>
@@ -82,7 +83,7 @@ function SignUp() {
                 </Dropdown.Toggle>
 
                 <Dropdown.Menu>
-                    
+
                     <Dropdown.Item href="#/action-1">Arizona Cardinals</Dropdown.Item>
                     <Dropdown.Item href="#/action-2">Atlanta Falcons</Dropdown.Item>
                     <Dropdown.Item href="#/action-3">Baltimore Ravens</Dropdown.Item>
@@ -112,7 +113,7 @@ function SignUp() {
                     <Dropdown.Item href="#/action-27">Pittsburgh Steelers</Dropdown.Item>
                     <Dropdown.Item href="#/action-28">Seattle Seahawks</Dropdown.Item>
                     <Dropdown.Item href="#/action-29">San Francisco 49ers</Dropdown.Item>
-                    
+
                     <Dropdown.Item href="#/action-30">Tampa Bay Buccaneers</Dropdown.Item>
                     <Dropdown.Item href="#/action-31">Tennessee Titans</Dropdown.Item>
                     <Dropdown.Item href="#/action-32">Washington Redskins</Dropdown.Item>
@@ -121,9 +122,9 @@ function SignUp() {
         </Col>
         </Row>
     </Container>
-     
+
       </div>
-    
+
     );
 }
 export default SignUp;

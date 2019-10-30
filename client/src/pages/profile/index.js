@@ -1,32 +1,32 @@
 import React from "react";
 
-import { Container, Row, Col,Image } from 'react-bootstrap';
+import { Container, Row, Col/*,Image*/ } from 'react-bootstrap';
 import "./style.css";
 
 
 import Navme from "../../components/Nav";
-import Avatar from "../../components/Avatar";
+//import Avatar from "../../components/Avatar"; // commenting out because it's not used and causes warnings in Dev Tools Inspector
 
 
 
 function Profile() {
   return (
-    
-     
+
+
       <div className="Profile">
 
        <Navme />
-       
-     
-       
-           
+
+
+
+
                 <h2>Profile Page</h2>
-               
-           
-           
-                <Image src="holder.js/171x180" roundedCircle />
-            
-         
+
+
+
+                {/* <Image src="holder.js/171x180" roundedCircle /> */}
+
+
            <Container>
            <Row>
                <Col>
@@ -53,11 +53,11 @@ function Profile() {
                </Col>
            </Row>
        </Container>
-       
-       
-       
+
+
+
       </div>
-    
+
   );
 }
 
