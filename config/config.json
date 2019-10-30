@@ -1,7 +1,7 @@
 {
   "development": {
-    "username": "root",
-    "password": "Zxq@820121",
+    "username": "nodeuser",
+    "password": "",
     "database": "beat_the_spread",
     "host": "127.0.0.1",
     "port": 3306,
