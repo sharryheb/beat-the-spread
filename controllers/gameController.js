@@ -3,7 +3,7 @@ const db = require("../models");
 module.exports = {
   getAll: function(req, res) {
     db.Game
-      .find()
+      .findAll({})
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },
@@ -40,16 +40,11 @@ module.exports = {
       .catch(err => res.status(422).json(err));
   },
   save: function(req, res) {
-      console.log(req.body);
     db.Game
-      .create(req.body)
-      .then(dbModel => res.json(dbModel))
-      .catch(err => res.status(422).json(err));
-  },
-  saveMultiple: function(req, res) {
-      console.log(req.body);
-    db.Game
-      .bulkCreate(req.body)
+      .update(req.body,
+            {
+                where: {homeTeamCode: req.body.homeTeamCode, awayTeamCode: req.body.awayTeamCode}
+            })
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   }
