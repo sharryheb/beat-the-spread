@@ -17,5 +17,8 @@ module.exports = function(sequelize, DataTypes) {
         tableName: 'games'
     });
 
+    Game.associate = function (models) {
+        Game.hasMany(models.Prediction);
+    };
     return Game;
 };

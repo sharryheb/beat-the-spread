@@ -4,8 +4,8 @@
         "data":
         {
             "id" : 1,
-            "username" : "sharryheb",
-            "gameid" : "5",
+            "UserScreenname" : "sharryheb",
+            "GameId" : "5",
             "preGamePrediction" : 1,
             "predictionCorrect" : 1,
             "deadline" : "2019-09-06 03:20:00"
@@ -16,8 +16,8 @@
         "data":
         {
             "id" : 2,
-            "username" : "sharryheb",
-            "gameid" : "6",
+            "UserScreenname" : "sharryheb",
+            "GameId" : "6",
             "preGamePrediction" : 0,
             "predictionCorrect" : 1,
             "deadline" : "2019-09-08 20:00:00"
@@ -28,8 +28,8 @@
         "data":
         {
             "id" : 3,
-            "username" : "sharryheb",
-            "gameid" : "7",
+            "UserScreenname" : "sharryheb",
+            "GameId" : "7",
             "preGamePrediction" : 1,
             "predictionCorrect" : 0,
             "deadline" : "2019-09-08 20:00:00"
@@ -40,10 +40,34 @@
         "data":
         {
             "id" : 4,
-            "username" : "sharryheb",
-            "gameid" : "8",
+            "UserScreenname" : "sharryheb",
+            "GameId" : "8",
             "preGamePrediction" : 0,
             "predictionCorrect" : 0,
+            "deadline" : "2019-09-08 20:00:00"
+        }
+	},
+    {
+        "model": "Prediction",
+        "data":
+        {
+            "id" : 5,
+            "UserScreenname" : "mattjennings",
+            "GameId" : "5",
+            "preGamePrediction" : 1,
+            "predictionCorrect" : 1,
+            "deadline" : "2019-09-06 03:20:00"
+        }
+    },
+	{
+        "model": "Prediction",
+        "data":
+        {
+            "id" : 6,
+            "UserScreenname" : "mattjennings",
+            "GameId" : "6",
+            "preGamePrediction" : 0,
+            "predictionCorrect" : 1,
             "deadline" : "2019-09-08 20:00:00"
         }
 	}

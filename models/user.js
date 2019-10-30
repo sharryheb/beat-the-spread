@@ -1,6 +1,6 @@
 module.exports = function(sequelize, DataTypes) {
   var User = sequelize.define("User", {
-    username: { type: DataTypes.STRING, allowNull: false},
+    screenname: { type: DataTypes.STRING, allowNull: false, primaryKey: true},
     email: { type: DataTypes.STRING, allowNull: false},
     password: { type: DataTypes.STRING, allowNull: false},
     avatar: DataTypes.STRING,
@@ -11,6 +11,11 @@ module.exports = function(sequelize, DataTypes) {
       freezeTableName: true,
       tableName: 'users'
   });
+
+User.associate = function (models) {
+    User.hasMany(models.Prediction);
+  };
+
 
   return User;
 };

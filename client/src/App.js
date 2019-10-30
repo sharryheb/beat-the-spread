@@ -14,7 +14,15 @@ import {
   import sharry from "./sharryScratchpad";
 
   function App() {
-      sharry.loadGames();
+      sharry.updateSpreads()
+      .then(function()
+      {
+          sharry.loadUsers();
+          sharry.loadTeams();
+          sharry.loadGames();
+          sharry.calculatePredictionResults();
+      });
+
     return (
       <Router>
       <div>

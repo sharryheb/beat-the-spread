@@ -3,8 +3,7 @@
         "model": "User",
         "data":
         {
-            "id" : 1,
-            "username" : "sharryheb",
+            "screenname" : "sharryheb",
             "email" : "sharry_c@yahoo.com",
             "password" : "mydumbpassword",
             "avatar" : "https://icon-library.net/icon/avatar-icon-images-13.html",
@@ -15,8 +14,7 @@
         "model": "User",
         "data":
         {
-            "id" : 2,
-            "username" : "sarahzhou",
+            "screenname" : "sarahzhou",
             "email" : "xiaoquan.zhou@email.edcc.edu",
             "password" : "sarahzhou",
             "avatar" : "https://icon-library.net/icon/avatar-icon-images-13.html",
@@ -27,8 +25,7 @@
         "model": "User",
         "data":
         {
-            "id" : 3,
-            "username" : "mattjennings",
+            "screenname" : "mattjennings",
             "email" : "matt@mattjennings.net",
             "password" : "mattjennings",
             "avatar" : "https://previews.123rf.com/images/anatolir/anatolir1710/anatolir171000760/88197335-man-avatar-icon-simple-illustration-of-man-avatar-vector-icon-for-any-web-design.jpg",
@@ -39,8 +36,7 @@
         "model": "User",
         "data":
         {
-            "id" : 4,
-            "username" : "suzannecho",
+            "screenname" : "suzannecho",
             "email" : "suzanne@somewhere.com",
             "password" : "suzannecho",
             "avatar" : "https://icon-library.net/icon/avatar-icon-images-13.html",

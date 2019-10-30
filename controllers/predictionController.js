@@ -3,7 +3,17 @@ const db = require("../models");
 module.exports = {
   getAll: function(req, res) {
     db.Prediction
-      .find()
+      .findAll({
+        attributes: ["preGamePrediction","predictionCorrect"],
+        include:
+        [{
+            model: db.User,
+            attributes: [ "screenname", "avatar", "favoriteTeamCode" ]
+        },
+        {
+            model: db.Game,
+        }]
+      })
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },
@@ -13,14 +23,13 @@ module.exports = {
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },
-  getByUsername: function(req, res) {
+  getByScreenname: function(req, res) {
     db.Prediction
-      .findById({ username: req.params.username })
+      .findById({ screenname: req.params.screenname })
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },
   save: function(req, res) {
-      console.log(req.body);
     db.Prediction
       .bulkCreate(req.body)
       .then(dbModel => res.json(dbModel))
@@ -28,11 +37,11 @@ module.exports = {
   }
 };
 
-//  select users.username, users.avatar, users.favoriteTeamCode,
+//  select users.screenname, users.avatar, users.favoriteTeamCode,
 // 	   games.*,
 //     predictions.preGamePrediction,
 //     predictions.predictionCorrect
 
 // from predictions
-//     join users on users.username = predictions.username
+//     join users on users.screenname = predictions.screenname
 //     join games on games.id = predictions.gameid
