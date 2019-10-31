@@ -1,11 +1,14 @@
 import axios from "axios";
-import API from "./utils/API";
+import gamesAPI from "./utils/gamesAPI";
+import teamsAPI from "./utils/teamsAPI";
+import predictionsAPI from "./utils/predictionsAPI";
+import usersAPI from "./utils/usersAPI";
 
 
 export default {
     async loadGames(){
             try {
-            const res = await API.getGames();
+            const res = await gamesAPI.getGames();
             // do something with the data here
             console.log("************ GAMES *************");
             console.log(res.data);
@@ -19,7 +22,7 @@ export default {
     {
         try
         {
-            const res = await API.getTeams();
+            const res = await teamsAPI.getTeams();
             // do something with the data here
             console.log("************ TEAMS *************");
             console.log(res.data);
@@ -34,7 +37,7 @@ export default {
     {
         try
         {
-            const res = await API.getUsers();
+            const res = await usersAPI.getUsers();
             // do something with the data here
             console.log("************ USERS *************");
             console.log(res.data);
@@ -45,11 +48,33 @@ export default {
         }
     },
 
+    async saveUser(userData){
+        try {
+            const res = await usersAPI.saveUser(userData);
+            return res;
+        }
+        catch (err) {
+            return console.log(err);
+        }
+    },
+
+    async savePrediction(predictionData){
+        try {
+            const res = await predictionsAPI.savePrediction(predictionData);
+            // do something with the data here
+            //this.calculatePredictionResults();
+            return res;
+        }
+        catch (err) {
+            return console.log(err);
+        }
+    },
+
     async calculatePredictionResults()
     {
         try
         {
-            const res = await API.getPredictions();
+            const res = await predictionsAPI.getPredictions();
             console.log("************ PREDICTIONS *************");
             console.log(res.data);
         }
@@ -97,7 +122,7 @@ export default {
                         "homeTeamScore": game.HomeScore,
                         "awayTeamScore": game.AwayScore
                     };
-                API.saveGame(tempGame)
+                gamesAPI.saveGame(tempGame)
                     .catch(err => console.log(err));
             }
         }
