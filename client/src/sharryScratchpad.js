@@ -87,7 +87,7 @@ export default {
     async updateSpreads()
     {
         try {
-            const res = await axios.get("https://api.sportsdata.io/v3/nfl/scores/json/Scores/2019?key=284949503768453bb5e67eb98f2dfcb9");
+            const res = await axios.get("https://api.sportsdata.io/v3/nfl/scores/json/Scores/2019?key=" + process.env.API_KEY_SDIO);
             let tempGame = {};
             let favoredTeam = "";
             let spreadCovered = false;
