@@ -1,6 +1,6 @@
 import React from "react";
 // import 'bootstrap/dist/css/bootstrap.min.css';
-import { Image, Table } from 'react-bootstrap';
+import { /*Image,*/ Table } from 'react-bootstrap';
 
 import "./style.css";
 
@@ -22,7 +22,7 @@ function Game() {
                 <tr>
                     <td>
                         <div className = " ">
-                        <Image src="holder.js/100px250" fluid />
+                        {/* <Image src="holder.js/100px250" fluid /> */}
                         </div>
                     </td>
                     <td>
@@ -32,7 +32,7 @@ function Game() {
                 <tr>
                     <td>
                         <div className = " ">
-                        <Image src="holder.js/100px250" fluid />
+                        {/* <Image src="holder.js/100px250" fluid /> */}
                         </div>
                     </td>
                     <td>

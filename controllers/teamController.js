@@ -3,8 +3,9 @@ const db = require("../models");
 // pull by id, key, fullname, conf/div,
 module.exports = {
   getAll: function(req, res) {
+      console.log("getAll in controller");
     db.Team
-      .find()
+      .findAll({})
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },

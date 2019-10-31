@@ -3,13 +3,13 @@ const db = require("../models");
 module.exports = {
   getAll: function(req, res) {
     db.User
-      .find()
+      .findAll({})
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },
-  getByUsername: function(req, res) {
+  getByScreenname: function(req, res) {
     db.User
-      .find({username: req.params.username })
+      .find({screenname: req.params.screenname })
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },
@@ -20,7 +20,6 @@ module.exports = {
       .catch(err => res.status(422).json(err));
   },
   save: function(req, res) {
-      console.log(req.body);
     db.User
       .create(req.body)
       .then(dbModel => res.json(dbModel))

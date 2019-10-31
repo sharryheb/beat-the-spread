@@ -1,6 +1,6 @@
 [
     {
-        "model": "game",
+        "model": "Game",
         "data": {
             "weekNumber": "1",
             "gameTime": "2019-09-05T20:20:00",
@@ -9,7 +9,7 @@
         }
     },
     {
-        "model": "game",
+        "model": "Game",
         "data": {
             "weekNumber": "1",
             "gameTime": "2019-09-08T13:00:00",
@@ -18,7 +18,7 @@
         }
     },
     {
-        "model": "game",
+        "model": "Game",
         "data": {
             "weekNumber": "1",
             "gameTime": "2019-09-08T13:00:00",
@@ -27,7 +27,7 @@
         }
     },
     {
-        "model": "game",
+        "model": "Game",
         "data": {
             "weekNumber": "1",
             "gameTime": "2019-09-08T13:00:00",
@@ -36,7 +36,7 @@
         }
     },
     {
-        "model": "game",
+        "model": "Game",
         "data": {
             "weekNumber": "1",
             "gameTime": "2019-09-08T13:00:00",
@@ -45,7 +45,7 @@
         }
     },
     {
-        "model": "game",
+        "model": "Game",
         "data": {
             "weekNumber": "1",
             "gameTime": "2019-09-08T13:00:00",
@@ -54,7 +54,7 @@
         }
     },
     {
-        "model": "game",
+        "model": "Game",
         "data": {
             "weekNumber": "1",
             "gameTime": "2019-09-08T13:00:00",
@@ -63,7 +63,7 @@
         }
     },
     {
-        "model": "game",
+        "model": "Game",
         "data": {
             "weekNumber": "1",
             "gameTime": "2019-09-08T13:00:00",
@@ -72,7 +72,7 @@
         }
     },
     {
-        "model": "game",
+        "model": "Game",
         "data": {
             "weekNumber": "1",
             "gameTime": "2019-09-08T16:05:00",
@@ -81,7 +81,7 @@
         }
     },
     {
-        "model": "game",
+        "model": "Game",
         "data": {
             "weekNumber": "1",
             "gameTime": "2019-09-08T16:05:00",
@@ -90,7 +90,7 @@
         }
     },
     {
-        "model": "game",
+        "model": "Game",
         "data": {
             "weekNumber": "1",
             "gameTime": "2019-09-08T16:25:00",
@@ -99,7 +99,7 @@
         }
     },
     {
-        "model": "game",
+        "model": "Game",
         "data": {
             "weekNumber": "1",
             "gameTime": "2019-09-08T16:25:00",
@@ -108,7 +108,7 @@
         }
     },
     {
-        "model": "game",
+        "model": "Game",
         "data": {
             "weekNumber": "1",
             "gameTime": "2019-09-08T16:25:00",
@@ -117,7 +117,7 @@
         }
     },
     {
-        "model": "game",
+        "model": "Game",
         "data": {
             "weekNumber": "1",
             "gameTime": "2019-09-08T20:20:00",
@@ -126,7 +126,7 @@
         }
     },
     {
-        "model": "game",
+        "model": "Game",
         "data": {
             "weekNumber": "1",
             "gameTime": "2019-09-09T19:10:00",
@@ -135,7 +135,7 @@
         }
     },
     {
-        "model": "game",
+        "model": "Game",
         "data": {
             "weekNumber": "1",
             "gameTime": "2019-09-09T22:20:00",
@@ -144,7 +144,7 @@
         }
     },
     {
-        "model": "game",
+        "model": "Game",
         "data": {
             "weekNumber": "2",
             "gameTime": "2019-09-12T20:20:00",
@@ -153,7 +153,7 @@
         }
     },
     {
-        "model": "game",
+        "model": "Game",
         "data": {
             "weekNumber": "2",
             "gameTime": "2019-09-15T13:00:00",
@@ -162,7 +162,7 @@
         }
     },
     {
-        "model": "game",
+        "model": "Game",
         "data": {
             "weekNumber": "2",
             "gameTime": "2019-09-15T13:00:00",
@@ -171,7 +171,7 @@
         }
     },
     {
-        "model": "game",
+        "model": "Game",
         "data": {
             "weekNumber": "2",
             "gameTime": "2019-09-15T13:00:00",
@@ -180,7 +180,7 @@
         }
     },
     {
-        "model": "game",
+        "model": "Game",
         "data": {
             "weekNumber": "2",
             "gameTime": "2019-09-15T13:00:00",
@@ -189,7 +189,7 @@
         }
     },
     {
-        "model": "game",
+        "model": "Game",
         "data": {
             "weekNumber": "2",
             "gameTime": "2019-09-15T13:00:00",
@@ -198,7 +198,7 @@
         }
     },
     {
-        "model": "game",
+        "model": "Game",
         "data": {
             "weekNumber": "2",
             "gameTime": "2019-09-15T13:00:00",
@@ -207,7 +207,7 @@
         }
     },
     {
-        "model": "game",
+        "model": "Game",
         "data": {
             "weekNumber": "2",
             "gameTime": "2019-09-15T13:00:00",
@@ -216,7 +216,7 @@
         }
     },
     {
-        "model": "game",
+        "model": "Game",
         "data": {
             "weekNumber": "2",
             "gameTime": "2019-09-15T13:00:00",
@@ -225,7 +225,7 @@
         }
     },
     {
-        "model": "game",
+        "model": "Game",
         "data": {
             "weekNumber": "2",
             "gameTime": "2019-09-15T13:00:00",
@@ -234,7 +234,7 @@
         }
     },
     {
-        "model": "game",
+        "model": "Game",
         "data": {
             "weekNumber": "2",
             "gameTime": "2019-09-15T13:00:00",
@@ -243,7 +243,7 @@
         }
     },
     {
-        "model": "game",
+        "model": "Game",
         "data": {
             "weekNumber": "2",
             "gameTime": "2019-09-15T16:05:00",
@@ -252,7 +252,7 @@
         }
     },
     {
-        "model": "game",
+        "model": "Game",
         "data": {
             "weekNumber": "2",
             "gameTime": "2019-09-15T16:25:00",
@@ -261,7 +261,7 @@
         }
     },
     {
-        "model": "game",
+        "model": "Game",
         "data": {
             "weekNumber": "2",
             "gameTime": "2019-09-15T16:25:00",
@@ -270,7 +270,7 @@
         }
     },
     {
-        "model": "game",
+        "model": "Game",
         "data": {
             "weekNumber": "2",
             "gameTime": "2019-09-15T20:20:00",
@@ -279,7 +279,7 @@
         }
     },
     {
-        "model": "game",
+        "model": "Game",
         "data": {
             "weekNumber": "2",
             "gameTime": "2019-09-16T20:15:00",
@@ -288,7 +288,7 @@
         }
     },
     {
-        "model": "game",
+        "model": "Game",
         "data": {
             "weekNumber": "3",
             "gameTime": "2019-09-19T20:20:00",
@@ -297,7 +297,7 @@
         }
     },
     {
-        "model": "game",
+        "model": "Game",
         "data": {
             "weekNumber": "3",
             "gameTime": "2019-09-22T13:00:00",
@@ -306,7 +306,7 @@
         }
     },
     {
-        "model": "game",
+        "model": "Game",
         "data": {
             "weekNumber": "3",
             "gameTime": "2019-09-22T13:00:00",
@@ -315,7 +315,7 @@
         }
     },
     {
-        "model": "game",
+        "model": "Game",
         "data": {
             "weekNumber": "3",
             "gameTime": "2019-09-22T13:00:00",
@@ -324,7 +324,7 @@
         }
     },
     {
-        "model": "game",
+        "model": "Game",
         "data": {
             "weekNumber": "3",
             "gameTime": "2019-09-22T13:00:00",
@@ -333,7 +333,7 @@
         }
     },
     {
-        "model": "game",
+        "model": "Game",
         "data": {
             "weekNumber": "3",
             "gameTime": "2019-09-22T13:00:00",
@@ -342,7 +342,7 @@
         }
     },
     {
-        "model": "game",
+        "model": "Game",
         "data": {
             "weekNumber": "3",
             "gameTime": "2019-09-22T13:00:00",
@@ -351,7 +351,7 @@
         }
     },
     {
-        "model": "game",
+        "model": "Game",
         "data": {
             "weekNumber": "3",
             "gameTime": "2019-09-22T13:00:00",
@@ -360,7 +360,7 @@
         }
     },
     {
-        "model": "game",
+        "model": "Game",
         "data": {
             "weekNumber": "3",
             "gameTime": "2019-09-22T13:00:00",
@@ -369,7 +369,7 @@
         }
     },
     {
-        "model": "game",
+        "model": "Game",
         "data": {
             "weekNumber": "3",
             "gameTime": "2019-09-22T16:05:00",
@@ -378,7 +378,7 @@
         }
     },
     {
-        "model": "game",
+        "model": "Game",
         "data": {
             "weekNumber": "3",
             "gameTime": "2019-09-22T16:05:00",
@@ -387,7 +387,7 @@
         }
     },
     {
-        "model": "game",
+        "model": "Game",
         "data": {
             "weekNumber": "3",
             "gameTime": "2019-09-22T16:25:00",
@@ -396,7 +396,7 @@
         }
     },
     {
-        "model": "game",
+        "model": "Game",
         "data": {
             "weekNumber": "3",
             "gameTime": "2019-09-22T16:25:00",
@@ -405,7 +405,7 @@
         }
     },
     {
-        "model": "game",
+        "model": "Game",
         "data": {
             "weekNumber": "3",
             "gameTime": "2019-09-22T16:25:00",
@@ -414,7 +414,7 @@
         }
     },
     {
-        "model": "game",
+        "model": "Game",
         "data": {
             "weekNumber": "3",
             "gameTime": "2019-09-22T20:20:00",
@@ -423,7 +423,7 @@
         }
     },
     {
-        "model": "game",
+        "model": "Game",
         "data": {
             "weekNumber": "3",
             "gameTime": "2019-09-23T20:15:00",
@@ -432,7 +432,7 @@
         }
     },
     {
-        "model": "game",
+        "model": "Game",
         "data": {
             "weekNumber": "4",
             "gameTime": "2019-09-26T20:20:00",
@@ -441,7 +441,7 @@
         }
     },
     {
-        "model": "game",
+        "model": "Game",
         "data": {
             "weekNumber": "4",
             "gameTime": "2019-09-29T13:00:00",
@@ -450,7 +450,7 @@
         }
     },
     {
-        "model": "game",
+        "model": "Game",
         "data": {
             "weekNumber": "4",
             "gameTime": "2019-09-29T13:00:00",
@@ -459,7 +459,7 @@
         }
     },
     {
-        "model": "game",
+        "model": "Game",
         "data": {
             "weekNumber": "4",
             "gameTime": "2019-09-29T13:00:00",
@@ -468,7 +468,7 @@
         }
     },
     {
-        "model": "game",
+        "model": "Game",
         "data": {
             "weekNumber": "4",
             "gameTime": "2019-09-29T13:00:00",
@@ -477,7 +477,7 @@
         }
     },
     {
-        "model": "game",
+        "model": "Game",
         "data": {
             "weekNumber": "4",
             "gameTime": "2019-09-29T13:00:00",
@@ -486,7 +486,7 @@
         }
     },
     {
-        "model": "game",
+        "model": "Game",
         "data": {
             "weekNumber": "4",
             "gameTime": "2019-09-29T13:00:00",
@@ -495,7 +495,7 @@
         }
     },
     {
-        "model": "game",
+        "model": "Game",
         "data": {
             "weekNumber": "4",
             "gameTime": "2019-09-29T13:00:00",
@@ -504,7 +504,7 @@
         }
     },
     {
-        "model": "game",
+        "model": "Game",
         "data": {
             "weekNumber": "4",
             "gameTime": "2019-09-29T13:00:00",
@@ -513,7 +513,7 @@
         }
     },
     {
-        "model": "game",
+        "model": "Game",
         "data": {
             "weekNumber": "4",
             "gameTime": "2019-09-29T16:05:00",
@@ -522,7 +522,7 @@
         }
     },
     {
-        "model": "game",
+        "model": "Game",
         "data": {
             "weekNumber": "4",
             "gameTime": "2019-09-29T16:05:00",
@@ -531,7 +531,7 @@
         }
     },
     {
-        "model": "game",
+        "model": "Game",
         "data": {
             "weekNumber": "4",
             "gameTime": "2019-09-29T16:25:00",
@@ -540,7 +540,7 @@
         }
     },
     {
-        "model": "game",
+        "model": "Game",
         "data": {
             "weekNumber": "4",
             "gameTime": "2019-09-29T16:25:00",
@@ -549,7 +549,7 @@
         }
     },
     {
-        "model": "game",
+        "model": "Game",
         "data": {
             "weekNumber": "4",
             "gameTime": "2019-09-29T20:20:00",
@@ -558,7 +558,7 @@
         }
     },
     {
-        "model": "game",
+        "model": "Game",
         "data": {
             "weekNumber": "4",
             "gameTime": "2019-09-30T20:15:00",
@@ -567,7 +567,7 @@
         }
     },
     {
-        "model": "game",
+        "model": "Game",
         "data": {
             "weekNumber": "5",
             "gameTime": "2019-10-03T20:20:00",
@@ -576,7 +576,7 @@
         }
     },
     {
-        "model": "game",
+        "model": "Game",
         "data": {
             "weekNumber": "5",
             "gameTime": "2019-10-06T13:00:00",
@@ -585,7 +585,7 @@
         }
     },
     {
-        "model": "game",
+        "model": "Game",
         "data": {
             "weekNumber": "5",
             "gameTime": "2019-10-06T13:00:00",
@@ -594,7 +594,7 @@
         }
     },
     {
-        "model": "game",
+        "model": "Game",
         "data": {
             "weekNumber": "5",
             "gameTime": "2019-10-06T13:00:00",
@@ -603,7 +603,7 @@
         }
     },
     {
-        "model": "game",
+        "model": "Game",
         "data": {
             "weekNumber": "5",
             "gameTime": "2019-10-06T13:00:00",
@@ -612,7 +612,7 @@
         }
     },
     {
-        "model": "game",
+        "model": "Game",
         "data": {
             "weekNumber": "5",
             "gameTime": "2019-10-06T13:00:00",
@@ -621,7 +621,7 @@
         }
     },
     {
-        "model": "game",
+        "model": "Game",
         "data": {
             "weekNumber": "5",
             "gameTime": "2019-10-06T13:00:00",
@@ -630,7 +630,7 @@
         }
     },
     {
-        "model": "game",
+        "model": "Game",
         "data": {
             "weekNumber": "5",
             "gameTime": "2019-10-06T13:00:00",
@@ -639,7 +639,7 @@
         }
     },
     {
-        "model": "game",
+        "model": "Game",
         "data": {
             "weekNumber": "5",
             "gameTime": "2019-10-06T13:00:00",
@@ -648,7 +648,7 @@
         }
     },
     {
-        "model": "game",
+        "model": "Game",
         "data": {
             "weekNumber": "5",
             "gameTime": "2019-10-06T13:00:00",
@@ -657,7 +657,7 @@
         }
     },
     {
-        "model": "game",
+        "model": "Game",
         "data": {
             "weekNumber": "5",
             "gameTime": "2019-10-06T13:00:00",
@@ -666,7 +666,7 @@
         }
     },
     {
-        "model": "game",
+        "model": "Game",
         "data": {
             "weekNumber": "5",
             "gameTime": "2019-10-06T16:05:00",
@@ -675,7 +675,7 @@
         }
     },
     {
-        "model": "game",
+        "model": "Game",
         "data": {
             "weekNumber": "5",
             "gameTime": "2019-10-06T16:25:00",
@@ -684,7 +684,7 @@
         }
     },
     {
-        "model": "game",
+        "model": "Game",
         "data": {
             "weekNumber": "5",
             "gameTime": "2019-10-06T20:20:00",
@@ -693,7 +693,7 @@
         }
     },
     {
-        "model": "game",
+        "model": "Game",
         "data": {
             "weekNumber": "5",
             "gameTime": "2019-10-07T20:15:00",
@@ -702,7 +702,7 @@
         }
     },
     {
-        "model": "game",
+        "model": "Game",
         "data": {
             "weekNumber": "6",
             "gameTime": "2019-10-10T20:20:00",
@@ -711,7 +711,7 @@
         }
     },
     {
-        "model": "game",
+        "model": "Game",
         "data": {
             "weekNumber": "6",
             "gameTime": "2019-10-13T09:30:00",
@@ -720,7 +720,7 @@
         }
     },
     {
-        "model": "game",
+        "model": "Game",
         "data": {
             "weekNumber": "6",
             "gameTime": "2019-10-13T13:00:00",
@@ -729,7 +729,7 @@
         }
     },
     {
-        "model": "game",
+        "model": "Game",
         "data": {
             "weekNumber": "6",
             "gameTime": "2019-10-13T13:00:00",
@@ -738,7 +738,7 @@
         }
     },
     {
-        "model": "game",
+        "model": "Game",
         "data": {
             "weekNumber": "6",
             "gameTime": "2019-10-13T13:00:00",
@@ -747,7 +747,7 @@
         }
     },
     {
-        "model": "game",
+        "model": "Game",
         "data": {
             "weekNumber": "6",
             "gameTime": "2019-10-13T13:00:00",
@@ -756,7 +756,7 @@
         }
     },
     {
-        "model": "game",
+        "model": "Game",
         "data": {
             "weekNumber": "6",
             "gameTime": "2019-10-13T13:00:00",
@@ -765,7 +765,7 @@
         }
     },
     {
-        "model": "game",
+        "model": "Game",
         "data": {
             "weekNumber": "6",
             "gameTime": "2019-10-13T13:00:00",
@@ -774,7 +774,7 @@
         }
     },
     {
-        "model": "game",
+        "model": "Game",
         "data": {
             "weekNumber": "6",
             "gameTime": "2019-10-13T16:05:00",
@@ -783,7 +783,7 @@
         }
     },
     {
-        "model": "game",
+        "model": "Game",
         "data": {
             "weekNumber": "6",
             "gameTime": "2019-10-13T16:05:00",
@@ -792,7 +792,7 @@
         }
     },
     {
-        "model": "game",
+        "model": "Game",
         "data": {
             "weekNumber": "6",
             "gameTime": "2019-10-13T16:25:00",
@@ -801,7 +801,7 @@
         }
     },
     {
-        "model": "game",
+        "model": "Game",
         "data": {
             "weekNumber": "6",
             "gameTime": "2019-10-13T16:25:00",
@@ -810,7 +810,7 @@
         }
     },
     {
-        "model": "game",
+        "model": "Game",
         "data": {
             "weekNumber": "6",
             "gameTime": "2019-10-13T20:20:00",
@@ -819,7 +819,7 @@
         }
     },
     {
-        "model": "game",
+        "model": "Game",
         "data": {
             "weekNumber": "6",
             "gameTime": "2019-10-14T20:15:00",
@@ -828,7 +828,7 @@
         }
     },
     {
-        "model": "game",
+        "model": "Game",
         "data": {
             "weekNumber": "7",
             "gameTime": "2019-10-17T20:20:00",
@@ -837,7 +837,7 @@
         }
     },
     {
-        "model": "game",
+        "model": "Game",
         "data": {
             "weekNumber": "7",
             "gameTime": "2019-10-20T13:00:00",
@@ -846,7 +846,7 @@
         }
     },
     {
-        "model": "game",
+        "model": "Game",
         "data": {
             "weekNumber": "7",
             "gameTime": "2019-10-20T13:00:00",
@@ -855,7 +855,7 @@
         }
     },
     {
-        "model": "game",
+        "model": "Game",
         "data": {
             "weekNumber": "7",
             "gameTime": "2019-10-20T13:00:00",
@@ -864,7 +864,7 @@
         }
     },
     {
-        "model": "game",
+        "model": "Game",
         "data": {
             "weekNumber": "7",
             "gameTime": "2019-10-20T13:00:00",
@@ -873,7 +873,7 @@
         }
     },
     {
-        "model": "game",
+        "model": "Game",
         "data": {
             "weekNumber": "7",
             "gameTime": "2019-10-20T13:00:00",
@@ -882,7 +882,7 @@
         }
     },
     {
-        "model": "game",
+        "model": "Game",
         "data": {
             "weekNumber": "7",
             "gameTime": "2019-10-20T13:00:00",
@@ -891,7 +891,7 @@
         }
     },
     {
-        "model": "game",
+        "model": "Game",
         "data": {
             "weekNumber": "7",
             "gameTime": "2019-10-20T13:00:00",
@@ -900,7 +900,7 @@
         }
     },
     {
-        "model": "game",
+        "model": "Game",
         "data": {
             "weekNumber": "7",
             "gameTime": "2019-10-20T13:00:00",
@@ -909,7 +909,7 @@
         }
     },
     {
-        "model": "game",
+        "model": "Game",
         "data": {
             "weekNumber": "7",
             "gameTime": "2019-10-20T16:05:00",
@@ -918,7 +918,7 @@
         }
     },
     {
-        "model": "game",
+        "model": "Game",
         "data": {
             "weekNumber": "7",
             "gameTime": "2019-10-20T16:25:00",
@@ -927,7 +927,7 @@
         }
     },
     {
-        "model": "game",
+        "model": "Game",
         "data": {
             "weekNumber": "7",
             "gameTime": "2019-10-20T16:25:00",
@@ -936,7 +936,7 @@
         }
     },
     {
-        "model": "game",
+        "model": "Game",
         "data": {
             "weekNumber": "7",
             "gameTime": "2019-10-20T20:20:00",
@@ -945,7 +945,7 @@
         }
     },
     {
-        "model": "game",
+        "model": "Game",
         "data": {
             "weekNumber": "7",
             "gameTime": "2019-10-21T20:15:00",
@@ -954,7 +954,7 @@
         }
     },
     {
-        "model": "game",
+        "model": "Game",
         "data": {
             "weekNumber": "8",
             "gameTime": "2019-10-24T20:20:00",
@@ -963,7 +963,7 @@
         }
     },
     {
-        "model": "game",
+        "model": "Game",
         "data": {
             "weekNumber": "8",
             "gameTime": "2019-10-27T13:00:00",
@@ -972,7 +972,7 @@
         }
     },
     {
-        "model": "game",
+        "model": "Game",
         "data": {
             "weekNumber": "8",
             "gameTime": "2019-10-27T13:00:00",
@@ -981,7 +981,7 @@
         }
     },
     {
-        "model": "game",
+        "model": "Game",
         "data": {
             "weekNumber": "8",
             "gameTime": "2019-10-27T13:00:00",
@@ -990,7 +990,7 @@
         }
     },
     {
-        "model": "game",
+        "model": "Game",
         "data": {
             "weekNumber": "8",
             "gameTime": "2019-10-27T13:00:00",
@@ -999,7 +999,7 @@
         }
     },
     {
-        "model": "game",
+        "model": "Game",
         "data": {
             "weekNumber": "8",
             "gameTime": "2019-10-27T13:00:00",
@@ -1008,7 +1008,7 @@
         }
     },
     {
-        "model": "game",
+        "model": "Game",
         "data": {
             "weekNumber": "8",
             "gameTime": "2019-10-27T13:00:00",
@@ -1017,7 +1017,7 @@
         }
     },
     {
-        "model": "game",
+        "model": "Game",
         "data": {
             "weekNumber": "8",
             "gameTime": "2019-10-27T13:00:00",
@@ -1026,7 +1026,7 @@
         }
     },
     {
-        "model": "game",
+        "model": "Game",
         "data": {
             "weekNumber": "8",
             "gameTime": "2019-10-27T13:00:00",
@@ -1035,7 +1035,7 @@
         }
     },
     {
-        "model": "game",
+        "model": "Game",
         "data": {
             "weekNumber": "8",
             "gameTime": "2019-10-27T13:00:00",
@@ -1044,7 +1044,7 @@
         }
     },
     {
-        "model": "game",
+        "model": "Game",
         "data": {
             "weekNumber": "8",
             "gameTime": "2019-10-27T16:05:00",
@@ -1053,7 +1053,7 @@
         }
     },
     {
-        "model": "game",
+        "model": "Game",
         "data": {
             "weekNumber": "8",
             "gameTime": "2019-10-27T16:25:00",
@@ -1062,7 +1062,7 @@
         }
     },
     {
-        "model": "game",
+        "model": "Game",
         "data": {
             "weekNumber": "8",
             "gameTime": "2019-10-27T16:25:00",
@@ -1071,7 +1071,7 @@
         }
     },
     {
-        "model": "game",
+        "model": "Game",
         "data": {
             "weekNumber": "8",
             "gameTime": "2019-10-27T20:20:00",
@@ -1080,7 +1080,7 @@
         }
     },
     {
-        "model": "game",
+        "model": "Game",
         "data": {
             "weekNumber": "8",
             "gameTime": "2019-10-28T20:15:00",
@@ -1089,7 +1089,7 @@
         }
     },
     {
-        "model": "game",
+        "model": "Game",
         "data": {
             "weekNumber": "9",
             "gameTime": "2019-10-31T20:20:00",
@@ -1098,7 +1098,7 @@
         }
     },
     {
-        "model": "game",
+        "model": "Game",
         "data": {
             "weekNumber": "9",
             "gameTime": "2019-11-03T09:30:00",
@@ -1107,7 +1107,7 @@
         }
     },
     {
-        "model": "game",
+        "model": "Game",
         "data": {
             "weekNumber": "9",
             "gameTime": "2019-11-03T13:00:00",
@@ -1116,7 +1116,7 @@
         }
     },
     {
-        "model": "game",
+        "model": "Game",
         "data": {
             "weekNumber": "9",
             "gameTime": "2019-11-03T13:00:00",
@@ -1125,7 +1125,7 @@
         }
     },
     {
-        "model": "game",
+        "model": "Game",
         "data": {
             "weekNumber": "9",
             "gameTime": "2019-11-03T13:00:00",
@@ -1134,7 +1134,7 @@
         }
     },
     {
-        "model": "game",
+        "model": "Game",
         "data": {
             "weekNumber": "9",
             "gameTime": "2019-11-03T13:00:00",
@@ -1143,7 +1143,7 @@
         }
     },
     {
-        "model": "game",
+        "model": "Game",
         "data": {
             "weekNumber": "9",
             "gameTime": "2019-11-03T13:00:00",
@@ -1152,7 +1152,7 @@
         }
     },
     {
-        "model": "game",
+        "model": "Game",
         "data": {
             "weekNumber": "9",
             "gameTime": "2019-11-03T13:00:00",
@@ -1161,7 +1161,7 @@
         }
     },
     {
-        "model": "game",
+        "model": "Game",
         "data": {
             "weekNumber": "9",
             "gameTime": "2019-11-03T16:05:00",
@@ -1170,7 +1170,7 @@
         }
     },
     {
-        "model": "game",
+        "model": "Game",
         "data": {
             "weekNumber": "9",
             "gameTime": "2019-11-03T16:05:00",
@@ -1179,7 +1179,7 @@
         }
     },
     {
-        "model": "game",
+        "model": "Game",
         "data": {
             "weekNumber": "9",
             "gameTime": "2019-11-03T16:25:00",
@@ -1188,7 +1188,7 @@
         }
     },
     {
-        "model": "game",
+        "model": "Game",
         "data": {
             "weekNumber": "9",
             "gameTime": "2019-11-03T16:25:00",
@@ -1197,7 +1197,7 @@
         }
     },
     {
-        "model": "game",
+        "model": "Game",
         "data": {
             "weekNumber": "9",
             "gameTime": "2019-11-03T20:20:00",
@@ -1206,7 +1206,7 @@
         }
     },
     {
-        "model": "game",
+        "model": "Game",
         "data": {
             "weekNumber": "9",
             "gameTime": "2019-11-04T20:15:00",
@@ -1215,7 +1215,7 @@
         }
     },
     {
-        "model": "game",
+        "model": "Game",
         "data": {
             "weekNumber": "10",
             "gameTime": "2019-11-07T20:20:00",
@@ -1224,7 +1224,7 @@
         }
     },
     {
-        "model": "game",
+        "model": "Game",
         "data": {
             "weekNumber": "10",
             "gameTime": "2019-11-10T13:00:00",
@@ -1233,7 +1233,7 @@
         }
     },
     {
-        "model": "game",
+        "model": "Game",
         "data": {
             "weekNumber": "10",
             "gameTime": "2019-11-10T13:00:00",
@@ -1242,7 +1242,7 @@
         }
     },
     {
-        "model": "game",
+        "model": "Game",
         "data": {
             "weekNumber": "10",
             "gameTime": "2019-11-10T13:00:00",
@@ -1251,7 +1251,7 @@
         }
     },
     {
-        "model": "game",
+        "model": "Game",
         "data": {
             "weekNumber": "10",
             "gameTime": "2019-11-10T13:00:00",
@@ -1260,7 +1260,7 @@
         }
     },
     {
-        "model": "game",
+        "model": "Game",
         "data": {
             "weekNumber": "10",
             "gameTime": "2019-11-10T13:00:00",
@@ -1269,7 +1269,7 @@
         }
     },
     {
-        "model": "game",
+        "model": "Game",
         "data": {
             "weekNumber": "10",
             "gameTime": "2019-11-10T13:00:00",
@@ -1278,7 +1278,7 @@
         }
     },
     {
-        "model": "game",
+        "model": "Game",
         "data": {
             "weekNumber": "10",
             "gameTime": "2019-11-10T13:00:00",
@@ -1287,7 +1287,7 @@
         }
     },
     {
-        "model": "game",
+        "model": "Game",
         "data": {
             "weekNumber": "10",
             "gameTime": "2019-11-10T13:00:00",
@@ -1296,7 +1296,7 @@
         }
     },
     {
-        "model": "game",
+        "model": "Game",
         "data": {
             "weekNumber": "10",
             "gameTime": "2019-11-10T16:05:00",
@@ -1305,7 +1305,7 @@
         }
     },
     {
-        "model": "game",
+        "model": "Game",
         "data": {
             "weekNumber": "10",
             "gameTime": "2019-11-10T16:25:00",
@@ -1314,7 +1314,7 @@
         }
     },
     {
-        "model": "game",
+        "model": "Game",
         "data": {
             "weekNumber": "10",
             "gameTime": "2019-11-10T20:20:00",
@@ -1323,7 +1323,7 @@
         }
     },
     {
-        "model": "game",
+        "model": "Game",
         "data": {
             "weekNumber": "10",
             "gameTime": "2019-11-11T20:15:00",
@@ -1332,7 +1332,7 @@
         }
     },
     {
-        "model": "game",
+        "model": "Game",
         "data": {
             "weekNumber": "11",
             "gameTime": "2019-11-14T20:20:00",
@@ -1341,7 +1341,7 @@
         }
     },
     {
-        "model": "game",
+        "model": "Game",
         "data": {
             "weekNumber": "11",
             "gameTime": "2019-11-17T01:00:00",
@@ -1350,7 +1350,7 @@
         }
     },
     {
-        "model": "game",
+        "model": "Game",
         "data": {
             "weekNumber": "11",
             "gameTime": "2019-11-17T13:00:00",
@@ -1359,7 +1359,7 @@
         }
     },
     {
-        "model": "game",
+        "model": "Game",
         "data": {
             "weekNumber": "11",
             "gameTime": "2019-11-17T13:00:00",
@@ -1368,7 +1368,7 @@
         }
     },
     {
-        "model": "game",
+        "model": "Game",
         "data": {
             "weekNumber": "11",
             "gameTime": "2019-11-17T13:00:00",
@@ -1377,7 +1377,7 @@
         }
     },
     {
-        "model": "game",
+        "model": "Game",
         "data": {
             "weekNumber": "11",
             "gameTime": "2019-11-17T13:00:00",
@@ -1386,7 +1386,7 @@
         }
     },
     {
-        "model": "game",
+        "model": "Game",
         "data": {
             "weekNumber": "11",
             "gameTime": "2019-11-17T13:00:00",
@@ -1395,7 +1395,7 @@
         }
     },
     {
-        "model": "game",
+        "model": "Game",
         "data": {
             "weekNumber": "11",
             "gameTime": "2019-11-17T13:00:00",
@@ -1404,7 +1404,7 @@
         }
     },
     {
-        "model": "game",
+        "model": "Game",
         "data": {
             "weekNumber": "11",
             "gameTime": "2019-11-17T13:00:00",
@@ -1413,7 +1413,7 @@
         }
     },
     {
-        "model": "game",
+        "model": "Game",
         "data": {
             "weekNumber": "11",
             "gameTime": "2019-11-17T16:05:00",
@@ -1422,7 +1422,7 @@
         }
     },
     {
-        "model": "game",
+        "model": "Game",
         "data": {
             "weekNumber": "11",
             "gameTime": "2019-11-17T16:25:00",
@@ -1431,7 +1431,7 @@
         }
     },
     {
-        "model": "game",
+        "model": "Game",
         "data": {
             "weekNumber": "11",
             "gameTime": "2019-11-17T16:25:00",
@@ -1440,7 +1440,7 @@
         }
     },
     {
-        "model": "game",
+        "model": "Game",
         "data": {
             "weekNumber": "11",
             "gameTime": "2019-11-17T20:20:00",
@@ -1449,7 +1449,7 @@
         }
     },
     {
-        "model": "game",
+        "model": "Game",
         "data": {
             "weekNumber": "11",
             "gameTime": "2019-11-18T20:15:00",
@@ -1458,7 +1458,7 @@
         }
     },
     {
-        "model": "game",
+        "model": "Game",
         "data": {
             "weekNumber": "12",
             "gameTime": "2019-11-21T20:20:00",
@@ -1467,7 +1467,7 @@
         }
     },
     {
-        "model": "game",
+        "model": "Game",
         "data": {
             "weekNumber": "12",
             "gameTime": "2019-11-24T13:00:00",
@@ -1476,7 +1476,7 @@
         }
     },
     {
-        "model": "game",
+        "model": "Game",
         "data": {
             "weekNumber": "12",
             "gameTime": "2019-11-24T13:00:00",
@@ -1485,7 +1485,7 @@
         }
     },
     {
-        "model": "game",
+        "model": "Game",
         "data": {
             "weekNumber": "12",
             "gameTime": "2019-11-24T13:00:00",
@@ -1494,7 +1494,7 @@
         }
     },
     {
-        "model": "game",
+        "model": "Game",
         "data": {
             "weekNumber": "12",
             "gameTime": "2019-11-24T13:00:00",
@@ -1503,7 +1503,7 @@
         }
     },
     {
-        "model": "game",
+        "model": "Game",
         "data": {
             "weekNumber": "12",
             "gameTime": "2019-11-24T13:00:00",
@@ -1512,7 +1512,7 @@
         }
     },
     {
-        "model": "game",
+        "model": "Game",
         "data": {
             "weekNumber": "12",
             "gameTime": "2019-11-24T13:00:00",
@@ -1521,7 +1521,7 @@
         }
     },
     {
-        "model": "game",
+        "model": "Game",
         "data": {
             "weekNumber": "12",
             "gameTime": "2019-11-24T13:00:00",
@@ -1530,7 +1530,7 @@
         }
     },
     {
-        "model": "game",
+        "model": "Game",
         "data": {
             "weekNumber": "12",
             "gameTime": "2019-11-24T13:00:00",
@@ -1539,7 +1539,7 @@
         }
     },
     {
-        "model": "game",
+        "model": "Game",
         "data": {
             "weekNumber": "12",
             "gameTime": "2019-11-24T16:05:00",
@@ -1548,7 +1548,7 @@
         }
     },
     {
-        "model": "game",
+        "model": "Game",
         "data": {
             "weekNumber": "12",
             "gameTime": "2019-11-24T16:25:00",
@@ -1557,7 +1557,7 @@
         }
     },
     {
-        "model": "game",
+        "model": "Game",
         "data": {
             "weekNumber": "12",
             "gameTime": "2019-11-24T16:25:00",
@@ -1566,7 +1566,7 @@
         }
     },
     {
-        "model": "game",
+        "model": "Game",
         "data": {
             "weekNumber": "12",
             "gameTime": "2019-11-24T20:20:00",
@@ -1575,7 +1575,7 @@
         }
     },
     {
-        "model": "game",
+        "model": "Game",
         "data": {
             "weekNumber": "12",
             "gameTime": "2019-11-25T20:15:00",
@@ -1584,7 +1584,7 @@
         }
     },
     {
-        "model": "game",
+        "model": "Game",
         "data": {
             "weekNumber": "13",
             "gameTime": "2019-11-28T12:30:00",
@@ -1593,7 +1593,7 @@
         }
     },
     {
-        "model": "game",
+        "model": "Game",
         "data": {
             "weekNumber": "13",
             "gameTime": "2019-11-28T16:30:00",
@@ -1602,7 +1602,7 @@
         }
     },
     {
-        "model": "game",
+        "model": "Game",
         "data": {
             "weekNumber": "13",
             "gameTime": "2019-11-28T20:20:00",
@@ -1611,7 +1611,7 @@
         }
     },
     {
-        "model": "game",
+        "model": "Game",
         "data": {
             "weekNumber": "13",
             "gameTime": "2019-12-01T13:00:00",
@@ -1620,7 +1620,7 @@
         }
     },
     {
-        "model": "game",
+        "model": "Game",
         "data": {
             "weekNumber": "13",
             "gameTime": "2019-12-01T13:00:00",
@@ -1629,7 +1629,7 @@
         }
     },
     {
-        "model": "game",
+        "model": "Game",
         "data": {
             "weekNumber": "13",
             "gameTime": "2019-12-01T13:00:00",
@@ -1638,7 +1638,7 @@
         }
     },
     {
-        "model": "game",
+        "model": "Game",
         "data": {
             "weekNumber": "13",
             "gameTime": "2019-12-01T13:00:00",
@@ -1647,7 +1647,7 @@
         }
     },
     {
-        "model": "game",
+        "model": "Game",
         "data": {
             "weekNumber": "13",
             "gameTime": "2019-12-01T13:00:00",
@@ -1656,7 +1656,7 @@
         }
     },
     {
-        "model": "game",
+        "model": "Game",
         "data": {
             "weekNumber": "13",
             "gameTime": "2019-12-01T13:00:00",
@@ -1665,7 +1665,7 @@
         }
     },
     {
-        "model": "game",
+        "model": "Game",
         "data": {
             "weekNumber": "13",
             "gameTime": "2019-12-01T13:00:00",
@@ -1674,7 +1674,7 @@
         }
     },
     {
-        "model": "game",
+        "model": "Game",
         "data": {
             "weekNumber": "13",
             "gameTime": "2019-12-01T13:00:00",
@@ -1683,7 +1683,7 @@
         }
     },
     {
-        "model": "game",
+        "model": "Game",
         "data": {
             "weekNumber": "13",
             "gameTime": "2019-12-01T16:05:00",
@@ -1692,7 +1692,7 @@
         }
     },
     {
-        "model": "game",
+        "model": "Game",
         "data": {
             "weekNumber": "13",
             "gameTime": "2019-12-01T16:25:00",
@@ -1701,7 +1701,7 @@
         }
     },
     {
-        "model": "game",
+        "model": "Game",
         "data": {
             "weekNumber": "13",
             "gameTime": "2019-12-01T16:25:00",
@@ -1710,7 +1710,7 @@
         }
     },
     {
-        "model": "game",
+        "model": "Game",
         "data": {
             "weekNumber": "13",
             "gameTime": "2019-12-01T20:20:00",
@@ -1719,7 +1719,7 @@
         }
     },
     {
-        "model": "game",
+        "model": "Game",
         "data": {
             "weekNumber": "13",
             "gameTime": "2019-12-02T20:15:00",
@@ -1728,7 +1728,7 @@
         }
     },
     {
-        "model": "game",
+        "model": "Game",
         "data": {
             "weekNumber": "14",
             "gameTime": "2019-12-05T20:20:00",
@@ -1737,7 +1737,7 @@
         }
     },
     {
-        "model": "game",
+        "model": "Game",
         "data": {
             "weekNumber": "14",
             "gameTime": "2019-12-08T13:00:00",
@@ -1746,7 +1746,7 @@
         }
     },
     {
-        "model": "game",
+        "model": "Game",
         "data": {
             "weekNumber": "14",
             "gameTime": "2019-12-08T13:00:00",
@@ -1755,7 +1755,7 @@
         }
     },
     {
-        "model": "game",
+        "model": "Game",
         "data": {
             "weekNumber": "14",
             "gameTime": "2019-12-08T13:00:00",
@@ -1764,7 +1764,7 @@
         }
     },
     {
-        "model": "game",
+        "model": "Game",
         "data": {
             "weekNumber": "14",
             "gameTime": "2019-12-08T13:00:00",
@@ -1773,7 +1773,7 @@
         }
     },
     {
-        "model": "game",
+        "model": "Game",
         "data": {
             "weekNumber": "14",
             "gameTime": "2019-12-08T13:00:00",
@@ -1782,7 +1782,7 @@
         }
     },
     {
-        "model": "game",
+        "model": "Game",
         "data": {
             "weekNumber": "14",
             "gameTime": "2019-12-08T13:00:00",
@@ -1791,7 +1791,7 @@
         }
     },
     {
-        "model": "game",
+        "model": "Game",
         "data": {
             "weekNumber": "14",
             "gameTime": "2019-12-08T13:00:00",
@@ -1800,7 +1800,7 @@
         }
     },
     {
-        "model": "game",
+        "model": "Game",
         "data": {
             "weekNumber": "14",
             "gameTime": "2019-12-08T13:00:00",
@@ -1809,7 +1809,7 @@
         }
     },
     {
-        "model": "game",
+        "model": "Game",
         "data": {
             "weekNumber": "14",
             "gameTime": "2019-12-08T13:00:00",
@@ -1818,7 +1818,7 @@
         }
     },
     {
-        "model": "game",
+        "model": "Game",
         "data": {
             "weekNumber": "14",
             "gameTime": "2019-12-08T16:05:00",
@@ -1827,7 +1827,7 @@
         }
     },
     {
-        "model": "game",
+        "model": "Game",
         "data": {
             "weekNumber": "14",
             "gameTime": "2019-12-08T16:25:00",
@@ -1836,7 +1836,7 @@
         }
     },
     {
-        "model": "game",
+        "model": "Game",
         "data": {
             "weekNumber": "14",
             "gameTime": "2019-12-08T16:25:00",
@@ -1845,7 +1845,7 @@
         }
     },
     {
-        "model": "game",
+        "model": "Game",
         "data": {
             "weekNumber": "14",
             "gameTime": "2019-12-08T16:25:00",
@@ -1854,7 +1854,7 @@
         }
     },
     {
-        "model": "game",
+        "model": "Game",
         "data": {
             "weekNumber": "14",
             "gameTime": "2019-12-08T20:20:00",
@@ -1863,7 +1863,7 @@
         }
     },
     {
-        "model": "game",
+        "model": "Game",
         "data": {
             "weekNumber": "14",
             "gameTime": "2019-12-09T20:15:00",
@@ -1872,7 +1872,7 @@
         }
     },
     {
-        "model": "game",
+        "model": "Game",
         "data": {
             "weekNumber": "15",
             "gameTime": "2019-12-12T20:20:00",
@@ -1881,7 +1881,7 @@
         }
     },
     {
-        "model": "game",
+        "model": "Game",
         "data": {
             "weekNumber": "15",
             "gameTime": "2019-12-15T13:00:00",
@@ -1890,7 +1890,7 @@
         }
     },
     {
-        "model": "game",
+        "model": "Game",
         "data": {
             "weekNumber": "15",
             "gameTime": "2019-12-15T13:00:00",
@@ -1899,7 +1899,7 @@
         }
     },
     {
-        "model": "game",
+        "model": "Game",
         "data": {
             "weekNumber": "15",
             "gameTime": "2019-12-15T13:00:00",
@@ -1908,7 +1908,7 @@
         }
     },
     {
-        "model": "game",
+        "model": "Game",
         "data": {
             "weekNumber": "15",
             "gameTime": "2019-12-15T13:00:00",
@@ -1917,7 +1917,7 @@
         }
     },
     {
-        "model": "game",
+        "model": "Game",
         "data": {
             "weekNumber": "15",
             "gameTime": "2019-12-15T13:00:00",
@@ -1926,7 +1926,7 @@
         }
     },
     {
-        "model": "game",
+        "model": "Game",
         "data": {
             "weekNumber": "15",
             "gameTime": "2019-12-15T13:00:00",
@@ -1935,7 +1935,7 @@
         }
     },
     {
-        "model": "game",
+        "model": "Game",
         "data": {
             "weekNumber": "15",
             "gameTime": "2019-12-15T13:00:00",
@@ -1944,7 +1944,7 @@
         }
     },
     {
-        "model": "game",
+        "model": "Game",
         "data": {
             "weekNumber": "15",
             "gameTime": "2019-12-15T13:00:00",
@@ -1953,7 +1953,7 @@
         }
     },
     {
-        "model": "game",
+        "model": "Game",
         "data": {
             "weekNumber": "15",
             "gameTime": "2019-12-15T13:00:00",
@@ -1962,7 +1962,7 @@
         }
     },
     {
-        "model": "game",
+        "model": "Game",
         "data": {
             "weekNumber": "15",
             "gameTime": "2019-12-15T16:05:00",
@@ -1971,7 +1971,7 @@
         }
     },
     {
-        "model": "game",
+        "model": "Game",
         "data": {
             "weekNumber": "15",
             "gameTime": "2019-12-15T16:05:00",
@@ -1980,7 +1980,7 @@
         }
     },
     {
-        "model": "game",
+        "model": "Game",
         "data": {
             "weekNumber": "15",
             "gameTime": "2019-12-15T16:25:00",
@@ -1989,7 +1989,7 @@
         }
     },
     {
-        "model": "game",
+        "model": "Game",
         "data": {
             "weekNumber": "15",
             "gameTime": "2019-12-15T16:25:00",
@@ -1998,7 +1998,7 @@
         }
     },
     {
-        "model": "game",
+        "model": "Game",
         "data": {
             "weekNumber": "15",
             "gameTime": "2019-12-15T20:20:00",
@@ -2007,7 +2007,7 @@
         }
     },
     {
-        "model": "game",
+        "model": "Game",
         "data": {
             "weekNumber": "15",
             "gameTime": "2019-12-16T20:15:00",
@@ -2016,7 +2016,7 @@
         }
     },
     {
-        "model": "game",
+        "model": "Game",
         "data": {
             "weekNumber": "16",
             "gameTime": "2019-12-22T01:00:00",
@@ -2025,7 +2025,7 @@
         }
     },
     {
-        "model": "game",
+        "model": "Game",
         "data": {
             "weekNumber": "16",
             "gameTime": "2019-12-22T01:00:00",
@@ -2034,7 +2034,7 @@
         }
     },
     {
-        "model": "game",
+        "model": "Game",
         "data": {
             "weekNumber": "16",
             "gameTime": "2019-12-22T01:00:00",
@@ -2043,7 +2043,7 @@
         }
     },
     {
-        "model": "game",
+        "model": "Game",
         "data": {
             "weekNumber": "16",
             "gameTime": "2019-12-22T01:00:00",
@@ -2052,7 +2052,7 @@
         }
     },
     {
-        "model": "game",
+        "model": "Game",
         "data": {
             "weekNumber": "16",
             "gameTime": "2019-12-22T01:00:00",
@@ -2061,7 +2061,7 @@
         }
     },
     {
-        "model": "game",
+        "model": "Game",
         "data": {
             "weekNumber": "16",
             "gameTime": "2019-12-22T13:00:00",
@@ -2070,7 +2070,7 @@
         }
     },
     {
-        "model": "game",
+        "model": "Game",
         "data": {
             "weekNumber": "16",
             "gameTime": "2019-12-22T13:00:00",
@@ -2079,7 +2079,7 @@
         }
     },
     {
-        "model": "game",
+        "model": "Game",
         "data": {
             "weekNumber": "16",
             "gameTime": "2019-12-22T13:00:00",
@@ -2088,7 +2088,7 @@
         }
     },
     {
-        "model": "game",
+        "model": "Game",
         "data": {
             "weekNumber": "16",
             "gameTime": "2019-12-22T13:00:00",
@@ -2097,7 +2097,7 @@
         }
     },
     {
-        "model": "game",
+        "model": "Game",
         "data": {
             "weekNumber": "16",
             "gameTime": "2019-12-22T13:00:00",
@@ -2106,7 +2106,7 @@
         }
     },
     {
-        "model": "game",
+        "model": "Game",
         "data": {
             "weekNumber": "16",
             "gameTime": "2019-12-22T13:00:00",
@@ -2115,7 +2115,7 @@
         }
     },
     {
-        "model": "game",
+        "model": "Game",
         "data": {
             "weekNumber": "16",
             "gameTime": "2019-12-22T13:00:00",
@@ -2124,7 +2124,7 @@
         }
     },
     {
-        "model": "game",
+        "model": "Game",
         "data": {
             "weekNumber": "16",
             "gameTime": "2019-12-22T16:25:00",
@@ -2133,7 +2133,7 @@
         }
     },
     {
-        "model": "game",
+        "model": "Game",
         "data": {
             "weekNumber": "16",
             "gameTime": "2019-12-22T16:25:00",
@@ -2142,7 +2142,7 @@
         }
     },
     {
-        "model": "game",
+        "model": "Game",
         "data": {
             "weekNumber": "16",
             "gameTime": "2019-12-22T20:20:00",
@@ -2151,7 +2151,7 @@
         }
     },
     {
-        "model": "game",
+        "model": "Game",
         "data": {
             "weekNumber": "16",
             "gameTime": "2019-12-23T20:15:00",
@@ -2160,7 +2160,7 @@
         }
     },
     {
-        "model": "game",
+        "model": "Game",
         "data": {
             "weekNumber": "17",
             "gameTime": "2019-12-29T13:00:00",
@@ -2169,7 +2169,7 @@
         }
     },
     {
-        "model": "game",
+        "model": "Game",
         "data": {
             "weekNumber": "17",
             "gameTime": "2019-12-29T13:00:00",
@@ -2178,7 +2178,7 @@
         }
     },
     {
-        "model": "game",
+        "model": "Game",
         "data": {
             "weekNumber": "17",
             "gameTime": "2019-12-29T13:00:00",
@@ -2187,7 +2187,7 @@
         }
     },
     {
-        "model": "game",
+        "model": "Game",
         "data": {
             "weekNumber": "17",
             "gameTime": "2019-12-29T13:00:00",
@@ -2196,7 +2196,7 @@
         }
     },
     {
-        "model": "game",
+        "model": "Game",
         "data": {
             "weekNumber": "17",
             "gameTime": "2019-12-29T13:00:00",
@@ -2205,7 +2205,7 @@
         }
     },
     {
-        "model": "game",
+        "model": "Game",
         "data": {
             "weekNumber": "17",
             "gameTime": "2019-12-29T13:00:00",
@@ -2214,7 +2214,7 @@
         }
     },
     {
-        "model": "game",
+        "model": "Game",
         "data": {
             "weekNumber": "17",
             "gameTime": "2019-12-29T13:00:00",
@@ -2223,7 +2223,7 @@
         }
     },
     {
-        "model": "game",
+        "model": "Game",
         "data": {
             "weekNumber": "17",
             "gameTime": "2019-12-29T13:00:00",
@@ -2232,7 +2232,7 @@
         }
     },
     {
-        "model": "game",
+        "model": "Game",
         "data": {
             "weekNumber": "17",
             "gameTime": "2019-12-29T13:00:00",
@@ -2241,7 +2241,7 @@
         }
     },
     {
-        "model": "game",
+        "model": "Game",
         "data": {
             "weekNumber": "17",
             "gameTime": "2019-12-29T13:00:00",
@@ -2250,7 +2250,7 @@
         }
     },
     {
-        "model": "game",
+        "model": "Game",
         "data": {
             "weekNumber": "17",
             "gameTime": "2019-12-29T13:00:00",
@@ -2259,7 +2259,7 @@
         }
     },
     {
-        "model": "game",
+        "model": "Game",
         "data": {
             "weekNumber": "17",
             "gameTime": "2019-12-29T13:00:00",
@@ -2268,7 +2268,7 @@
         }
     },
     {
-        "model": "game",
+        "model": "Game",
         "data": {
             "weekNumber": "17",
             "gameTime": "2019-12-29T13:00:00",
@@ -2277,7 +2277,7 @@
         }
     },
     {
-        "model": "game",
+        "model": "Game",
         "data": {
             "weekNumber": "17",
             "gameTime": "2019-12-29T16:25:00",
@@ -2286,7 +2286,7 @@
         }
     },
     {
-        "model": "game",
+        "model": "Game",
         "data": {
             "weekNumber": "17",
             "gameTime": "2019-12-29T16:25:00",
@@ -2295,7 +2295,7 @@
         }
     },
     {
-        "model": "game",
+        "model": "Game",
         "data": {
             "weekNumber": "17",
             "gameTime": "2019-12-29T16:25:00",
