@@ -11,37 +11,30 @@ module.exports = {
             attributes: [ "screenname", "avatar", "favoriteTeamCode" ]
         },
         {
-            model: db.Game,
+            model: db.Game
         }]
       })
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },
-  getByGameId: function(req, res) {
-    db.Prediction
-      .findById({ gameId: req.params.gameId })
-      .then(dbModel => res.json(dbModel))
-      .catch(err => res.status(422).json(err));
-  },
-  getByScreenname: function(req, res) {
-    db.Prediction
-      .findById({ screenname: req.params.screenname })
-      .then(dbModel => res.json(dbModel))
-      .catch(err => res.status(422).json(err));
-  },
+//   getByGameId: function(req, res) {
+//     db.Prediction
+//       .findById({ gameId: req.params.gameId })
+//       .then(dbModel => res.json(dbModel))
+//       .catch(err => res.status(422).json(err));
+//   },
+//   getByScreenname: function(req, res) {
+//     db.Prediction
+//       .findById({ screenname: req.params.screenname })
+//       .then(dbModel => res.json(dbModel))
+//       .catch(err => res.status(422).json(err));
+//   },
   save: function(req, res) {
+      console.log("trying save...");
+      console.log(req.body);
     db.Prediction
-      .bulkCreate(req.body)
+      .create(req.body)
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   }
 };
-
-//  select users.screenname, users.avatar, users.favoriteTeamCode,
-// 	   games.*,
-//     predictions.preGamePrediction,
-//     predictions.predictionCorrect
-
-// from predictions
-//     join users on users.screenname = predictions.screenname
-//     join games on games.id = predictions.gameid

@@ -18,7 +18,8 @@ module.exports = function(sequelize, DataTypes) {
     });
 
     Game.associate = function (models) {
-        Game.hasMany(models.Prediction);
+        Game.belongsToMany(models.User, { through: models.Prediction, foreignKey: 'GameId'});
     };
+
     return Game;
 };

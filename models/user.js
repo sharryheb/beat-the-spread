@@ -12,10 +12,9 @@ module.exports = function(sequelize, DataTypes) {
       tableName: 'users'
   });
 
-User.associate = function (models) {
-    User.hasMany(models.Prediction);
+  User.associate = function (models) {
+    User.belongsToMany(models.Game, { through: models.Prediction, foreignKey: 'UserScreenname'});
   };
-
 
   return User;
 };
