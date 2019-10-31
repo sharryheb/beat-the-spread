@@ -7,8 +7,8 @@ const BCRYPT_SALT_ROUNDS = 12;
 
 const passport = require('passport');
 const localStrategy = require('passport-local').Strategy;
-// Access MySQL table for Users
-const User = require('../models/user');
+// Access MySQL database
+const db = require("../models");
 const JWTstrategy = require('passport-jwt').Strategy;
 const ExtractJWT = require('passport-jwt').ExtractJwt;
 
@@ -16,26 +16,28 @@ passport.use(
   'register',
   new localStrategy(
     {
-      usernameField: 'username',
+      usernameField: 'email',
       passwordField: 'password',
-      session: false
+      session: false,
+      passReqToCallback: true,
     },
-   (username, email, password, avatar, done) => {
+   (req, email, password, done) => {
      try {
-      User.findOne({
+      db.User.findOne({
         where: {
-          username
+          email
         },
       }).then(user => {
         if(user !== null) {
-          return done(null, false, { message: 'username already taken' })
+          return done(null, false, { message: 'email address already taken' });
         } else {
           bcrypt.hash(password, BCRYPT_SALT_ROUNDS).then(hashedPassword => {
-            User.create({ 
-              username, 
-              email, 
+            db.User.create({ 
+              screenname: req.body.screenname,
+              email: email, 
               password: hashedPassword, 
-              avatar 
+              avatar: req.body.avatar,
+              favoriteTeamId: parseInt(req.body.favoriteTeamId)
             }).then(user => {
               return done(null, user);
             });
@@ -53,15 +55,15 @@ passport.use(
   'login',
   new localStrategy(
     {
-      usernameField: 'username',
+      usernameField: 'email',
       passwordField: 'password',
       session: false,
     },
-    (username, password, done) => {
+    (email, password, done) => {
       try {
-        User.findOne({
+        db.User.findOne({
           where: {
-            username: username,
+            email: email,
           },
         }).then(user => {
           if(user === null) {
@@ -86,16 +88,18 @@ passport.use(
 
 const opts = {
   jwtFromRequest: ExtractJWT.fromAuthHeaderWithScheme('JWT'),
-  secretOrKey: jwtSecret,
+  // jwtFromRequest: ExtractJWT.fromAuthHeaderAsBearerToken(),
+  secretOrKey: jwtSecret
 };
 
 passport.use(
   'jwt', 
   new JWTstrategy(opts, (jwt_payload, done) => {
     try {
-      User.findOne({
+      console.log(jwt_payload);
+      db.User.findOne({
         where: {
-          username: jwt_payload.id
+          id: jwt_payload.id
         },
       }).then(user => {
         if(user) {
@@ -110,4 +114,4 @@ passport.use(
       done(err);
     }
   }),
-)
+);

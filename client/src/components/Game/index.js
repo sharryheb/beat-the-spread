@@ -48,18 +48,8 @@ function Game() {
       <td></td>
     </tr>
   </tbody>
-        // <Container>
-        // <Image src="holder.js/50px125" fluid />
-        // <Card style={{ width: '18rem'}}>
-            
-            
-        //     <ListGroup variant="flush">
-        //     <ListGroup.Item>Time</ListGroup.Item>
-        //     <ListGroup.Item>Location</ListGroup.Item>
-        //     <ListGroup.Item>Prediction</ListGroup.Item>
-        //     </ListGroup>
-        // </Card>
-        // </Container>
+  </Table>
+
     );
   }
   

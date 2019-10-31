@@ -3,6 +3,7 @@ require('dotenv').config();
 const express = require("express");
 const routes = require("./routes");
 const app = express();
+
 /*
 Code to implement NPM Passport with React (logging in to an application)
 on server-side - see:
@@ -18,13 +19,15 @@ const passport = require('passport');
 const PORT = process.env.PORT || 3001;
 
 // The JWT and Passport configuration
-require('./config/passport');
+require('./authentication/passport');
 
 // Define middleware here
 app.use(Cors());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(logger('dev'));
+app.use(passport.initialize());
+
 // Serve up static assets (usually on heroku)
 if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
