@@ -1,6 +1,6 @@
 [
     {
-        "model": "team",
+        "model": "Team",
         "data": {
             "Key": "ARI",
             "City": "Arizona",
@@ -21,7 +21,7 @@
         }
     },
     {
-        "model": "team",
+        "model": "Team",
         "data": {
             "Key": "ATL",
             "City": "Atlanta",
@@ -42,7 +42,7 @@
         }
     },
     {
-        "model": "team",
+        "model": "Team",
         "data": {
             "Key": "BAL",
             "City": "Baltimore",
@@ -63,7 +63,7 @@
         }
     },
     {
-        "model": "team",
+        "model": "Team",
         "data": {
             "Key": "BUF",
             "City": "Buffalo",
@@ -84,7 +84,7 @@
         }
     },
     {
-        "model": "team",
+        "model": "Team",
         "data": {
             "Key": "CAR",
             "City": "Carolina",
@@ -105,7 +105,7 @@
         }
     },
     {
-        "model": "team",
+        "model": "Team",
         "data": {
             "Key": "CHI",
             "City": "Chicago",
@@ -127,7 +127,7 @@
         }
     },
     {
-        "model": "team",
+        "model": "Team",
         "data": {
             "Key": "CIN",
             "City": "Cincinnati",
@@ -148,7 +148,7 @@
         }
     },
     {
-        "model": "team",
+        "model": "Team",
         "data": {
             "Key": "CLE",
             "City": "Cleveland",
@@ -169,7 +169,7 @@
         }
     },
     {
-        "model": "team",
+        "model": "Team",
         "data": {
             "Key": "DAL",
             "City": "Dallas",
@@ -190,7 +190,7 @@
         }
     },
     {
-        "model": "team",
+        "model": "Team",
         "data": {
             "Key": "DEN",
             "City": "Denver",
@@ -211,7 +211,7 @@
         }
     },
     {
-        "model": "team",
+        "model": "Team",
         "data": {
             "Key": "DET",
             "City": "Detroit",
@@ -238,7 +238,7 @@
         }
     },
     {
-        "model": "team",
+        "model": "Team",
         "data": {
             "Key": "GB",
             "City": "Green Bay",
@@ -259,7 +259,7 @@
         }
     },
     {
-        "model": "team",
+        "model": "Team",
         "data": {
             "Key": "HOU",
             "City": "Houston",
@@ -280,7 +280,7 @@
         }
     },
     {
-        "model": "team",
+        "model": "Team",
         "data": {
             "Key": "IND",
             "City": "Indianapolis",
@@ -301,7 +301,7 @@
         }
     },
     {
-        "model": "team",
+        "model": "Team",
         "data": {
             "Key": "JAX",
             "City": "Jacksonville",
@@ -322,7 +322,7 @@
         }
     },
     {
-        "model": "team",
+        "model": "Team",
         "data": {
             "Key": "KC",
             "City": "Kansas City",
@@ -343,7 +343,7 @@
         }
     },
     {
-        "model": "team",
+        "model": "Team",
         "data": {
             "Key": "LAC",
             "City": "Los Angeles",
@@ -364,7 +364,7 @@
         }
     },
     {
-        "model": "team",
+        "model": "Team",
         "data": {
             "Key": "LAR",
             "City": "Los Angeles",
@@ -385,7 +385,7 @@
         }
     },
     {
-        "model": "team",
+        "model": "Team",
         "data": {
             "Key": "MIA",
             "City": "Miami",
@@ -406,7 +406,7 @@
         }
     },
     {
-        "model": "team",
+        "model": "Team",
         "data": {
             "Key": "MIN",
             "City": "Minnesota",
@@ -427,7 +427,7 @@
         }
     },
     {
-        "model": "team",
+        "model": "Team",
         "data": {
             "Key": "NE",
             "City": "New England",
@@ -448,7 +448,7 @@
         }
     },
     {
-        "model": "team",
+        "model": "Team",
         "data": {
             "Key": "NO",
             "City": "New Orleans",
@@ -469,7 +469,7 @@
         }
     },
     {
-        "model": "team",
+        "model": "Team",
         "data": {
             "Key": "NYG",
             "City": "New York",
@@ -490,7 +490,7 @@
         }
     },
     {
-        "model": "team",
+        "model": "Team",
         "data": {
             "Key": "NYJ",
             "City": "New York",
@@ -511,7 +511,7 @@
         }
     },
     {
-        "model": "team",
+        "model": "Team",
         "data": {
             "Key": "OAK",
             "City": "Oakland",
@@ -532,7 +532,7 @@
         }
     },
     {
-        "model": "team",
+        "model": "Team",
         "data": {
             "Key": "PHI",
             "City": "Philadelphia",
@@ -553,7 +553,7 @@
         }
     },
     {
-        "model": "team",
+        "model": "Team",
         "data": {
             "Key": "PIT",
             "City": "Pittsburgh",
@@ -574,7 +574,7 @@
         }
     },
     {
-        "model": "team",
+        "model": "Team",
         "data": {
             "Key": "SEA",
             "City": "Seattle",
@@ -595,7 +595,7 @@
         }
     },
     {
-        "model": "team",
+        "model": "Team",
         "data": {
             "Key": "SF",
             "City": "San Francisco",
@@ -616,7 +616,7 @@
         }
     },
     {
-        "model": "team",
+        "model": "Team",
         "data": {
             "Key": "TB",
             "City": "Tampa Bay",
@@ -637,7 +637,7 @@
         }
     },
     {
-        "model": "team",
+        "model": "Team",
         "data": {
             "Key": "TEN",
             "City": "Tennessee",
@@ -658,7 +658,7 @@
         }
     },
     {
-        "model": "team",
+        "model": "Team",
         "data": {
             "Key": "WAS",
             "City": "Washington",
