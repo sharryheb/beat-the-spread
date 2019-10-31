@@ -2,7 +2,8 @@
 
 import React from "react";
 // import 'bootstrap/dist/css/bootstrap.min.css';
-import { Image, Table, ButtonToolbar, Button} from 'react-bootstrap';
+
+import { Image, Table, Button,  ButtonToolbar } from 'react-bootstrap';
 
 import "./style.css";
 

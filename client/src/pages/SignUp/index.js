@@ -2,7 +2,8 @@ import React from "react";
 import Navme from "../../components/Nav";
 import TeamsDataJson from "../../data/TeamsData";
 
-import { Form, Button, Container, Row, Col, Dropdown, Image, FormGroup, FormControl, ControlLabel } from 'react-bootstrap';
+
+import { Form, Button, Container, Row, Col, Dropdown, Image } from 'react-bootstrap';
 
 //import DropdownButton from 'react-bootstrap/DropdownButton'
 
