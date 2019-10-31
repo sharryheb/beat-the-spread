@@ -4,15 +4,11 @@ import Navme from "../../components/Nav";
 //import TeamsDataJson from "../../data/TeamsData";
 //import axios from 'axios';
 import { Form, Button, Container, Row, Col, Dropdown, Image } from 'react-bootstrap';
-import TeamsDataJson from "../../data/TeamsData";
 import API from "../../utils/API";  // use this to get Team data from DB
 
 import { Form, Button, Container, Row, Col, Dropdown, Image } from 'react-bootstrap';
 
-
-import API from '../../utils/API';
-
-import DropdownButton from 'react-bootstrap/DropdownButton'
+//import DropdownButton from 'react-bootstrap/DropdownButton'
 
 import "./style.css";
 import { Component } from "react";
