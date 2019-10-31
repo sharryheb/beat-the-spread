@@ -32,8 +32,8 @@ export default {
     getPredictions: function() {
         return axios.get("/api/predictions");
     },
-    getPrediction: function(username, gameId) {
-        return axios.get("/api/predictions/" + username + "/" + gameId);
+    getPrediction: function(screenname, gameId) {
+        return axios.get("/api/predictions/" + screenname + "/" + gameId);
     },
     savePrediction: function(predictionData) {
         return axios.post("/api/predictions", predictionData);

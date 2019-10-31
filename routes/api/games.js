@@ -17,12 +17,6 @@ const gameController = require("../../controllers/gameController");
     .route("/week/:weekNumber")
     .get(gameController.getAllForWeek)
 
-// PUT THIS IN THE teams.js ROUTES
-    // Matches with "/api/games/:teamCode"
-    // router
-    // .route("/:teamCode")
-    // .get(gameController.getAllForTeam)
-
     // Matches with "/api/games/favored/:id"
     router
     .route("/favored/:id")

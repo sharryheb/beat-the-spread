@@ -3,7 +3,9 @@
 import React from "react";
 // import 'bootstrap/dist/css/bootstrap.min.css';
 
+
 import { Image, Table, Button,  ButtonToolbar } from 'react-bootstrap';
+
 
 import "./style.css";
 
@@ -46,11 +48,6 @@ function Game() {
       <td></td>
     </tr>
   </tbody>
-
-        
-</Table>
-        
-        
         // <Container>
         // <Image src="holder.js/50px125" fluid />
         // <Card style={{ width: '18rem'}}>
