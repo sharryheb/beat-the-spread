@@ -2,16 +2,25 @@ h2{
    width:100%;
    text-align: center; 
    margin:5%;
-   color: darkblue;
+   color: red;
 
 }
 
 textarea{
+   float: bottom;
    margin-left: 10%;
    margin-right: 10%;
    width: 80%;
-   height: 100px;
+   height: 150px;
    font-style: bold;
    color: purple;
    background:skyblue;
+}
+
+.About {
+   height: 100%;
+   background-image: url("/images/football-bet.png");
+   background-repeat: no-repeat;
+   background-position: center;
+  background-size: cover;
 }

@@ -17,9 +17,6 @@ function About() {
        <Navme />
        
        <h2> About Us</h2>
-       <img src="/images/football.jpg" width="700px" 
-       ></img>
-       
        <textarea>We are an online football betting site that allows fans to gather, bet and have fun!
 
    Enhance your game watching experience to another level by seeing if you are a true fan who knows how to predict a future win!
