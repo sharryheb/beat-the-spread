@@ -18,7 +18,7 @@ router.use(logOutRoute);
 
 //router.use("/users", userRoutes);
 //router.use("/teams", teamRoutes);
-=======
+
 const userRoutes = require("./users");
 const teamRoutes = require("./teams");
 const gameRoutes = require("./games");
@@ -26,7 +26,6 @@ const predictionRoutes = require("./predictions");
 
 router.use("/users", userRoutes);
 router.use("/teams", teamRoutes);
->>>>>>> master
 router.use("/games", gameRoutes);
 router.use("/predictions", predictionRoutes);
 
