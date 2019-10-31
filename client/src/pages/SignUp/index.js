@@ -3,12 +3,14 @@ import Navme from "../../components/Nav";
 //import TeamsDataJson from "../../data/TeamsData";
 //import API from "../../utils/API";  // use this to get Team data from DB
 
-import { Form, Button, Container, Row, Col, Dropdown/*, Image*/ } from 'react-bootstrap';
+
+
+import { Form, Button, Container, Row, Col, Dropdown, Image } from 'react-bootstrap';
+
 
 //import DropdownButton from 'react-bootstrap/DropdownButton'
 
 import "./style.css";
-console.log('just loaded style.css');
 
 function SignUp() {
     // for(let i=0; i < TeamsDataJson.length; i++){

@@ -1,53 +1,58 @@
+
+
 import React from "react";
 // import 'bootstrap/dist/css/bootstrap.min.css';
-import { /*Image,*/ Table } from 'react-bootstrap';
+
+
+import { Image, Table, Button,  ButtonToolbar } from 'react-bootstrap';
+
 
 import "./style.css";
 
 function Game() {
     return (
-
-        <Table className="gamecard">
-            {/* <thead>
-                <tr>
-                <th>Game location</th>
-                <th>Game Date</th>
-                </tr>
-            </thead> */}
-            <tbody>
-                <tr>
-                    <td>Game location</td>
-                    <td>Game Date</td>
-                </tr>
-                <tr>
-                    <td>
-                        <div className = " ">
-                        {/* <Image src="holder.js/100px250" fluid /> */}
-                        </div>
-                    </td>
-                    <td>
-                        Team Name 1
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <div className = " ">
-                        {/* <Image src="holder.js/100px250" fluid /> */}
-                        </div>
-                    </td>
-                    <td>
-                        Team Name 2
-                    </td>
-                </tr>
-                <tr><td>Prediction</td></tr>
-            </tbody>
-        </Table>
-
+        
+        <Table striped bordered hover className="gamecard">
+             <thead>
+    <tr>
+      <th>Game Location</th>
+      <th>Game Date </th>
+      <th>Team 1</th>
+      <th>Team 2</th>
+      <th>Prediction </th>
+      <th>Take a Bet</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Centurylink Field</td>
+      <td>Sunday  October 20, 2019</td>
+      <td>Seattle Seahawks</td>
+      <td>Baltimore Ravens</td>
+      <td>In favor of Seahawks</td>
+      <td>
+          
+  <ButtonToolbar>
+      <p>Do you agree with this prediction?</p>
+  <Button variant="outline-info">Agree</Button>
+  <Button variant="outline-info">Disagree</Button>
+  </ButtonToolbar>
+      </td>
+    </tr>
+    <tr>
+      <td>Seattle, WA</td>
+      <td>1:25 pm</td>
+      <td><Image src="/images/Seattle-Seahawks-logo.png" fluid id="sea1" /></td>
+      <td><Image src="/images/Baltimore-Ravens-logo.png" fluid id="rav1" /></td>
+      <td>Seahawks wins by 3 points or more</td>
+      <td></td>
+    </tr>
+  </tbody>
         // <Container>
         // <Image src="holder.js/50px125" fluid />
         // <Card style={{ width: '18rem'}}>
-
-
+            
+            
         //     <ListGroup variant="flush">
         //     <ListGroup.Item>Time</ListGroup.Item>
         //     <ListGroup.Item>Location</ListGroup.Item>
@@ -57,5 +62,6 @@ function Game() {
         // </Container>
     );
   }
-
+  
   export default Game;
+  
