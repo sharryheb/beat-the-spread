@@ -3,7 +3,29 @@ module.exports = function(sequelize, DataTypes) {
     {
         preGamePrediction: { type: DataTypes.BOOLEAN, allowNull: false },
         predictionCorrect: { type: DataTypes.BOOLEAN, defaultValue: false },
-        deadline: { type: DataTypes.DATE }
+        deadline: { type: DataTypes.DATE },
+        GameId: {
+            type: DataTypes.INTEGER,
+            primaryKey: false,
+            references: {
+                model: 'Game',
+                key: 'id'
+            },
+            onDelete: 'cascade',
+            onUpdate: 'cascade',
+            unique: 'unique-game-per-user'
+        },
+        UserScreenname: {
+            type: DataTypes.STRING,
+            primaryKey: false,
+            references: {
+                model: 'User',
+                key: 'screenname'
+            },
+            onDelete: 'cascade',
+            onUpdate: 'cascade',
+            unique: 'unique-game-per-user'
+        }
     },
     {
         timestamps: false,
@@ -11,10 +33,10 @@ module.exports = function(sequelize, DataTypes) {
         tableName: 'predictions'
     });
 
-Prediction.associate = function (models) {
-    Prediction.belongsTo(models.User);
-    Prediction.belongsTo(models.Game);
-  };
+    Prediction.associate = function (models) {
+        Prediction.belongsTo(models.User, { foreignKey: 'UserScreenname', targetKey: 'screenname' });
+        Prediction.belongsTo(models.Game, { foreignKey: 'GameId', targetKey: 'id' });
+    };
 
     return Prediction;
 };

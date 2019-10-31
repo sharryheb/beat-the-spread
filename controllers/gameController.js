@@ -42,9 +42,9 @@ module.exports = {
   save: function(req, res) {
     db.Game
       .update(req.body,
-            {
-                where: {homeTeamCode: req.body.homeTeamCode, awayTeamCode: req.body.awayTeamCode}
-            })
+        {
+            where: {homeTeamCode: req.body.homeTeamCode, awayTeamCode: req.body.awayTeamCode}
+        })
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   }
