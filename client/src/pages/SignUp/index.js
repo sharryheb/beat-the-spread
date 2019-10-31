@@ -47,7 +47,7 @@ class SignUp extends Component {
         <Form>
              <Form.Group as={Col}>
              <Form.Label>Username</Form.Label>  
-             <Form.Control type="text" placeholder="Enter a username" name="username" onChange={this.handleChange} />
+             <Form.Control type="text" placeholder="Enter a username" name="screenname" onChange={this.handleChange} />
              </Form.Group>
 
              <Form.Group as={Col} controlId="formGridEmail">

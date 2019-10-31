@@ -23,7 +23,7 @@ passport.use(
     },
    (req, email, password, done) => {
      try {
-      db.user.findOne({
+      db.User.findOne({
         where: {
           email
         },
@@ -32,8 +32,8 @@ passport.use(
           return done(null, false, { message: 'email address already taken' });
         } else {
           bcrypt.hash(password, BCRYPT_SALT_ROUNDS).then(hashedPassword => {
-            db.user.create({ 
-              username: req.body.username,
+            db.User.create({ 
+              screenname: req.body.screenname,
               email: email, 
               password: hashedPassword, 
               avatar: req.body.avatar,
@@ -61,7 +61,7 @@ passport.use(
     },
     (email, password, done) => {
       try {
-        db.user.findOne({
+        db.User.findOne({
           where: {
             email: email,
           },
@@ -97,7 +97,7 @@ passport.use(
   new JWTstrategy(opts, (jwt_payload, done) => {
     try {
       console.log(jwt_payload);
-      db.user.findOne({
+      db.User.findOne({
         where: {
           id: jwt_payload.id
         },

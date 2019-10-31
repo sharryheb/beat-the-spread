@@ -12,12 +12,12 @@ module.exports = {
       } else {
         req.logIn(user, err => {
           const data = {
-            username: req.body.username,
+            screenname: req.body.screenname,
             email: req.body.email,
             avatar: req.body.avatar,
             favoriteTeamId: parseInt(req.body.favoriteTeamId)
           };
-          db.user.findOne({
+          db.User.findOne({
             where: {
               email: data.email
             },
