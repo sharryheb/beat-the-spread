@@ -1,10 +1,8 @@
 import React from "react";
 import Navme from "../../components/Nav";
 
-//import TeamsDataJson from "../../data/TeamsData";
-//import axios from 'axios';
-import { Form, Button, Container, Row, Col, Dropdown, Image } from 'react-bootstrap';
-import teamsAPI from "../../utils/teamsAPI";  // use this to get Team data from DB
+import { Form, Button, Container, Row, Col, Dropdown/*, Image*/ } from 'react-bootstrap';
+import authAPI from "../../utils/authAPI";  // use this to get Team data from DB
 
 import "./style.css";
 import { Component } from "react";
@@ -12,10 +10,10 @@ import { Component } from "react";
 class SignUp extends Component {
 
     state = {
-        username: '',
+        screenname: '',
         email: '',
         avatar: '',
-        favoriteTeamId: 1
+        favoriteTeamCode: 1
     };
 
     handleChange = event => {
@@ -27,10 +25,10 @@ class SignUp extends Component {
     handleSubmitToSaveUser = event => {
         event.preventDefault();
         console.log(this.state);
-        teamsAPI.registerUser(this.state)
+        authAPI.registerUser(this.state)
             .then(() => alert('User saved!'))
             .catch(err => {
-                alert('Error: ', err);
+                console.log(err);
             });
     }
 
@@ -61,8 +59,8 @@ class SignUp extends Component {
              </Form.Group>
 
              <Form.Group as={Col}>
-             <Form.Label>Favorite Team (ID)</Form.Label>
-             <Form.Control type="number" placeholder="Favorite Team (ID)" name="favoriteTeamId" defaultValue="1" />
+             <Form.Label>Favorite Team (Code)</Form.Label>
+             <Form.Control type="text" placeholder="Favorite Team (Code)" name="favoriteTeamCode" defaultValue="SEA" />
              </Form.Group>
 
              <Form.Group as={Col} controlId="formGridPassword">
@@ -94,12 +92,8 @@ class SignUp extends Component {
          </Form>
          </Col>
 
-
-
-
-
          <Col md={{ span: 4, offset: 7 }}>
-             <Image src="holder.js/171x180" roundedCircle />
+             {/* <Image src="holder.js/171x180" roundedCircle /> */}
              <Button variant="light" type="submit">
                  Upload Avatar Photo
              </Button>
