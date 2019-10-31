@@ -17,15 +17,14 @@ import Schedule from "../../components/Schedule";
 
 function Home() {
   return (
-    
-     
+
+
       <div className="Home">
        <Navme />
        <FanStanding />
        <Schedule />
-       <p>Here I Am!</p>
       </div>
-    
+
   );
 }
 

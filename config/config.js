@@ -17,7 +17,7 @@ let config = {
       logging: false
   },
   production: {
-      useEnvVariable: "JAWSDB_URL",
+      use_env_variable: "JAWSDB_URL",
       dialect: "mysql"
   }
 };
