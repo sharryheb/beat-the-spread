@@ -24,14 +24,15 @@ function FanStanding() {
                 <Avatar />
               </td>
               <td>
-              
+
               <i><b>Star123</b></i>
+              {/* add avatar and team logo to results */}
               <Card.Text>14 correct predictions <br></br>Favorite Sports Team: San Francisco 49ers</Card.Text>
               </td>
             </tr>
           </tbody>
           </Table>
-            
+
         </ListGroupItem>
         <ListGroupItem>
           <Table>
@@ -41,7 +42,7 @@ function FanStanding() {
                 <Avatar />
               </td>
               <td>
-               
+
               <i><b>Sarah Zhou</b></i>
                 <Card.Text>13 correct predictions <br></br>Favorite Sports Team: Carolina Panthers</Card.Text>
               </td>
@@ -65,7 +66,7 @@ function FanStanding() {
           </Table>
           </ListGroupItem>
       </ListGroup>
-      
+
     </Card>
   );
 }

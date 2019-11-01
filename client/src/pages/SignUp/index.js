@@ -1,10 +1,8 @@
 import React from "react";
 import Navme from "../../components/Nav";
 
-//import TeamsDataJson from "../../data/TeamsData";
-//import axios from 'axios';
-import { Form, Button, Container, Row, Col, Dropdown, Image } from 'react-bootstrap';
-import API from "../../utils/API";  // use this to get Team data from DB
+import { Form, Button, Container, Row, Col, Dropdown/*, Image*/ } from 'react-bootstrap';
+import authAPI from "../../utils/authAPI";  // use this to get Team data from DB
 
 import "./style.css";
 import { Component } from "react";
@@ -12,29 +10,29 @@ import { Component } from "react";
 class SignUp extends Component {
 
     state = {
-        username: '',
+        screenname: '',
         email: '',
         avatar: '',
-        favoriteTeamId: 1
+        favoriteTeamCode: 1
     };
 
     handleChange = event => {
         this.setState({
             [event.target.name]: event.target.value
-        }); 
+        });
     }
 
     handleSubmitToSaveUser = event => {
         event.preventDefault();
         console.log(this.state);
-        API.registerUser(this.state)
+        authAPI.registerUser(this.state)
             .then(() => alert('User saved!'))
             .catch(err => {
-                alert('Error: ', err);
+                console.log(err);
             });
     }
 
-    
+
     render() {
         return (
             <div className="SignUp">
@@ -46,7 +44,7 @@ class SignUp extends Component {
              <p style={{ color: 'blue' }}>Sign up for a user account to start making a game bet!</p>
         <Form>
              <Form.Group as={Col}>
-             <Form.Label>Username</Form.Label>  
+             <Form.Label>Username</Form.Label>
              <Form.Control type="text" placeholder="Enter a username" name="screenname" onChange={this.handleChange} />
              </Form.Group>
 
@@ -61,8 +59,8 @@ class SignUp extends Component {
              </Form.Group>
 
              <Form.Group as={Col}>
-             <Form.Label>Favorite Team (ID)</Form.Label>
-             <Form.Control type="number" placeholder="Favorite Team (ID)" name="favoriteTeamId" defaultValue="1" />
+             <Form.Label>Favorite Team (Code)</Form.Label>
+             <Form.Control type="text" placeholder="Favorite Team (Code)" name="favoriteTeamCode" defaultValue="SEA" />
              </Form.Group>
 
              <Form.Group as={Col} controlId="formGridPassword">
@@ -74,7 +72,7 @@ class SignUp extends Component {
              <Form.Label>Confirm your password</Form.Label>
              <Form.Control type="password" placeholder="Re-type your password" />
              </Form.Group>
-            
+
              <Button variant="primary" type="submit" onClick={this.handleSubmitToSaveUser}>
                  Sign Up
              </Button>
@@ -93,13 +91,9 @@ class SignUp extends Component {
              </Form.Row>
          </Form>
          </Col>
-        
-      
 
-        
-        
          <Col md={{ span: 4, offset: 7 }}>
-             <Image src="holder.js/171x180" roundedCircle />
+             {/* <Image src="holder.js/171x180" roundedCircle /> */}
              <Button variant="light" type="submit">
                  Upload Avatar Photo
              </Button>
@@ -111,7 +105,7 @@ class SignUp extends Component {
                  </Dropdown.Toggle>
 
                  <Dropdown.Menu>
-                    
+
                      <Dropdown.Item href="#/action-1">Arizona Cardinals</Dropdown.Item>
                      <Dropdown.Item href="#/action-2">Atlanta Falcons</Dropdown.Item>
                      <Dropdown.Item href="#/action-3">Baltimore Ravens</Dropdown.Item>
@@ -140,7 +134,7 @@ class SignUp extends Component {
                      <Dropdown.Item href="#/action-27">Pittsburgh Steelers</Dropdown.Item>
                      <Dropdown.Item href="#/action-28">Seattle Seahawks</Dropdown.Item>
                      <Dropdown.Item href="#/action-29">San Francisco 49ers</Dropdown.Item>
-                    
+
                      <Dropdown.Item href="#/action-30">Tampa Bay Buccaneers</Dropdown.Item>
                      <Dropdown.Item href="#/action-31">Tennessee Titans</Dropdown.Item>
                      <Dropdown.Item href="#/action-32">Washington Redskins</Dropdown.Item>
