@@ -3,7 +3,7 @@ const predictionController = require("../../controllers/predictionController");
 
         // Matches with "/api/predictions"
     router.route("/")
-    .get(predictionController.getAll)
+    .get(predictionController.getFanStandings)
     .post(predictionController.save)
 
 

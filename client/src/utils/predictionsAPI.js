@@ -2,7 +2,7 @@ import axios from "axios";
 
 export default
 {
-    getPredictions: function() {
+    getStandings: function() {
         return axios.get("/api/predictions");
     },
     getPrediction: function(screenname, gameId) {
