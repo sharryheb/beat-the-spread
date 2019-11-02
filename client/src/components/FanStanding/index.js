@@ -1,5 +1,4 @@
 import React from 'react';
-import axios from 'axios';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Card, ListGroup, ListGroupItem, Table } from 'react-bootstrap';
 import Avatar from "../Avatar";
@@ -49,8 +48,8 @@ class FanStanding extends React.Component {
                     <Card.Text>
                       {user.totalCorrect} correct predictions <br />
                       Favorite Sports Team: {user.FullName} 
-                      <Avatar imageUrl={user.logoUrl} /> 
                     </Card.Text>
+                    <Avatar imageUrl={user.logoUrl} /> 
                   </td>
                 </tr>
               </tbody>
