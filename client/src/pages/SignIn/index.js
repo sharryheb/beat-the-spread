@@ -24,7 +24,7 @@ function SignIn() {
 
       <div className="SignIn">
        <Navme />
-       <p id="sign">Sign In</p>
+       <h2 id="sign">Sign In</h2>
        <Form onSubmit={onSubmit} style={{ width: '18rem' }}>
             <Form.Group controlId="formBasicEmail">
 
@@ -48,6 +48,20 @@ function SignIn() {
                         Sign in
                     </Button>
                 </Col>
+            </Row>
+            <p>---------------------OR--------------------</p>
+            <Row>
+
+            </Row>
+            <Row>
+                
+                <Col md={8}>
+                <Button variant="primary" href="/SignUp">
+                Create an account
+                 </Button>
+                 </Col>
+            
+                
             </Row>
        </Form>
 
