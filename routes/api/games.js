@@ -4,7 +4,11 @@ const gameController = require("../../controllers/gameController");
     // Matches with "/api/games"
     router.route("/")
     .get(gameController.getAll)
-    .put(gameController.save)
+    .put(gameController.saveBulk)
+
+    // Matches with "/api/games/update/:force"
+    router.route("/update/:force")
+    .get(gameController.updateSpreads)
 
     // Matches with "/api/games/:id"
     router

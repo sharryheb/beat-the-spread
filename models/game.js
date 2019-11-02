@@ -9,7 +9,8 @@ module.exports = function(sequelize, DataTypes) {
         favoredTeamCode: { type: DataTypes.STRING, defaultValue: -1 },
         homeTeamScore: { type: DataTypes.INTEGER, defaultValue: 0 },
         awayTeamScore: { type: DataTypes.INTEGER, defaultValue: 0 },
-        spreadCovered: { type: DataTypes.BOOLEAN, defaultValue: false }
+        spreadCovered: { type: DataTypes.BOOLEAN, defaultValue: false },
+        updatedAt: { type: DataTypes.DATE, defaultValue: null }
     },
     {
         timestamps: false,
