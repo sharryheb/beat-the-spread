@@ -5,17 +5,24 @@ import { Card, ListGroup, ListGroupItem, Table } from 'react-bootstrap';
 import Avatar from "../Avatar";
 import "./style.css";
 
+
+import predictionsAPI from '../../utils/predictionsAPI';
+const { getStandings } = predictionsAPI;
+
+
 class FanStanding extends React.Component {
   state = {
     users: null,
   };
 
   componentDidMount () {
-    getUsers().then(res => {
-      this.setState({
-        users:res.data,
+    const response = getStandings();
+    Promise.resolve(response)
+      .then(res => {
+        this.setState({
+          users:res.data,
+        })
       })
-    })
   }
 
 
@@ -37,9 +44,13 @@ class FanStanding extends React.Component {
                     <Avatar imageUrl={user.avatar} />
                   </td>
                   <td>
-
+      
                     <em><strong>{user.screenname}</strong></em>
-                    <Card.Text>13 correct predictions <br></br>Favorite Sports Team: Carolina Panthers</Card.Text>
+                    <Card.Text>
+                      {user.totalCorrect} correct predictions <br />
+                      Favorite Sports Team: {user.FullName} 
+                      <Avatar imageUrl={user.logoUrl} /> 
+                    </Card.Text>
                   </td>
                 </tr>
               </tbody>
@@ -57,7 +68,7 @@ class FanStanding extends React.Component {
         <Card className="fs" style={{ width: '40rem' }}>
         {/* <Card.Img variant="top" src="holder.js/100px180?text=Image cap" /> */}
         <Card.Body>
-          <Card.Title>Fan Standing</Card.Title>
+          <Card.Title>Fan Standings Leaderboard</Card.Title>
           {/* <Card.Text>
             Some quick example text to build on the card title and make up the bulk of
             the card's content.
@@ -69,15 +80,6 @@ class FanStanding extends React.Component {
       </Card>
     );
   }
-}
-
-async function getUsers() {
-    try {
-        return await axios.get("/api/users");
-    }
-    catch(err) {
-        console.log(err);
-    }
 }
 
 export default FanStanding;
