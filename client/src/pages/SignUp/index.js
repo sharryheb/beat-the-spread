@@ -1,3 +1,5 @@
+
+
 import React from "react";
 import Navme from "../../components/Nav";
 
@@ -59,6 +61,50 @@ class SignUp extends Component {
              </Form.Group>
 
              <Form.Group as={Col}>
+                 
+             <h3>List of NFL Football Team Codes</h3>
+             <Dropdown>
+                 <Dropdown.Toggle variant="success" id="dropdown-light">
+                     Select
+                 </Dropdown.Toggle>
+
+                 <Dropdown.Menu>
+
+                     <Dropdown.Item href="#/action-1">Arizona Cardinals (ARI)</Dropdown.Item>
+                     <Dropdown.Item href="#/action-2">Atlanta Falcons (ATL)</Dropdown.Item>
+                     <Dropdown.Item href="#/action-3">Baltimore Ravens(BAL)</Dropdown.Item>
+                     <Dropdown.Item href="#/action-4">Buffalo Bills(BUF)</Dropdown.Item>
+                     <Dropdown.Item href="#/action-5">Carolina Panthers(CAR)</Dropdown.Item>
+                     <Dropdown.Item href="#/action-6">Chicago Bears(CHI)</Dropdown.Item>
+                     <Dropdown.Item href="#/action-7">Cincinnati Bengals(CIN)</Dropdown.Item>
+                     <Dropdown.Item href="#/action-8">Cleveland Browns(CLE)</Dropdown.Item>
+                     <Dropdown.Item href="#/action-9">Dallas Cowboys(DAL)</Dropdown.Item>                   
+                     <Dropdown.Item href="#/action-10">Denver Broncos(DEN)</Dropdown.Item>
+                     <Dropdown.Item href="#/action-11">Detroit Lions(DET)</Dropdown.Item>
+                     <Dropdown.Item href="#/action-12">Green Bay Packers(GB)</Dropdown.Item>
+                     <Dropdown.Item href="#/action-13">Houston Texans(HOU)</Dropdown.Item>
+                     <Dropdown.Item href="#/action-14">Indianapolis Colts(IND)</Dropdown.Item>
+                     <Dropdown.Item href="#/action-15">Jacksonville Jaguars(JAX)</Dropdown.Item>
+                     <Dropdown.Item href="#/action-16">Kansas City Chiefs(KC)</Dropdown.Item>
+                     <Dropdown.Item href="#/action-17">Los Angeles Chargers(LAC)</Dropdown.Item>
+                     <Dropdown.Item href="#/action-18">Los Angeles Rams(LAR)</Dropdown.Item>
+                     <Dropdown.Item href="#/action-19">Miami Dolphins(MIA)</Dropdown.Item>
+                     <Dropdown.Item href="#/action-20">Minnesota Vikings(MIN)</Dropdown.Item>
+                     <Dropdown.Item href="#/action-21">New England Patriots(NE)</Dropdown.Item>
+                     <Dropdown.Item href="#/action-22">New Orleans Saints(NO)</Dropdown.Item>
+                     <Dropdown.Item href="#/action-23">New York Giants(NYG)</Dropdown.Item>
+                     <Dropdown.Item href="#/action-24">New York Jets (NYJ)</Dropdown.Item>
+                     <Dropdown.Item href="#/action-25">Oakland Raiders(OAK)</Dropdown.Item>
+                     <Dropdown.Item href="#/action-26">Philadelphia Eagles(PHI)</Dropdown.Item>
+                     <Dropdown.Item href="#/action-27">Pittsburgh Steelers(PIT)</Dropdown.Item>
+                     <Dropdown.Item href="#/action-28">Seattle Seahawks (SEA)</Dropdown.Item>
+                     <Dropdown.Item href="#/action-29">San Francisco 49ers(SF)</Dropdown.Item>
+
+                     <Dropdown.Item href="#/action-30">Tampa Bay Buccaneers(TB)</Dropdown.Item>
+                     <Dropdown.Item href="#/action-31">Tennessee Titans(TEN)</Dropdown.Item>
+                     <Dropdown.Item href="#/action-32">Washington Redskins(WAS)</Dropdown.Item>
+                 </Dropdown.Menu>
+             </Dropdown>
              <Form.Label>Favorite Team (Code)</Form.Label>
              <Form.Control type="text" placeholder="Favorite Team (Code)" name="favoriteTeamCode" defaultValue="SEA" />
              </Form.Group>
@@ -76,6 +122,8 @@ class SignUp extends Component {
              <Button variant="primary" type="submit" onClick={this.handleSubmitToSaveUser}>
                  Sign Up
              </Button>
+             
+
              <Form.Row>
                 <h5>Already have an account?</h5>
                 <Button href="/SignIn" variant="primary" type="submit">
@@ -92,55 +140,6 @@ class SignUp extends Component {
          </Form>
          </Col>
 
-         <Col md={{ span: 4, offset: 7 }}>
-             {/* <Image src="holder.js/171x180" roundedCircle /> */}
-             <Button variant="light" type="submit">
-                 Upload Avatar Photo
-             </Button>
-             <br></br>
-             <h3>Select your Favorite Home Team (Optional)</h3>
-             <Dropdown>
-                 <Dropdown.Toggle variant="success" id="dropdown-light">
-                     Select
-                 </Dropdown.Toggle>
-
-                 <Dropdown.Menu>
-
-                     <Dropdown.Item href="#/action-1">Arizona Cardinals</Dropdown.Item>
-                     <Dropdown.Item href="#/action-2">Atlanta Falcons</Dropdown.Item>
-                     <Dropdown.Item href="#/action-3">Baltimore Ravens</Dropdown.Item>
-                     <Dropdown.Item href="#/action-4">Buffalo Bills</Dropdown.Item>
-                     <Dropdown.Item href="#/action-5">Carolina Panthers</Dropdown.Item>
-                     <Dropdown.Item href="#/action-6">Chicago Bears</Dropdown.Item>
-                     <Dropdown.Item href="#/action-7">Cincinnati Bengals</Dropdown.Item>
-                     <Dropdown.Item href="#/action-8">Cleveland Browns</Dropdown.Item>
-                     <Dropdown.Item href="#/action-9">Dallas Cowboys</Dropdown.Item>                     <Dropdown.Item href="#/action-10">Denver Broncos</Dropdown.Item>
-                     <Dropdown.Item href="#/action-11">Detroit Lions</Dropdown.Item>
-                     <Dropdown.Item href="#/action-12">Green Bay Packers</Dropdown.Item>
-                     <Dropdown.Item href="#/action-13">Houston Texans</Dropdown.Item>
-                     <Dropdown.Item href="#/action-14">Indianapolis Colts</Dropdown.Item>
-                     <Dropdown.Item href="#/action-15">Jacksonville Jaguars</Dropdown.Item>
-                     <Dropdown.Item href="#/action-16">Kansas City Chiefs</Dropdown.Item>
-                     <Dropdown.Item href="#/action-17">Los Angeles Chargers</Dropdown.Item>
-                     <Dropdown.Item href="#/action-18">Los Angeles Rams</Dropdown.Item>
-                     <Dropdown.Item href="#/action-19">Miami Dolphins</Dropdown.Item>
-                     <Dropdown.Item href="#/action-20">Minnesota Vikings</Dropdown.Item>
-                     <Dropdown.Item href="#/action-21">New England Patriots</Dropdown.Item>
-                     <Dropdown.Item href="#/action-22">New Orleans Saints</Dropdown.Item>
-                     <Dropdown.Item href="#/action-23">New York Giants</Dropdown.Item>
-                     <Dropdown.Item href="#/action-24">New York Jets</Dropdown.Item>
-                     <Dropdown.Item href="#/action-25">Oakland Raiders</Dropdown.Item>
-                     <Dropdown.Item href="#/action-26">Philadelphia Eagles</Dropdown.Item>
-                     <Dropdown.Item href="#/action-27">Pittsburgh Steelers</Dropdown.Item>
-                     <Dropdown.Item href="#/action-28">Seattle Seahawks</Dropdown.Item>
-                     <Dropdown.Item href="#/action-29">San Francisco 49ers</Dropdown.Item>
-
-                     <Dropdown.Item href="#/action-30">Tampa Bay Buccaneers</Dropdown.Item>
-                     <Dropdown.Item href="#/action-31">Tennessee Titans</Dropdown.Item>
-                     <Dropdown.Item href="#/action-32">Washington Redskins</Dropdown.Item>
-                 </Dropdown.Menu>
-             </Dropdown>
-         </Col>
          </Row>
      </Container>
 

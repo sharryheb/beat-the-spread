@@ -1,3 +1,4 @@
+
 import React from "react";
 
 import Navme from "../../components/Nav";
@@ -9,11 +10,6 @@ import authAPI from "../../utils/authAPI";
 import "./style.css";
 
 
-// MATT:
-// I have no idea if the following method (onSubmit) works, but this should be how you
-// login a user - should call "loginUser" on the "authAPI" client-side file,
-// which in turn will make an axios call to our server. look at the signUp to
-// see what I mean - I fixed that one up to be how it should work. Let me know if ??? -sharry
 const onSubmit = (e) => {
     e.preventDefault();
     authAPI.loginUser();
@@ -43,11 +39,17 @@ function SignIn() {
                     </Form.Group>
                 </Col>
                 <Col>
-
-                    <Button variant="primary" type="submit">
-                        Sign in
-                    </Button>
+                <Button href="/Profile" variant="primary" type="submit">
+                 Log In
+                 </Button>
                 </Col>
+                
+             <Form.Row>
+                <h5>First Time? Make an account.</h5>
+                <Button href="/SignUp" variant="primary" type="submit">
+                 Sign Up
+                 </Button>
+             </Form.Row>
             </Row>
        </Form>
 
