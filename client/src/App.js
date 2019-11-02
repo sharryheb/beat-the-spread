@@ -11,7 +11,7 @@ import {
   import Profile from "./pages/profile";
   import About from "./pages/about";
 
-  import sharry from "./sharryScratchpad";
+  //import sharry from "./sharryScratchpad";
 
   function App() {
 
@@ -19,7 +19,7 @@ import {
         //   sharry.updateSpreads();
 
           // get all User data from the DB
-          sharry.loadUsers();
+          //sharry.loadUsers();
 
         //  // create a new User
         //   var userData =
