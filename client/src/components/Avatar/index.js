@@ -1,17 +1,21 @@
 import React from "react";
-// import 'bootstrap/dist/css/bootstrap.min.css';
-import { /*Image,*/ Container, Row, Col } from 'react-bootstrap';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import { Image, Container, Row, Col } from 'react-bootstrap';
 
 import "./style.css";
 
-function Avatar() {
+function Avatar( props ) {
+  const {
+    imageUrl,
+  } = props;
+
     return (
 
     <Container>
         <Row>
 
           <Col xs={6} md={4}>
-            {/* <Image src="holder.js/171x180" roundedCircle fluid /> */}
+            <Image src={imageUrl} roundedCircle fluid />
           </Col>
 
         </Row>
