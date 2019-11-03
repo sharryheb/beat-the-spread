@@ -14,11 +14,11 @@ function Navme() {
           <Nav.Link className="topitems" href="/">Home</Nav.Link>
         </Nav.Item>
         <Nav.Item as="li">
-          <Nav.Link className="topitems" href="/SignIn">Sign In</Nav.Link>
+          <Nav.Link className="topitems" href="/SignIn">Log In</Nav.Link>
         </Nav.Item>
-        <Nav.Item as="li">
+        {/* <Nav.Item as="li">
           <Nav.Link className="topitems" href="/SignUp">Sign Up</Nav.Link>
-        </Nav.Item>
+        </Nav.Item> */}
         <Nav.Item as="li">
           <Nav.Link className="topitems" href="/about">About</Nav.Link>
         </Nav.Item>
