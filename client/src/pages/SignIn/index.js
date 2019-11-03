@@ -50,11 +50,12 @@ function SignIn() {
                  Log In
                  </Button>
                 </Col>
-                
+
+
              <Form.Row>
-                <h5>First Time? Make an account.</h5>
-                <Button href="/SignUp" variant="primary" type="submit">
-                 Sign Up
+                <h5>Forgot your password?</h5>
+                <Button variant="primary" type="submit">
+                 Reset Password
                  </Button>
              </Form.Row>
             </Row>
@@ -65,6 +66,7 @@ function SignIn() {
             <Row>
                 
                 <Col md={8}>
+                <h5>First Time? </h5>
                 <Button variant="primary" href="/SignUp">
                 Create an account
                  </Button>
