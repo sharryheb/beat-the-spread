@@ -1,17 +1,37 @@
 import React from "react";
 import { Image, Button,  ButtonToolbar } from 'react-bootstrap';
 
+import "./style.css";
+
 class GameRow extends React.Component
 {
     render ()
     {
+        var favoredTeam = "";
+        var fixedSpread = this.props.game.preGameSpread;
+        if (this.props.game.favoredTeamCode === this.props.game.homeTeamCode)
+        {
+            favoredTeam = this.props.game.homeShortName;
+        }
+        else
+        {
+            favoredTeam = this.props.game.awayShortName;
+            fixedSpread = fixedSpread * -1;
+        }
+        var gameTime = new Date(this.props.game.gameTime).toLocaleString();
         return (
             <tr>
-            <td>{this.props.gameLocation}</td>
-            <td>October 20, 2019 at 1:25pm</td>
-            <td>Seattle Seahawks<Image src="/images/Seattle-Seahawks-logo.png" fluid id="sea1" /></td>
-            <td>Baltimore Ravens<Image src="/images/Baltimore-Ravens-logo.png" fluid id="rav1" /></td>
-            <td>Seahawks favored by 3</td>
+            <td>{this.props.game.gameLocation}</td>
+            <td>{gameTime}</td>
+            <td><div className="d-flex justify-content-center align-items-center flex-column">
+                <Image src={this.props.game.awayLogoUrl} className="imgSize" />
+                <Image src={this.props.game.awayWordMarkUrl}  className="imgSize" />
+            </div></td>
+            <td><div className="d-flex justify-content-center align-items-center flex-column">
+                <Image src={this.props.game.homeLogoUrl}  className="imgSize" />
+                <Image src={this.props.game.homeWordMarkUrl}  className="imgSize" />
+            </div></td>
+            <td>{favoredTeam} favored by {fixedSpread}</td>
             <td>
                 <ButtonToolbar>
                     <Button variant="outline-info">Agree</Button>

@@ -3,7 +3,7 @@ import React from "react";
 import { Table, DropdownButton, Dropdown, Card } from 'react-bootstrap';
 
 import "./style.css";
-import Game from "../Game";
+import GameHeader from "../GameHeader";
 function Schedule() {
     return (
         <Card className="window">
@@ -24,7 +24,7 @@ function Schedule() {
             </tbody>
         </Table>
 
-        <Game />
+        <GameHeader />
         </Card>
 
 

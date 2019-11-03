@@ -1,8 +1,4 @@
-
-
-
 import React from "react";
-// import 'bootstrap/dist/css/bootstrap.min.css';
 import { Nav } from 'react-bootstrap';
 
 import "./style.css";
@@ -25,6 +21,5 @@ function Navme() {
       </Nav>
     );
   }
-  
+
   export default Navme;
-  

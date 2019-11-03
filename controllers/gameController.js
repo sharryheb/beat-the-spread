@@ -68,14 +68,19 @@ module.exports = {
     getAllForWeek: function(req, res) {
         console.log("getAllForWeek weekNumber: ");
         console.log(req.params.weekNumber);
-        db.sequelize.query(`select g.gameTime,
+        db.sequelize.query(`select g.id as id,
+        g.gameTime,
 	    tH.Key as homeTeamCode,
+        tH.Name as homeShortName,
         tH.FullName as homeFullName,
         tH.WikipediaLogoUrl as homeLogoUrl,
+        tH.WikipediaWordMarkUrl as homeWordMarkUrl,
         tH.City as gameLocation,
         tA.Key as awayTeamCode,
+        tA.Name as awayShortName,
         tA.FullName as awayFullName,
         tA.WikipediaLogoUrl as awayLogoUrl,
+        tA.WikipediaWordMarkUrl as awayWordMarkUrl,
         g.preGameSpread, g.favoredTeamCode
             from games g
                 join teams tH on g.homeTeamCode=tH.Key
