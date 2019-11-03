@@ -40,7 +40,7 @@ class FanStanding extends React.Component {
               <tbody>
                 <tr>
                   <td>
-                    <Avatar imageUrl={user.avatar} />
+                    <Avatar imageUrl={user.avatar}/>
                   </td>
                   <td>
 
@@ -49,7 +49,7 @@ class FanStanding extends React.Component {
                       {user.totalCorrect} correct predictions <br />
                       Favorite Sports Team: {user.FullName}
                     </Card.Text>
-                    <Avatar imageUrl={user.logoUrl} />
+                    <Avatar imageUrl={user.logoUrl}  />
                   </td>
                 </tr>
               </tbody>
