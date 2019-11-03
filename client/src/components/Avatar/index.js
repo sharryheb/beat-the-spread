@@ -13,11 +13,9 @@ function Avatar( props ) {
 
     <Container>
         <Row>
-
           <Col xs={6} md={4}>
             <Image src={imageUrl} roundedCircle fluid/>
           </Col>
-
         </Row>
     </Container>
 
