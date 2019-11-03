@@ -1,3 +1,6 @@
+
+
+
 import React from "react";
 
 import Navme from "../../components/Nav";
@@ -43,11 +46,17 @@ function SignIn() {
                     </Form.Group>
                 </Col>
                 <Col>
-
-                    <Button variant="primary" type="submit">
-                        Sign in
-                    </Button>
+                <Button href="/Profile" variant="primary" type="submit">
+                 Log In
+                 </Button>
                 </Col>
+                
+             <Form.Row>
+                <h5>First Time? Make an account.</h5>
+                <Button href="/SignUp" variant="primary" type="submit">
+                 Sign Up
+                 </Button>
+             </Form.Row>
             </Row>
             <p>---------------------OR--------------------</p>
             <Row>
