@@ -1,4 +1,5 @@
 import React from "react";
+import ReCAPTCHA from "react-google-recaptcha";
 import Navme from "../../components/Nav";
 
 import { Form, Button, Container, Row, Col, Dropdown/*, Image*/ } from 'react-bootstrap';
@@ -41,12 +42,8 @@ class SignUp extends Component {
             <Row>
             <Col md={{ span: 5, offset: 2 }}>
              <h2> Create a New Account</h2>
-             
-        <Form>
-             <Form.Group as={Col}>
              <p style={{ color: 'blue' }}>Sign up for a user account to start making a game bet!</p>
-             </Form.Group>
-
+        <Form>
              <Form.Group as={Col}>
              <Form.Label>Username</Form.Label>
              <Form.Control type="text" placeholder="Enter a username" name="screenname" onChange={this.handleChange} />
@@ -121,25 +118,29 @@ class SignUp extends Component {
              <Form.Control type="password" placeholder="Re-type your password" />
              </Form.Group>
 
-             <Form.Group as={Col}>
+             <Form.Label>Please verify you are a human.</Form.Label>
+             <ReCAPTCHA
+                sitekey={process.env.REACT_APP_GOOGLE_RECAPTCHA_SITE_KEY}
+            />
+
              <Button variant="primary" type="submit" onClick={this.handleSubmitToSaveUser}>
                  Sign Up
              </Button>
-             </Form.Group>     
+             
 
-             <Form.Group as={Col}>
-                <h5 md={5}> Already have an account?</h5>
-                <Button md={5} href="/SignIn" variant="primary" type="submit">
+             <Form.Row>
+                <h5>Already have an account?</h5>
+                <Button href="/SignIn" variant="primary" type="submit">
                  Log In
                  </Button>
-             </Form.Group>
+             </Form.Row>
 
-             <Form.Group as={Col}>
+             <Form.Row>
                 <h5>Forgot Password?</h5>
                 <Button variant="primary" type="submit">
                  Reset your password
                  </Button>
-            </Form.Group>
+             </Form.Row>
          </Form>
          </Col>
 
