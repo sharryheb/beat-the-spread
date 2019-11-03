@@ -2,64 +2,60 @@ const db = require("../models");
 const axios = require("axios");
 
 
-function doUpdateSpreads()
+function doUpdateGames(games)
 {
-    axios.get("https://api.sportsdata.io/v3/nfl/scores/json/Scores/2019?key=" + process.env.API_KEY_SDIO)
-    .then(function(res)
+    let tempGames = [];
+    let tempGame = {};
+    let favoredTeam = "";
+    let spreadCovered = false;
+    for (let game of games)
     {
-        let tempGames = [];
-        let tempGame = {};
-        let favoredTeam = "";
-        let spreadCovered = false;
-        for (let game of res.data)
+        if (game.PointSpread < 0)
         {
-            if (game.PointSpread < 0)
-            {
-                favoredTeam = game.HomeTeam;
-                if (game.IsOver)
-                    spreadCovered = game.AwayScore - game.HomeScore < game.PointSpread ? true : false;
-                else
-                    spreadCovered = false;
-            }
+            favoredTeam = game.HomeTeam;
+            if (game.IsOver)
+                spreadCovered = game.AwayScore - game.HomeScore < game.PointSpread ? true : false;
             else
-            {
-                favoredTeam = game.AwayTeam;
-                if (game.IsOver)
-                    spreadCovered = game.HomeScore - game.AwayScore < game.PointSpread ? true : false;
-                else
-                    spreadCovered = false;
-            }
-            tempGame =
-            {
-                "weekNumber": game.Week,
-                "gameTime": game.DateTime,
-                "homeTeamCode": game.HomeTeam,
-                "awayTeamCode": game.AwayTeam,
-                "preGameSpread": game.PointSpread,
-                "favoredTeamCode": favoredTeam,
-                "spreadCovered": spreadCovered,
-                "homeTeamScore": game.HomeScore,
-                "awayTeamScore": game.AwayScore,
-                "updatedAt": Date.now()
-            };
-            tempGames.push(tempGame);
+                spreadCovered = false;
         }
-        g_saveBulk(tempGames);
-        res.json("done");
-    })
-    .catch(err => res.json(err));
+        else
+        {
+            favoredTeam = game.AwayTeam;
+            if (game.IsOver)
+                spreadCovered = game.HomeScore - game.AwayScore < game.PointSpread ? true : false;
+            else
+                spreadCovered = false;
+        }
+        tempGame =
+        {
+            "weekNumber": game.Week,
+            "gameTime": game.DateTime,
+            "homeTeamCode": game.HomeTeam,
+            "awayTeamCode": game.AwayTeam,
+            "preGameSpread": game.PointSpread,
+            "favoredTeamCode": favoredTeam,
+            "spreadCovered": spreadCovered,
+            "homeTeamScore": game.HomeScore,
+            "awayTeamScore": game.AwayScore,
+            "updatedAt": Date.now()
+        };
+        tempGames.push(tempGame);
+    }
+    return g_saveBulk(tempGames);
 }
 
 function g_saveBulk(games) {
+    var promises = [];
     for (let game of games)
     {
-        db.Game
+        promises.push(db.Game
         .update(game,
         {
             where: { homeTeamCode: game.homeTeamCode, awayTeamCode: game.awayTeamCode }
         })
-        .catch(err => console.log(err));
+        .catch(err => console.log(err)));
     }
+    return promises;
 }
 
 module.exports = {
@@ -73,8 +69,13 @@ module.exports = {
         console.log("getAllForWeek weekNumber: ");
         console.log(req.params.weekNumber);
         db.sequelize.query(`select g.gameTime,
-        tH.FullName, tH.WikipediaLogoUrl as homeLogoUrl,
-        tA.FullName, tA.WikipediaLogoUrl as awayLogoUrl,
+	    tH.Key as homeTeamCode,
+        tH.FullName as homeFullName,
+        tH.WikipediaLogoUrl as homeLogoUrl,
+        tH.City as gameLocation,
+        tA.Key as awayTeamCode,
+        tA.FullName as awayFullName,
+        tA.WikipediaLogoUrl as awayLogoUrl,
         g.preGameSpread, g.favoredTeamCode
             from games g
                 join teams tH on g.homeTeamCode=tH.Key
@@ -120,38 +121,47 @@ module.exports = {
         .then(dbModel => res.json(dbModel))
         .catch(err => res.status(422).json(err));
     },
+
     saveBulk: g_saveBulk,
-    updateSpreads: function(req, res)
+
+    updateGames: function(req, res)
     {
         var force = parseInt(req.params.force);
-        var oneDayAgo = new Date();
-        oneDayAgo = new Date(oneDayAgo.setDate(oneDayAgo.getDate()-1));
+        var now = new Date();
+        var oneDayAgo = new Date(now.setDate(now.getDate()-1));
 
         var lastUpdate;
 
         if (!force) // if user is not forcing, let's see if it's been more than 1 day since last update.
         {
-            db.Game.findAll({order: [['updatedAt', 'desc']] })
+            db.Game.findAll({order: [['updatedAt', 'desc']], attributes: ['updatedAt']})
             .then((dbModel) =>
             {
                 lastUpdate = dbModel[0].updatedAt;
                 force = (lastUpdate === null || (lastUpdate < oneDayAgo));
-                console.log("oneDayAgo");
-                console.log(oneDayAgo);
-                console.log("lastUpdate: ")
-                console.log(lastUpdate);
-                if (force)
-                {
-                    doUpdateSpreads();
-                }
-                else
-                {
-                    console.log("NO UPDATES NECESSARY");
-                }
             })
             .catch(err => console.log(err));
         }
-        else if (force)
-            doUpdateSpreads();
+
+        if (force) // do not use "else" here, as the above block can change the value of "force"
+        {
+            console.log("FORCING UPDATES");
+            axios.get("https://api.sportsdata.io/v3/nfl/scores/json/Scores/2019?key=" + process.env.API_KEY_SDIO)
+            .then(function(req, res)
+            {
+                Promise.all(doUpdateGames(res.data[0]))
+                .then(function(req, res)
+                {
+                    console.log("SENDING SUCCESS");
+                    res.send("Success");
+                });
+            })
+            .catch(err => res.send(err));
+        }
+        else
+        {
+            console.log("NO UPDATES, SENDING SUCCESS");
+            res.send("Success");
+        }
     }
 };

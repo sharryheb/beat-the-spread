@@ -16,7 +16,7 @@ import {
   function App() {
 
         //   // call NFL API to get updated spreads/scores
-        //   sharry.updateSpreads();
+        //   sharry.updateGames();
 
           // get all User data from the DB
           //sharry.loadUsers();

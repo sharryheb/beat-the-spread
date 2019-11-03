@@ -8,7 +8,7 @@ const gameController = require("../../controllers/gameController");
 
     // Matches with "/api/games/update/:force"
     router.route("/update/:force")
-    .get(gameController.updateSpreads)
+    .get(gameController.updateGames)
 
     // Matches with "/api/games/:id"
     router

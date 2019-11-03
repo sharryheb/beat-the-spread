@@ -1,5 +1,4 @@
 import React from 'react';
-import axios from 'axios';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Card, ListGroup, ListGroupItem, Table } from 'react-bootstrap';
 import Avatar from "../Avatar";
@@ -27,12 +26,12 @@ class FanStanding extends React.Component {
 
 
   render () {
-    const { 
+    const {
       state
     } = this;
 
     let userEls = null;
-    
+
     if ( state.users && state.users.length > 0 ) {
       userEls = state.users.map(( user, index ) => {
         return (
@@ -44,13 +43,13 @@ class FanStanding extends React.Component {
                     <Avatar imageUrl={user.avatar} />
                   </td>
                   <td>
-      
+
                     <em><strong>{user.screenname}</strong></em>
                     <Card.Text>
                       {user.totalCorrect} correct predictions <br />
-                      Favorite Sports Team: {user.FullName} 
-                      <Avatar imageUrl={user.logoUrl} /> 
+                      Favorite Sports Team: {user.FullName}
                     </Card.Text>
+                    <Avatar imageUrl={user.logoUrl} />
                   </td>
                 </tr>
               </tbody>
@@ -59,7 +58,7 @@ class FanStanding extends React.Component {
         );
       });
     }
-    
+
 
     return (
         // DO SOMETHING WITH getFandStanding() results ("res.data") in your return below...

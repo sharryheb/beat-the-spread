@@ -4,7 +4,7 @@ import { Table, DropdownButton, Dropdown, Card } from 'react-bootstrap';
 
 import "./style.css";
 import Game from "../Game";
-function Shedule() {
+function Schedule() {
     return (
         <Card className="window">
         <Table>
@@ -23,13 +23,12 @@ function Shedule() {
                 </tr>
             </tbody>
         </Table>
-        
+
         <Game />
         </Card>
 
-      
+
     );
   }
-  
-  export default Shedule;
-  
+
+  export default Schedule;
