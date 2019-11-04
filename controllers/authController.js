@@ -45,22 +45,16 @@ module.exports = {
       console.log("in auth controller");
     passport.authenticate('register', (err, user, info) => {
       if(!user) {
-        successOrErrorMsg = 'Your registration failed as the email address is already taken.';
+        successOrErrorMsg = 'Your regisration failed as the email address is already taken.';
         res.clearCookie('registerFail');
         res.clearCookie('registerSuccess');
-        res.cookie('registerFail', successOrErrorMsg, cookieOptions).send('Register failure');
+        res.cookie('registerFail', successOrErrorMsg, cookieOptions).send('Register failure'); //Sets name = express
       } else {
         if(err) {
-          successOrErrorMsg = 'Your registration failed as the email address is already taken.';
-          res.clearCookie('registerFail');
-          res.clearCookie('registerSuccess');
-          res.cookie('registerFail', successOrErrorMsg, cookieOptions).send('Register failure');          
+          console.log(err);
         }
         if(info !== undefined) {
-          successOrErrorMsg = 'Your registration failed as the email address is already taken.';
-          res.clearCookie('registerFail');
-          res.clearCookie('registerSuccess');
-          res.cookie('registerFail', successOrErrorMsg, cookieOptions).send('Register failure');    
+          res.send(info.message);
         } else {
           req.logIn(user, err => {
             const data = {
