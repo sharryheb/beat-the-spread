@@ -19,7 +19,8 @@ const cookies = new Cookies();
 // see what I mean - I fixed that one up to be how it should work. Let me know if ??? -sharry
 class SignIn extends Component {
     state = {
-        email: ''
+        email: '',
+        errorOrSuccessMsg: ''
     };
     
     handleChange = event => {
@@ -30,8 +31,32 @@ class SignIn extends Component {
 
     onSubmit = event => {
         event.preventDefault();
+
         authAPI.loginUser(this.state)
             .then(response => {
+                let logInSuccessOrErrorMsgCookieObj = cookies.get('logInSuccessOrErrorMsg');
+                console.log(logInSuccessOrErrorMsgCookieObj);
+                if(response.data && logInSuccessOrErrorMsgCookieObj.success) {
+                    this.setState({
+                        errorOrSuccessMsg: {
+                            successMsg: logInSuccessOrErrorMsgCookieObj.success.message,
+                            userInfo: {
+                                email: logInSuccessOrErrorMsgCookieObj.success.email,
+                                screename: logInSuccessOrErrorMsgCookieObj.success.screenname,
+                                avatar: logInSuccessOrErrorMsgCookieObj.success.avatar,
+                                favoriteTeamCode: logInSuccessOrErrorMsgCookieObj.favoriteTeamCode
+                            }
+                        },
+                        password: ''
+                    });
+                } else {
+                    this.setState({
+                        errorOrSuccessMsg: {
+                            failMsg: logInSuccessOrErrorMsgCookieObj.fail
+                        },
+                        password: ''
+                    });
+                }
                 
             })
             .catch(err => {
@@ -40,11 +65,24 @@ class SignIn extends Component {
     }
 
     render() {
+        let successOrFailureMsg;
+        console.log(this.state.errorOrSuccessMsg);
+
+        if(this.state.errorOrSuccessMsg.successMsg) {
+            successOrFailureMsg = <p>Success</p>;
+        } else if (this.state.errorOrSuccessMsg.failMsg) {
+            successOrFailureMsg = <p>Fail</p>;
+        }
+
         return (
 
             <div className="SignIn">
             <Navme />
             <p id="sign">Sign In</p>
+            {successOrFailureMsg}
+            {(this.state.errorOrSuccessMsg.failMsg === 'undefined') && <p>{successOrFailureMsg}</p>}
+            {(this.state.errorOrSuccessMsg.success === 'undefined') && <p>{successOrFailureMsg}</p>}
+               
             <Form style={{ width: '18rem' }}>
                     <Form.Group controlId="formBasicEmail">
 

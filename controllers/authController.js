@@ -1,7 +1,7 @@
 const db = require('../models');
 const passport = require('passport');
 let registerSuccessOrErrorMsg;
-let logInSucessOrErrorMsg;
+let logInSuccessOrErrorMsg;
 let cookieOptions = require('../authentication/cookie-options');
 
 module.exports = {
@@ -14,40 +14,54 @@ module.exports = {
   loginUser: (req, res, next) => {
     console.log('outside login user passport.authenticate');
     passport.authenticate('login', (err, user, info) => {
-      console.log('user: ', user);
-      if(err) {
-        logInSucessOrErrorMsg = {
+      if(!user) {
+        logInSuccessOrErrorMsg = {
           fail: 'The email and/or password were incorrect. Please try again.'
         };
-
         res.clearCookie('registerFail');
         res.clearCookie('registerSuccess');
-        res.clearCookie('logInSucessOrErrorMsg');
-        res.cookie('logInSucessOrErrorMsg', logInSucessOrErrorMsg, cookieOptions).send('Login failure');
-      }
-      if(info !== undefined) {
-        res.clearCookie('registerFail');
-        res.clearCookie('registerSuccess');
-        res.clearCookie('logInSucessOrErrorMsg');
-        res.cookie('logInSucessOrErrorMsg', logInSucessOrErrorMsg, cookieOptions).send('Login failure');
+        res.clearCookie('logInSuccessOrErrorMsg');
+        res.cookie('logInSuccessOrErrorMsg', logInSuccessOrErrorMsg, cookieOptions).send('Login failure');
       } else {
-        req.logIn(user, err => {
-          db.User.findOne({
-            where: {
-              email: user.email
-            },
-          }).then(user => {
-            logInSucessOrErrorMsg = {
-              success: {
-                message: 'You have successfully logged in!',
-                email: user.email,
-                screenname: user.screenname,
-                avatar: user.avatar,
-                favoriteTeamCode: user.favoriteTeamCode
-              }
-            }
+        console.log('user: ', user);
+        if(err) {
+          logInSuccessOrErrorMsg = {
+            fail: 'The email and/or password were incorrect. Please try again.'
+          };
+  
+          res.clearCookie('registerFail');
+          res.clearCookie('registerSuccess');
+          res.clearCookie('logInSuccessOrErrorMsg');
+          res.cookie('logInSuccessOrErrorMsg', logInSuccessOrErrorMsg, cookieOptions).send('Login failure');
+        }
+        if(info !== undefined) {
+          res.clearCookie('registerFail');
+          res.clearCookie('registerSuccess');
+          res.clearCookie('logInSuccessOrErrorMsg');
+          res.cookie('logInSuccessOrErrorMsg', logInSuccessOrErrorMsg, cookieOptions).send('Login failure');
+        } else {
+          req.logIn(user, err => {
+            db.User.findOne({
+              where: {
+                email: user.email
+              },
+            }).then(user => {
+              logInSuccessOrErrorMsg = {
+                success: {
+                  message: 'You have successfully logged in!',
+                  email: user.email,
+                  screenname: user.screenname,
+                  avatar: user.avatar,
+                  favoriteTeamCode: user.favoriteTeamCode
+                }
+              };
+              res.clearCookie('registerFail');
+              res.clearCookie('registerSuccess');
+              res.clearCookie('logInSuccessOrErrorMsg');
+              res.cookie('logInSuccessOrErrorMsg', logInSuccessOrErrorMsg, cookieOptions).send('Login success');
+            });
           });
-        });
+        }
       }
     })(req, res, next);
   },
@@ -59,7 +73,7 @@ module.exports = {
         registerSuccessOrErrorMsg = 'Your regisration failed as the email address is already taken.';
         res.clearCookie('registerFail');
         res.clearCookie('registerSuccess');
-        res.clearCookie('logInSucessOrErrorMsg');
+        res.clearCookie('logInSuccessOrErrorMsg');
         res.cookie('registerFail', registerSuccessOrErrorMsg, cookieOptions).send('Register failure');
       } else {
         if(err) {
@@ -83,7 +97,7 @@ module.exports = {
               registerSuccessOrErrorMsg = 'New accout created';
               res.clearCookie('registerFail');
               res.clearCookie('registerSuccess');
-              res.clearCookie('logInSucessOrErrorMsg');
+              res.clearCookie('logInSuccessOrErrorMsg');
               res.cookie('registerSuccess', registerSuccessOrErrorMsg, cookieOptions).send('Registration success!'); 
             });
           });
