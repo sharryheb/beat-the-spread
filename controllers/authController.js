@@ -1,7 +1,7 @@
 const db = require('../models');
 const passport = require('passport');
-// const jwtSecret = process.env.JWT_SECRET;
-// const jwt = require('jsonwebtoken');
+let successOrErrorMsg;
+let cookieOptions = require('../authentication/cookie-options');
 
 module.exports = {
 
@@ -44,28 +44,43 @@ module.exports = {
   registerUser: (req, res, next) => {
       console.log("in auth controller");
     passport.authenticate('register', (err, user, info) => {
-      if(err) {
-        console.log(err);
-      }
-      if(info !== undefined) {
-        res.send(info.message);
+      if(!user) {
+        successOrErrorMsg = 'Your registration failed as the email address is already taken.';
+        res.clearCookie('registerFail');
+        res.clearCookie('registerSuccess');
+        res.cookie('registerFail', successOrErrorMsg, cookieOptions).send('Register failure');
       } else {
-        req.logIn(user, err => {
-          const data = {
-            screenname: req.body.screenname,
-            email: req.body.email,
-            avatar: req.body.avatar,
-            favoriteTeamCode: req.body.favoriteTeamCode
-          };
-          db.User.findOne({
-            where: {
-              email: data.email
-            },
-          }).then(() => {
-            console.log('user created in db');
-            res.status(200).send({ message: 'user created' });
+        if(err) {
+          successOrErrorMsg = 'Your registration failed as the email address is already taken.';
+          res.clearCookie('registerFail');
+          res.clearCookie('registerSuccess');
+          res.cookie('registerFail', successOrErrorMsg, cookieOptions).send('Register failure');          
+        }
+        if(info !== undefined) {
+          successOrErrorMsg = 'Your registration failed as the email address is already taken.';
+          res.clearCookie('registerFail');
+          res.clearCookie('registerSuccess');
+          res.cookie('registerFail', successOrErrorMsg, cookieOptions).send('Register failure');    
+        } else {
+          req.logIn(user, err => {
+            const data = {
+              screenname: req.body.screenname,
+              email: req.body.email,
+              avatar: req.body.avatar,
+              favoriteTeamCode: req.body.favoriteTeamCode
+            };
+            db.User.findOne({
+              where: {
+                email: data.email
+              },
+            }).then(() => {              
+              successOrErrorMsg = 'New accout created';
+              res.clearCookie('registerFail');
+              res.clearCookie('registerSuccess');
+              res.cookie('registerSuccess', successOrErrorMsg, cookieOptions).send('Registration success!'); 
+            });
           });
-        });
+        }
       }
     })(req, res, next);
   },
