@@ -30,7 +30,13 @@ class SignIn extends Component {
 
     onSubmit = event => {
         event.preventDefault();
-        authAPI.loginUser();
+        authAPI.loginUser(this.state)
+            .then(response => {
+                
+            })
+            .catch(err => {
+                console.log(err);
+            });
     }
 
     render() {
@@ -42,13 +48,13 @@ class SignIn extends Component {
             <Form style={{ width: '18rem' }}>
                     <Form.Group controlId="formBasicEmail">
 
-                        <Form.Control type="text" placeholder="Email" name="email" />
+                        <Form.Control type="text" placeholder="Email" name="email" onChange={this.handleChange} />
 
                     </Form.Group>
 
                     <Form.Group controlId="formBasicPassword">
 
-                        <Form.Control type="password" placeholder="Password" name="password" />
+                        <Form.Control type="password" placeholder="Password" name="password" onChange={this.handleChange} />
                     </Form.Group>
                     <Row>
                         <Col>

@@ -16,7 +16,7 @@ class SignUp extends Component {
         screenname: '',
         email: '',
         avatar: '',
-        favoriteTeamCode: 1,
+        favoriteTeamCode: 'SEA',
         errorOrSuccessMsg: ''
     };
 

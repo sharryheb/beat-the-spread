@@ -1,6 +1,7 @@
 const db = require('../models');
 const passport = require('passport');
-let successOrErrorMsg;
+let registerSuccessOrErrorMsg;
+let logInSucessOrErrorMsg;
 let cookieOptions = require('../authentication/cookie-options');
 
 module.exports = {
@@ -11,13 +12,24 @@ module.exports = {
   },
 
   loginUser: (req, res, next) => {
+    console.log('outside login user passport.authenticate');
     passport.authenticate('login', (err, user, info) => {
+      console.log('user: ', user);
       if(err) {
-        console.log(err);
-        return res.redirect('/SignIn');
+        logInSucessOrErrorMsg = {
+          fail: 'The email and/or password were incorrect. Please try again.'
+        };
+
+        res.clearCookie('registerFail');
+        res.clearCookie('registerSuccess');
+        res.clearCookie('logInSucessOrErrorMsg');
+        res.cookie('logInSucessOrErrorMsg', logInSucessOrErrorMsg, cookieOptions).send('Login failure');
       }
       if(info !== undefined) {
-        return res.redirect('/SignIn');
+        res.clearCookie('registerFail');
+        res.clearCookie('registerSuccess');
+        res.clearCookie('logInSucessOrErrorMsg');
+        res.cookie('logInSucessOrErrorMsg', logInSucessOrErrorMsg, cookieOptions).send('Login failure');
       } else {
         req.logIn(user, err => {
           db.User.findOne({
@@ -25,16 +37,15 @@ module.exports = {
               email: user.email
             },
           }).then(user => {
-            // const token = jwt.sign({
-            //   id: user.id
-            // }, jwtSecret);
-
-            // res.status(200).send({
-            //   auth: true,
-            //   token: token,
-            //   message: 'user found & logged in',
-            // });
-            return res.redirect('/api/profile/');
+            logInSucessOrErrorMsg = {
+              success: {
+                message: 'You have successfully logged in!',
+                email: user.email,
+                screenname: user.screenname,
+                avatar: user.avatar,
+                favoriteTeamCode: user.favoriteTeamCode
+              }
+            }
           });
         });
       }
@@ -45,10 +56,11 @@ module.exports = {
       console.log("in auth controller");
     passport.authenticate('register', (err, user, info) => {
       if(!user) {
-        successOrErrorMsg = 'Your regisration failed as the email address is already taken.';
+        registerSuccessOrErrorMsg = 'Your regisration failed as the email address is already taken.';
         res.clearCookie('registerFail');
         res.clearCookie('registerSuccess');
-        res.cookie('registerFail', successOrErrorMsg, cookieOptions).send('Register failure'); //Sets name = express
+        res.clearCookie('logInSucessOrErrorMsg');
+        res.cookie('registerFail', registerSuccessOrErrorMsg, cookieOptions).send('Register failure');
       } else {
         if(err) {
           console.log(err);
@@ -68,10 +80,11 @@ module.exports = {
                 email: data.email
               },
             }).then(() => {              
-              successOrErrorMsg = 'New accout created';
+              registerSuccessOrErrorMsg = 'New accout created';
               res.clearCookie('registerFail');
               res.clearCookie('registerSuccess');
-              res.cookie('registerSuccess', successOrErrorMsg, cookieOptions).send('Registration success!'); 
+              res.clearCookie('logInSucessOrErrorMsg');
+              res.cookie('registerSuccess', registerSuccessOrErrorMsg, cookieOptions).send('Registration success!'); 
             });
           });
         }
