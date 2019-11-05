@@ -8,13 +8,17 @@ import authAPI from "../../utils/authAPI";  // use this to get Team data from DB
 import "./style.css";
 import { Component } from "react";
 
+import Cookies from 'universal-cookie';
+const cookies = new Cookies();
+
 class SignUp extends Component {
 
     state = {
         screenname: '',
         email: '',
         avatar: '',
-        favoriteTeamCode: 1
+        favoriteTeamCode: 'SEA',
+        errorOrSuccessMsg: ''
     };
 
     handleChange = event => {
@@ -25,9 +29,19 @@ class SignUp extends Component {
 
     handleSubmitToSaveUser = event => {
         event.preventDefault();
-        console.log(this.state);
+
         authAPI.registerUser(this.state)
-            .then(() => alert('User saved!'))
+            .then(response => {
+                if(response.data && cookies.get('registerSuccess')) {
+                    this.setState({
+                        errorOrSuccessMsg: cookies.get('registerSuccess')
+                    });
+                } else {
+                    this.setState({
+                        errorOrSuccessMsg: cookies.get('registerFail')
+                    });
+                }
+            })
             .catch(err => {
                 console.log(err);
             });
@@ -43,6 +57,7 @@ class SignUp extends Component {
             <Col md={{ span: 5, offset: 2 }}>
              <h2> Create a New Account</h2>
              <p style={{ color: 'blue' }}>Sign up for a user account to start making a game bet!</p>
+             {this.state.errorOrSuccessMsg && <p style={{ color: 'green' }}>{this.state.errorOrSuccessMsg}</p>}
         <Form>
              <Form.Group as={Col}>
              <Form.Label>Username</Form.Label>
