@@ -22,7 +22,7 @@ class SignIn extends Component {
         email: '',
         errorOrSuccessMsg: ''
     };
-    
+
     handleChange = event => {
         this.setState({
             [event.target.name]: event.target.value
@@ -57,7 +57,7 @@ class SignIn extends Component {
                         password: ''
                     });
                 }
-                
+
             })
             .catch(err => {
                 console.log(err);
@@ -82,7 +82,7 @@ class SignIn extends Component {
             {successOrFailureMsg}
             {(this.state.errorOrSuccessMsg.failMsg === 'undefined') && <p>{successOrFailureMsg}</p>}
             {(this.state.errorOrSuccessMsg.success === 'undefined') && <p>{successOrFailureMsg}</p>}
-               
+
             <Form style={{ width: '18rem' }}>
                     <Form.Group controlId="formBasicEmail">
 
@@ -120,26 +120,25 @@ class SignIn extends Component {
 
                     </Row>
                     <Row>
-                        
+
                         <Col md={8}>
                         <h5>First Time? </h5>
                         <Button variant="primary" href="/SignUp">
                         Create an account
                         </Button>
                         </Col>
-                    
-                        
+
+
                     </Row>
 
-                    
+
             </Form>
 
 
             </div>
 
-        );        
+        );
     }
 }
 
 export default SignIn;
-

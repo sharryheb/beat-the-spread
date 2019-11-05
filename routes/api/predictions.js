@@ -8,9 +8,8 @@ const predictionController = require("../../controllers/predictionController");
 
 
     // Matches with "/api/predictions/:screenname"
-    // router
-    // .route("/:screenname")
-    // .get(predictionController.getById)
-    // .put(predictionController.save)
+    router.route("/:screenname")
+    .get(predictionController.getByUser)
+    .put(predictionController.save)
 
 module.exports = router;

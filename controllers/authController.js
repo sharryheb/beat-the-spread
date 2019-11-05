@@ -28,7 +28,7 @@ module.exports = {
           logInSuccessOrErrorMsg = {
             fail: 'The email and/or password were incorrect. Please try again.'
           };
-  
+
           res.clearCookie('registerFail');
           res.clearCookie('registerSuccess');
           res.clearCookie('logInSuccessOrErrorMsg');
@@ -67,7 +67,6 @@ module.exports = {
   },
 
   registerUser: (req, res, next) => {
-      console.log("in auth controller");
     passport.authenticate('register', (err, user, info) => {
       if(!user) {
         registerSuccessOrErrorMsg = 'Your regisration failed as the email address is already taken.';
@@ -93,12 +92,12 @@ module.exports = {
               where: {
                 email: data.email
               },
-            }).then(() => {              
+            }).then(() => {
               registerSuccessOrErrorMsg = 'New accout created';
               res.clearCookie('registerFail');
               res.clearCookie('registerSuccess');
               res.clearCookie('logInSuccessOrErrorMsg');
-              res.cookie('registerSuccess', registerSuccessOrErrorMsg, cookieOptions).send('Registration success!'); 
+              res.cookie('registerSuccess', registerSuccessOrErrorMsg, cookieOptions).send('Registration success!');
             });
           });
         }
@@ -115,7 +114,6 @@ module.exports = {
         console.log(info.message);
         res.send(info.message);
       } else {
-        console.log('user in DB from route');
         res.status(200).send({
           auth: true,
           screenname: user.screenname,

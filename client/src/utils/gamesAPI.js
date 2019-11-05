@@ -6,11 +6,13 @@ export default {
         return axios.get("/api/games");
     },
     updateGames: function(force) {
-        console.log("in updateGames");
         return axios.get("/api/games/update/" + force);
     },
     getGame: function(id) {
         return axios.get("/api/games/" + id);
+    },
+    getWeeks: function() {
+        return axios.get("/api/games/weeks");
     },
     getGamesForWeek: function(weekNumber) {
         return axios.get("/api/games/week/" + weekNumber);

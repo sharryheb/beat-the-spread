@@ -6,6 +6,9 @@ const gameController = require("../../controllers/gameController");
     .get(gameController.getAll)
     .put(gameController.saveBulk)
 
+    router.route("/weeks")
+    .get(gameController.getWeeks)
+
     // Matches with "/api/games/update/:force"
     router.route("/update/:force")
     .get(gameController.updateGames)
