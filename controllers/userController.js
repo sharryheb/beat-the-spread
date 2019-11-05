@@ -8,7 +8,6 @@ module.exports = {
       .catch(err => res.status(422).json(err));
   },
   getByScreenname: function(req, res) {
-      console.log("getByScreenname");
       db.User
         .findOne({where: {screenname: req.params.screenname}})
         .then(dbModel => res.json(dbModel))

@@ -8,34 +8,34 @@ import "./style.css";
 // class GameHeader extends React.Component
 const GameHeader = (props) =>
 {
+    console.log("props: ", props);
+    return (
+        <Table striped bordered>
+            <thead>
+                <tr>
+                <th>Game Time </th>
+                <th>Away Team</th>
+                <th>Home Team</th>
+                <th>The Spread </th>
+                <th>Prediction</th>
+                </tr>
+            </thead>
 
-        return (
-            <Table striped bordered>
-                <thead>
-                    <tr>
-                    <th>Game Time </th>
-                    <th>Away Team</th>
-                    <th>Home Team</th>
-                    <th>The Spread </th>
-                    <th>Prediction</th>
-                    </tr>
-                </thead>
-
-                <tbody>
-                {
-                    props.games && props.games.length ? (
-                        props.games.map(game => {
-                            return <GameRow
-                                key={game.id}
-                                game={game}
-                                prediction={props.predictions[game.id]}
-                                handlePrediction={props.handlePrediction} />;
-                        }
-                    )) : <tr><td><h3>Select a Week to Show Games</h3></td></tr>
-                }
-                </tbody>
-            </Table>
-        );
+            <tbody>
+            {
+                props.games && props.games.length ? (
+                    props.games.map((game) => {
+                        return <GameRow
+                            key={game.id}
+                            game={game}
+                            prediction={props.predictions[game.id]}
+                            handlePrediction={props.handlePrediction} />;
+                    }
+                )) : <tr><td><h3>Select a Week to Show Games</h3></td></tr>
+            }
+            </tbody>
+        </Table>
+    );
 
 }
 export default GameHeader;

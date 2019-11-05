@@ -17,14 +17,12 @@ class Schedule extends React.Component
         gamesAPI.getWeeks()
         .then((res =>
         {
-            this.setState({weeks: res.data}, this.getGames(this));
+            this.setState({weeks: res.data}, this.getGames);
         }));
 
         usersAPI.getUser("sharryheb")
         .then(res =>
         {
-            console.log("user: ");
-            console.log(res.data);
             this.setState({user: res.data}, () => this.getPredictions(res.data));
         })
     }
@@ -38,10 +36,10 @@ class Schedule extends React.Component
     getGames = () =>
     {
         // SET force = 1 IF YOU WANT TO FORCE THE SPREADS/SCORES OF GAMES TO UPDATE
-        var force = 1;  // 0 means ONLY update games if it's been more than 24 hours since last update
-
+        var force = 0;  // 0 means ONLY update games if it's been more than 24 hours since last update
+        console.log("in getGames");
         gamesAPI.updateGames(force)
-        .then(() =>
+        .then((req, res) =>
         {
             gamesAPI.getGamesForWeek(this.state.selectedWeek)
             .then(res =>
@@ -67,8 +65,6 @@ class Schedule extends React.Component
             {
                 userPredictions[game.GameId] = {prediction: game.preGamePrediction, spreadBeat: game.predictionCorrect}
             }
-            console.log("user predictions data: ");
-            console.log(userPredictions);
             this.setState({predictions: userPredictions});
         })
     }

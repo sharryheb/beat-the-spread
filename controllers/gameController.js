@@ -72,7 +72,6 @@ module.exports = {
         })
         .then((dbModel) =>
         {
-            console.log("getWeeks succeeded");
             res.json(dbModel);
         })
         .catch((err) =>
@@ -83,8 +82,6 @@ module.exports = {
         });
     },
     getAllForWeek: function(req, res) {
-        console.log("getAllForWeek weekNumber: ");
-        console.log(req.params.weekNumber);
         db.sequelize.query(`select g.id as id,
         g.gameTime,
 	    tH.Key as homeTeamCode,
@@ -156,6 +153,7 @@ module.exports = {
 
         var lastUpdate;
 
+        console.log("updateGames.... ")
         if (!force) // if user is not forcing, let's see if it's been more than 1 day since last update.
         {
             db.Game.findAll({order: [['updatedAt', 'desc']], attributes: ['updatedAt']})
@@ -171,14 +169,10 @@ module.exports = {
         {
             console.log("FORCING UPDATES");
             axios.get("https://api.sportsdata.io/v3/nfl/scores/json/Scores/2019?key=" + process.env.API_KEY_SDIO)
-            .then(function(req, res)
+            .then(function(res)
             {
-                console.log("data from sportsdata.io: ", res)
-                Promise.all(doUpdateGames(res.data[0]))
-                .then(function(req, res)
-                {
-                    res.send("Success");
-                });
+                Promise.all(doUpdateGames(res.data))
+                .catch(err => console.log(err));
             })
             .catch(err => res.send(err));
         }
