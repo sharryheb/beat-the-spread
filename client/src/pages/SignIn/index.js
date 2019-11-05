@@ -54,25 +54,18 @@ function SignIn() {
 
              <Form.Row>
                 <h5>Forgot your password?</h5>
-                <Button variant="primary" type="submit">
-                 Reset Password
-                 </Button>
+                <Button variant="primary" type="submit">Reset Password</Button>
              </Form.Row>
             </Row>
-            <p>---------------------OR--------------------</p>
+            <p>---------- OR ----------</p>
             <Row>
 
             </Row>
             <Row>
-                
                 <Col md={8}>
-                <h5>First Time? </h5>
-                <Button variant="primary" href="/SignUp">
-                Create an account
-                 </Button>
-                 </Col>
-            
-                
+                    <h5>First Time? </h5>
+                    <Button variant="primary" href="/SignUp">Create an account</Button>
+                </Col>
             </Row>
        </Form>
 

@@ -7,7 +7,6 @@ export default {
     },
 
     registerUser: function(authData) {
-        console.log("in authAPI registerUser");
         return axios.post("/api/auth/registerUser", authData);
     }
 };

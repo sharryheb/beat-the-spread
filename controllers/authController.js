@@ -42,7 +42,6 @@ module.exports = {
   },
 
   registerUser: (req, res, next) => {
-      console.log("in auth controller");
     passport.authenticate('register', (err, user, info) => {
       if(err) {
         console.log(err);
@@ -62,7 +61,6 @@ module.exports = {
               email: data.email
             },
           }).then(() => {
-            console.log('user created in db');
             res.status(200).send({ message: 'user created' });
           });
         });
@@ -79,7 +77,6 @@ module.exports = {
         console.log(info.message);
         res.send(info.message);
       } else {
-        console.log('user in DB from route');
         res.status(200).send({
           auth: true,
           screenname: user.screenname,

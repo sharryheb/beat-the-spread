@@ -7,18 +7,13 @@ module.exports = {
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },
-//   getByScreenname: function(req, res) {
-//     db.User
-//       .find({screenname: req.params.screenname })
-//       .then(dbModel => res.json(dbModel))
-//       .catch(err => res.status(422).json(err));
-//   },
-//   getByFavoriteTeam: function(req, res) {
-//     db.User
-//       .find({favoriteTeamId: req.params.favoriteTeamId})
-//       .then(dbModel => res.json(dbModel))
-//       .catch(err => res.status(422).json(err));
-//   },
+  getByScreenname: function(req, res) {
+      console.log("getByScreenname");
+      db.User
+        .findOne({where: {screenname: req.params.screenname}})
+        .then(dbModel => res.json(dbModel))
+        .catch(err => res.status(422).json(err));
+  },
   save: function(req, res) {
     db.User
       .create(req.body)

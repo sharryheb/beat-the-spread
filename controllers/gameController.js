@@ -65,6 +65,23 @@ module.exports = {
         .then(dbModel => res.json(dbModel))
         .catch(err => res.status(422).json(err));
     },
+    getWeeks: function(req, res) {
+        db.Game
+        .findAll({
+            attributes: [[db.Sequelize.fn('DISTINCT', db.Sequelize.col('weekNumber')), 'weekNumber']]
+        })
+        .then((dbModel) =>
+        {
+            console.log("getWeeks succeeded");
+            res.json(dbModel);
+        })
+        .catch((err) =>
+        {
+            console.log("getWeeks failed");
+            console.log(err);
+            res.status(422).json(err)
+        });
+    },
     getAllForWeek: function(req, res) {
         console.log("getAllForWeek weekNumber: ");
         console.log(req.params.weekNumber);
@@ -81,13 +98,15 @@ module.exports = {
         tA.FullName as awayFullName,
         tA.WikipediaLogoUrl as awayLogoUrl,
         tA.WikipediaWordMarkUrl as awayWordMarkUrl,
-        g.preGameSpread, g.favoredTeamCode
+        g.preGameSpread,
+        g.favoredTeamCode,
+        g.homeTeamScore,
+        g.awayTeamScore,
+        g.spreadCovered
             from games g
                 join teams tH on g.homeTeamCode=tH.Key
                 join teams tA on g.awayTeamCode=tA.Key
             where weekNumber=${req.params.weekNumber}`)
-        // db.Game
-        //   .find({weekNumber: req.params.weekNumber })
         .then(dbModel => res.json(dbModel))
         .catch(err => res.status(422).json(err));
     },
@@ -157,7 +176,6 @@ module.exports = {
                 Promise.all(doUpdateGames(res.data[0]))
                 .then(function(req, res)
                 {
-                    console.log("SENDING SUCCESS");
                     res.send("Success");
                 });
             })
@@ -165,7 +183,6 @@ module.exports = {
         }
         else
         {
-            console.log("NO UPDATES, SENDING SUCCESS");
             res.send("Success");
         }
     }

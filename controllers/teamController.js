@@ -14,17 +14,4 @@ module.exports = {
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
     }
-//   },
-//   getById: function(req, res) {
-//     db.Team
-//       .findById({ _id: req.params.id })
-//       .then(dbModel => res.json(dbModel))
-//       .catch(err => res.status(422).json(err));
-//   },
-//   getByName: function(req, res) {
-//     db.Team
-//       .find({ FullName: req.params.name })
-//       .then(dbModel => res.json(dbModel))
-//       .catch(err => res.status(422).json(err));
-//   }
 };
