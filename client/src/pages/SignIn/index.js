@@ -107,6 +107,31 @@ class SignIn extends Component {
                             </Button>
                         </Col>
                     </Row>
+
+                    <Form.Row>
+                        <h5>Forgot your password?</h5>
+                        <Button variant="primary" type="submit">
+                        Reset Password
+                        </Button>
+                    </Form.Row>
+
+                    <p>---------------------OR--------------------</p>
+                    <Row>
+
+                    </Row>
+                    <Row>
+                        
+                        <Col md={8}>
+                        <h5>First Time? </h5>
+                        <Button variant="primary" href="/SignUp">
+                        Create an account
+                        </Button>
+                        </Col>
+                    
+                        
+                    </Row>
+
+                    
             </Form>
 
 
@@ -118,46 +143,3 @@ class SignIn extends Component {
 
 export default SignIn;
 
-
-// const onSubmit = (e) => {
-//     e.preventDefault();
-//     authAPI.loginUser();
-// }
-
-// function SignIn() {
-//   return (
-
-//       <div className="SignIn">
-//        <Navme />
-//        <p id="sign">Sign In</p>
-//        <Form onSubmit={onSubmit} style={{ width: '18rem' }}>
-//             <Form.Group controlId="formBasicEmail">
-
-//                 <Form.Control type="text" placeholder="Email" name="email" />
-
-//             </Form.Group>
-
-//             <Form.Group controlId="formBasicPassword">
-
-//                 <Form.Control type="password" placeholder="Password" name="password" />
-//             </Form.Group>
-//             <Row>
-//                 <Col>
-//                     <Form.Group controlId="formBasicCheckbox">
-//                         <Form.Check type="checkbox" label="Remember Me" />
-//                     </Form.Group>
-//                 </Col>
-//                 <Col>
-
-//                     <Button variant="primary" type="submit">
-//                         Sign in
-//                     </Button>
-//                 </Col>
-//             </Row>
-//        </Form>
-
-
-//       </div>
-
-//   );
-// }

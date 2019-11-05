@@ -5,6 +5,10 @@ export default {
     getGames: function() {
         return axios.get("/api/games");
     },
+    updateGames: function(force) {
+        console.log("in updateGames");
+        return axios.get("/api/games/update/" + force);
+    },
     getGame: function(id) {
         return axios.get("/api/games/" + id);
     },
