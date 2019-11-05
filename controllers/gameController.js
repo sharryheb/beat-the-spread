@@ -173,6 +173,7 @@ module.exports = {
             axios.get("https://api.sportsdata.io/v3/nfl/scores/json/Scores/2019?key=" + process.env.API_KEY_SDIO)
             .then(function(req, res)
             {
+                console.log("data from sportsdata.io: ", res)
                 Promise.all(doUpdateGames(res.data[0]))
                 .then(function(req, res)
                 {

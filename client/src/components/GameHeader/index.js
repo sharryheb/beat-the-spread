@@ -2,12 +2,13 @@ import React from "react";
 import { Table } from 'react-bootstrap';
 import GameRow from "../GameRow"
 
+
 import "./style.css";
 
-class GameHeader extends React.Component
+// class GameHeader extends React.Component
+const GameHeader = (props) =>
 {
-    render ()
-    {
+
         return (
             <Table striped bordered>
                 <thead>
@@ -22,14 +23,19 @@ class GameHeader extends React.Component
 
                 <tbody>
                 {
-                    this.props.games && this.props.games.length ? (
-                        this.props.games.map(game =>(
-                        <GameRow key={game.id} game={game} user={this.props.user} />)
+                    props.games && props.games.length ? (
+                        props.games.map(game => {
+                            return <GameRow
+                                key={game.id}
+                                game={game}
+                                prediction={props.predictions[game.id]}
+                                handlePrediction={props.handlePrediction} />;
+                        }
                     )) : <tr><td><h3>Select a Week to Show Games</h3></td></tr>
                 }
                 </tbody>
             </Table>
         );
-    }
+
 }
 export default GameHeader;

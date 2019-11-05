@@ -3,6 +3,7 @@ import React from "react";
 import { Table, DropdownButton, Dropdown, Card } from 'react-bootstrap';
 import gamesAPI from "../../utils/gamesAPI"
 import usersAPI from "../../utils/usersAPI"
+import predictionsAPI from "../../utils/predictionsAPI"
 
 import "./style.css";
 import GameHeader from "../GameHeader";
@@ -10,7 +11,7 @@ import GameHeader from "../GameHeader";
 
 class Schedule extends React.Component
 {
-    state = { weeks: null, selectedWeek: null, weekTitle: "Select Week", user: null };
+    state = { weeks: null, selectedWeek: null, weekTitle: "Select Week", user: null, games: null, predictions: null };
     componentDidMount()
     {
         gamesAPI.getWeeks()
@@ -22,34 +23,30 @@ class Schedule extends React.Component
         usersAPI.getUser("sharryheb")
         .then(res =>
         {
-            this.setState({user: res.data});
+            console.log("user: ");
+            console.log(res.data);
+            this.setState({user: res.data}, () => this.getPredictions(res.data));
         })
     }
 
     handleWeekSelect = (weekNumber, event) =>
     {
         event.preventDefault();
-        this.setState({selectedWeek: weekNumber, weekTitle: "Week " + weekNumber}, this.getGames(this));
+        this.setState({selectedWeek: weekNumber, weekTitle: "Week " + weekNumber}, this.getGames);
     }
 
-    setGamesState = (games) =>
-    {
-        this.setState({games})
-    }
-
-    getGames = (state) =>
+    getGames = () =>
     {
         // SET force = 1 IF YOU WANT TO FORCE THE SPREADS/SCORES OF GAMES TO UPDATE
-        var force = 0;  // 0 means ONLY update games if it's been more than 24 hours since last update
+        var force = 1;  // 0 means ONLY update games if it's been more than 24 hours since last update
 
         gamesAPI.updateGames(force)
-        .then(function()
+        .then(() =>
         {
-            gamesAPI.getGamesForWeek(state.state.selectedWeek)
+            gamesAPI.getGamesForWeek(this.state.selectedWeek)
             .then(res =>
             {
-                console.log("games for week");
-                state.setState({games: res.data[0]});
+                this.setState({games: res.data[0]});
             })
             .catch(err => console.log(err));
         })
@@ -57,6 +54,35 @@ class Schedule extends React.Component
         {
             console.log(err);
         });
+    }
+
+    getPredictions(user)
+    {
+        var userScreenname = user.screenname;
+        var userPredictions = [];
+        predictionsAPI.getPredictionsForUser(userScreenname)
+        .then((res) =>
+        {
+            for (var game of res.data)
+            {
+                userPredictions[game.GameId] = {prediction: game.preGamePrediction, spreadBeat: game.predictionCorrect}
+            }
+            console.log("user predictions data: ");
+            console.log(userPredictions);
+            this.setState({predictions: userPredictions});
+        })
+    }
+
+    handlePrediction = (gameId, prediction) =>
+    {
+        var predictionObj = {
+            UserScreenname: this.state.user.screenname,
+            preGamePrediction: prediction,
+            GameId: gameId
+        }
+        predictionsAPI.savePrediction(predictionObj)
+        .then(() => {this.getPredictions(this.state.user)})
+        .catch(err => console.log(err));
     }
 
     render()
@@ -82,8 +108,7 @@ class Schedule extends React.Component
                     </tr>
                 </tbody>
             </Table>
-
-            <GameHeader weekNumber={this.state.weekNumber} games={this.state.games} user={this.state.user} />
+            <GameHeader weekNumber={this.state.selectedWeek} games={this.state.games} predictions={this.state.predictions} handlePrediction={this.handlePrediction} />
             </Card>
         );
     }

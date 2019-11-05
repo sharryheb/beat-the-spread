@@ -1,7 +1,7 @@
 **Pages on “Beat The Spread Football Gambling Game”**
 
 
-*   Fan Standings (homepage) 
+*   Fan Standings (homepage)
     *   Have usernames and scores, like: \
 **Fan Standings **(points) \
  \
@@ -63,11 +63,11 @@ _
 *   Sign Up page
 
 	Username (text field) \
-	
+
 
 	Avatar (image upload field)
 
-	
+
 
 	Password (text field) \
  \
@@ -78,6 +78,6 @@ _
 
 
 *   Users table: userid, username, avatar, email, password.
-*   Predictions table: userid, gameid, preGamePrediction (y/n - boolean), predictionCorrect (tinyint: 1/0), deadline (datetime - this needs to be set to the start time of the game, found in games table)
+*   Predictions table: userid, gameid, preGamePrediction (y/n - boolean), predictionCorrect (tinyint: 1/0)
 *   Teams table: teamid, teamname, teamlogo, etc? (stadium, city/state, metadata)
 *   Games table: gameid, weekNumber, gameTime (datetime), homeTeamId, awayTeamId, preGameSpread, winTeamScore, loseTeamScore, spreadBeat (boolean) \

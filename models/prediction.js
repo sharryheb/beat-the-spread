@@ -3,7 +3,6 @@ module.exports = function(sequelize, DataTypes) {
     {
         preGamePrediction: { type: DataTypes.BOOLEAN, allowNull: false },
         predictionCorrect: { type: DataTypes.BOOLEAN, defaultValue: false },
-        deadline: { type: DataTypes.DATE },
         GameId: {
             type: DataTypes.INTEGER,
             primaryKey: false,
