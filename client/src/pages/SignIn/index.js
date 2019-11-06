@@ -102,19 +102,19 @@ class SignIn extends Component {
                         </Col>
                         <Col>
 
-                            <Button variant="primary" type="submit" onClick={this.onSubmit}>
-                                Sign in
+                            <Button variant="warning" type="submit" onClick={this.onSubmit}>
+                                Log In
                             </Button>
                         </Col>
-                    </Row>
+                    
 
-                    <Form.Row>
+                    <Col md={10}>
                         <h5>Forgot your password?</h5>
-                        <Button variant="primary" type="submit">
+                        <Button variant="warning" type="submit">
                         Reset Password
                         </Button>
-                    </Form.Row>
-
+                    </Col>
+                    </Row>
                     <p>---------------------OR--------------------</p>
                     <Row>
 
@@ -123,7 +123,7 @@ class SignIn extends Component {
 
                         <Col md={8}>
                         <h5>First Time? </h5>
-                        <Button variant="primary" href="/SignUp">
+                        <Button variant="warning" href="/SignUp">
                         Create an account
                         </Button>
                         </Col>
