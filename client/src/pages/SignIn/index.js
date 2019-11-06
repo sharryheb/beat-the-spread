@@ -4,12 +4,15 @@ import Navme from "../../components/Nav";
 
 import { Form, Button, Row, Col } from 'react-bootstrap';
 
+import { BrowserRouter, Route, Link } from "react-router-dom";
+
 import authAPI from "../../utils/authAPI";
 
 import "./style.css";
 
 import Cookies from 'universal-cookie';
 const cookies = new Cookies();
+
 
 
 // MATT:
@@ -37,18 +40,19 @@ class SignIn extends Component {
                 let logInSuccessOrErrorMsgCookieObj = cookies.get('logInSuccessOrErrorMsg');
                 console.log(logInSuccessOrErrorMsgCookieObj);
                 if(response.data && logInSuccessOrErrorMsgCookieObj.success) {
-                    this.setState({
-                        errorOrSuccessMsg: {
-                            successMsg: logInSuccessOrErrorMsgCookieObj.success.message,
-                            userInfo: {
-                                email: logInSuccessOrErrorMsgCookieObj.success.email,
-                                screename: logInSuccessOrErrorMsgCookieObj.success.screenname,
-                                avatar: logInSuccessOrErrorMsgCookieObj.success.avatar,
-                                favoriteTeamCode: logInSuccessOrErrorMsgCookieObj.favoriteTeamCode
-                            }
-                        },
-                        password: ''
-                    });
+                    // this.setState({
+                    //     errorOrSuccessMsg: {
+                    //         successMsg: logInSuccessOrErrorMsgCookieObj.success.message,
+                    //         userInfo: {
+                    //             email: logInSuccessOrErrorMsgCookieObj.success.email,
+                    //             screename: logInSuccessOrErrorMsgCookieObj.success.screenname,
+                    //             avatar: logInSuccessOrErrorMsgCookieObj.success.avatar,
+                    //             favoriteTeamCode: logInSuccessOrErrorMsgCookieObj.favoriteTeamCode
+                    //         }
+                    //     },
+                    //     password: ''
+                    // });
+                    this.props.history.push('/');
                 } else {
                     this.setState({
                         errorOrSuccessMsg: {
