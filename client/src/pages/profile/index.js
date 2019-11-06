@@ -1,64 +1,87 @@
 import React from "react";
+import { Container, Row, Col } from 'react-bootstrap';
+import Avatar from "../../components/Avatar"
+import usersAPI from "../../utils/usersAPI";
+import predictionsAPI from "../../utils/predictionsAPI"
 
-import { Container, Row, Col/*,Image*/ } from 'react-bootstrap';
 import "./style.css";
 
-
 import Navme from "../../components/Nav";
-//import Avatar from "../../components/Avatar"; // commenting out because it's not used and causes warnings in Dev Tools Inspector
 
+class Profile extends React.Component
+{
+    state = {loggedInUser: {screenname: "sharryheb", avatar: "https://www.netclipart.com/pp/m/86-866514_picture-free-stock-seahawks-drawing-cartoon-seattle-seahawks.png"}, correctCount: 0, incorrectCount: 0, rank: 0};
 
+    componentDidMount()
+    {
+        var correctCount = 0;
+        var incorrectCount = 0;
+        var rank = -1;
+        usersAPI.getUser(this.state.loggedInUser.screenname)
+        .then(user =>
+        {
+            predictionsAPI.getStandings()
+            .then(standings =>
+            {
+                for (var i=0; i < standings.data.length; i++)
+                {
+                    if (standings.data[i].screenname === this.state.loggedInUser.screenname)
+                    {
+                        rank = i+1;
+                    }
+                }
+                predictionsAPI.getPredictionsForUser(user.data.screenname)
+                .then(userpred =>
+                {
+                    for (var prediction of userpred.data)
+                    {
+                        if (prediction.predictionCorrect)
+                            correctCount++;
+                        else
+                            incorrectCount++;
+                    }
+                    this.setState({user: user.data, rank: rank, correctCount: correctCount, incorrectCount: incorrectCount});
+                })
+            })
+        })
+    }
 
-function Profile() {
+render()
+{
   return (
-
-
-      <div className="Profile">
-
+      <div className="Profile text-center">
        <Navme />
 
-
-
-
-                <h2>Profile Page</h2>
-
-
-
-                {/* <Image src="holder.js/171x180" roundedCircle /> */}
-
-
-           <Container>
-           <Row>
-               <Col>
-                <h4>Total Points:</h4>
-               </Col>
-               <Col xs={5}>
-               <h4>Correct Predictions:13</h4>
-               </Col>
-               <Col xs={5}>
-               <h4>Incorrect Predictions:1</h4>
-               </Col>
-           </Row>
-           <Row>
-               <Col></Col>
-               <Col xs={10}>
-                   <h3>Current Ranking Status: 1 out of 200</h3>
-               </Col>
-           </Row>
-
-           <Row>
-               <Col></Col>
-               <Col xs={10}>
-                   <h3>To make a prediction, please go to Homepage</h3>
-               </Col>
-           </Row>
-       </Container>
-
-
-
+        <Container>
+            <Row>
+            <Col xs={12}>
+                <h3>{this.state.loggedInUser.screenname}'s Profile</h3>
+            </Col>
+        </Row>
+            <Row>
+            <Col xs={12}>
+        <Avatar imageUrl={this.state.loggedInUser.avatar} />
+        </Col>
+        </Row>
+        <Row>
+            <Col xs={12}>
+                <h3>Current Rank: #{this.state.rank}</h3>
+            </Col>
+        </Row>
+        <Row>
+            <Col xs={12}>
+            <h4>{this.state.correctCount} Correct Predictions</h4>
+            </Col>
+        </Row>
+        <Row>
+            <Col xs={12}>
+            <h4> {this.state.incorrectCount} Incorrect Predictions</h4>
+            </Col>
+        </Row>
+    </Container>
       </div>
-
   );
+}
 }
 
 export default Profile;

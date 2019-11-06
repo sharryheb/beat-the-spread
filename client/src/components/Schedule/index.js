@@ -1,5 +1,4 @@
 import React from "react";
-// import 'bootstrap/dist/css/bootstrap.min.css';
 import { Table, DropdownButton, Dropdown, Card } from 'react-bootstrap';
 import gamesAPI from "../../utils/gamesAPI"
 import usersAPI from "../../utils/usersAPI"
