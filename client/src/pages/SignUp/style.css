@@ -1,4 +1,17 @@
-h2{
-    color: darkblue;
+.SignUp{
+    
+    background-image: url("https://www.desktopbackground.org/p/2014/12/10/868910_nfl-event-poster_4791x4222_h.jpg");
+    /* background-repeat:no-repeat; */
+    height:180vh;
+    background-position: center;
+    background-size: cover;  
  
 }
+Label{
+    color:orange;
+}
+
+h5{
+    color: white;
+}
+

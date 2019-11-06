@@ -3,9 +3,14 @@
     margin-right: auto;
     margin-left: auto;
 }
+p{
+    color:white;
+}
 
-h2{
-    color: darkblue;
+
+
+h5{
+    color:white;
     margin-right: auto;
     margin-left: auto;
 }
@@ -19,4 +24,13 @@ Form{
 #sign {
     text-align:center;
     font-display: bold;
+}
+.SignIn{
+    
+    background-image: url("https://www.desktopbackground.org/p/2014/12/10/868910_nfl-event-poster_4791x4222_h.jpg");
+    background-repeat:no-repeat;
+    height:100vh;
+    background-position: center;
+    background-size: cover;  
+ 
 }

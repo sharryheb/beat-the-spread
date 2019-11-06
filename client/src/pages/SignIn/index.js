@@ -46,28 +46,28 @@ function SignIn() {
                     </Form.Group>
                 </Col>
                 <Col>
-                <Button href="/Profile" variant="primary" type="submit">
+                <Button href="/Profile" variant="warning" type="submit">
                  Log In
                  </Button>
                 </Col>
 
 
-             <Form.Row>
+                <Col md={10}>
                 <h5>Forgot your password?</h5>
-                <Button variant="primary" type="submit">
+                <Button variant="warning" type="submit">
                  Reset Password
                  </Button>
-             </Form.Row>
+                 </Col>
             </Row>
             <p>---------------------OR--------------------</p>
             <Row>
 
             </Row>
             <Row>
-                
+            
                 <Col md={8}>
                 <h5>First Time? </h5>
-                <Button variant="primary" href="/SignUp">
+                <Button variant="warning" href="/SignUp">
                 Create an account
                  </Button>
                  </Col>
