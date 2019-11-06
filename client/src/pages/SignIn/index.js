@@ -36,7 +36,6 @@ class SignIn extends Component {
         authAPI.loginUser(this.state)
             .then(response => {
                 let logInSuccessOrErrorMsgCookieObj = cookies.get('logInSuccessOrErrorMsg');
-                console.log(logInSuccessOrErrorMsgCookieObj);
                 if(response.data && logInSuccessOrErrorMsgCookieObj.success) {
                     this.props.history.push('/');
                 } else {
@@ -55,23 +54,23 @@ class SignIn extends Component {
     }
 
     render() {
-        let successOrFailureMsg;
-        console.log(this.state.errorOrSuccessMsg);
 
-        if(this.state.errorOrSuccessMsg.successMsg) {
-            successOrFailureMsg = <p>Success</p>;
-        } else if (this.state.errorOrSuccessMsg.failMsg) {
-            successOrFailureMsg = <p>Fail</p>;
+        const registerSuccess =  cookies.get('registerSuccess');
+        const failMsg = this.state.errorOrSuccessMsg.failMsg;
+        let successOrErrorMsg;
+
+        if(registerSuccess) {
+            successOrErrorMsg = <p style={{color: 'green'}}>{registerSuccess}</p>;
+        } else if(failMsg) {
+            successOrErrorMsg = <p style={{color: 'green'}}>{failMsg}</p>;
         }
-
+        
         return (
 
             <div className="SignIn">
             <Navme />
             <p id="sign">Sign In</p>
-            {successOrFailureMsg}
-            {(this.state.errorOrSuccessMsg.failMsg === 'undefined') && <p>{successOrFailureMsg}</p>}
-            {(this.state.errorOrSuccessMsg.success === 'undefined') && <p>{successOrFailureMsg}</p>}
+            {successOrErrorMsg}
 
             <Form style={{ width: '18rem' }}>
                     <Form.Group controlId="formBasicEmail">
