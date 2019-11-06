@@ -50,7 +50,7 @@ render()
 {
   return (
       <div className="Profile text-center">
-       <Navme />
+       {/* <Navme /> */}
 
         <Container>
             <Row>

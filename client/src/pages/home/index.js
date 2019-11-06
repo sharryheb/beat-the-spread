@@ -18,11 +18,11 @@ render()
 // Use this to get object of user data
     var userCookie = cookies.get('logInSuccessOrErrorMsg');
     console.log("userCookie", userCookie);
-    var userLoggedIn =  (userCookie.success) ? true : false;
+    var userLoggedIn =  (userCookie && userCookie.success) ? true : false;
     return (
-      <div className="Home">
-       <Navme />
-       <Card className="fs">
+      <div className="Home m-0 p-0 w-100">
+       {/* <Navme user={userLoggedIn} /> */}
+       <Card className="fs" user={userLoggedIn ? userCookie : null}>
             <Card.Body className="p-0">
                 <Card.Title><h3>Fan Standings Leaderboard</h3></Card.Title>
                     <Table  striped bordered className="mb-0">
@@ -40,7 +40,7 @@ render()
             </Card.Body>
         </Card>
         {((userLoggedIn) ?
-            (<Schedule />)
+            (<Schedule user={userLoggedIn} />)
         :
             (<h3 className="m-3">Log in to start playing!</h3>))}
       </div>

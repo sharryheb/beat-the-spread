@@ -48,19 +48,19 @@ class SignUp extends Component {
 
     render() {
         return (
-            <div className="SignUp">
-                <Navme />
+            <div className="SignUp m-0 p-0 w-100">
+                {/* <Navme /> */}
                 <Container>
             <Row>
             <Col md={{ span: 5, offset: 2 }}>
              <h2> Create a New Account</h2>
-             
+
         <Form>
              <Form.Group as={Col}>
              <p style={{ color: 'orange' }}>Sign up for a user account to start making a game bet!</p>
              {this.state.errorOrSuccessMsg && <p style={{ color: 'green' }}>{this.state.errorOrSuccessMsg}</p>}
              </Form.Group>
-             
+
              <Form.Group as={Col}>
              <Form.Label>Username</Form.Label>
              <Form.Control type="text" placeholder="Enter a username" name="screenname" onChange={this.handleChange} />
@@ -77,7 +77,7 @@ class SignUp extends Component {
              </Form.Group>
 
              <Form.Group as={Col}>
-                 
+
              <h3> NFL Football Team Code List</h3>
              <Dropdown>
                  <Dropdown.Toggle variant="success" id="dropdown-light">
@@ -94,7 +94,7 @@ class SignUp extends Component {
                      <Dropdown.Item href="#/action-6">Chicago Bears (CHI)</Dropdown.Item>
                      <Dropdown.Item href="#/action-7">Cincinnati Bengals (CIN)</Dropdown.Item>
                      <Dropdown.Item href="#/action-8">Cleveland Browns (CLE)</Dropdown.Item>
-                     <Dropdown.Item href="#/action-9">Dallas Cowboys (DAL)</Dropdown.Item>                   
+                     <Dropdown.Item href="#/action-9">Dallas Cowboys (DAL)</Dropdown.Item>
                      <Dropdown.Item href="#/action-10">Denver Broncos (DEN)</Dropdown.Item>
                      <Dropdown.Item href="#/action-11">Detroit Lions (DET)</Dropdown.Item>
                      <Dropdown.Item href="#/action-12">Green Bay Packers (GB)</Dropdown.Item>
@@ -147,7 +147,7 @@ class SignUp extends Component {
                  Sign Up
              </Button>
              </Form.Group>
-             
+
 
              <Form.Group as={Col}>
                 <h5>Already have an account?</h5>
@@ -159,7 +159,7 @@ class SignUp extends Component {
                  </Button>
              </Form.Group>
 
-             
+
          </Form>
          </Col>
 

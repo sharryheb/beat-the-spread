@@ -18,18 +18,9 @@ Form{
     margin-left:auto;
     margin-right: auto;
     margin-top: 5%;
-    
+
 }
 #sign {
     width:90%;
     font-display: bold;
-}
-.SignIn{
-    
-    background-image: url("https://www.desktopbackground.org/p/2014/12/10/868910_nfl-event-poster_4791x4222_h.jpg");
-    background-repeat:no-repeat;
-    height:100vh;
-    background-position: center;
-    background-size: cover;  
- 
 }
