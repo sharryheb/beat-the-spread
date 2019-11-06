@@ -69,7 +69,9 @@ class SignIn extends Component {
 
             <div className="SignIn">
             <Navme />
-            <p id="sign">Sign In</p>
+
+            <h2 id="sign">Sign In</h2>
+
             {successOrErrorMsg}
 
             <Form style={{ width: '18rem' }}>
@@ -91,20 +93,20 @@ class SignIn extends Component {
                         </Col>
                         <Col>
 
-                            <Button variant="primary" type="submit" onClick={this.onSubmit}>
-                                Sign in
+                            <Button variant="warning" type="submit" onClick={this.onSubmit}>
+                                Log In
                             </Button>
                         </Col>
-                    </Row>
+                    
 
-                    <Form.Row>
+                    <Col md={10}>
                         <h5>Forgot your password?</h5>
-                        <Button variant="primary" type="submit">
+                        <Button variant="warning" type="submit">
                         Reset Password
                         </Button>
-                    </Form.Row>
-
-                    <p>---------------------OR--------------------</p>
+                    </Col>
+                    </Row>
+                    <p style={{color:'white'}}>---------------------OR--------------------</p>
                     <Row>
 
                     </Row>
@@ -112,7 +114,7 @@ class SignIn extends Component {
 
                         <Col md={8}>
                         <h5>First Time? </h5>
-                        <Button variant="primary" href="/SignUp">
+                        <Button variant="warning" href="/SignUp">
                         Create an account
                         </Button>
                         </Col>
