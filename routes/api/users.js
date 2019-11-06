@@ -7,9 +7,8 @@ const userController = require("../../controllers/userController");
     .get(userController.getAll)
     .post(userController.save)
 
-    // Matches with "/api/teams/:key" (where key=<3 character team code>, such as "SEA")
-    // router
-    // .route("/:screenname")
-    // .get(userController.getByScreenname)
+    // Matches with "/api/users/:screenname"
+    router.route("/:screenname")
+    .get(userController.getByScreenname)
 
 module.exports = router;

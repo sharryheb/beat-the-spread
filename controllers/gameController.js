@@ -65,9 +65,23 @@ module.exports = {
         .then(dbModel => res.json(dbModel))
         .catch(err => res.status(422).json(err));
     },
+    getWeeks: function(req, res) {
+        db.Game
+        .findAll({
+            attributes: [[db.Sequelize.fn('DISTINCT', db.Sequelize.col('weekNumber')), 'weekNumber']]
+        })
+        .then((dbModel) =>
+        {
+            res.json(dbModel);
+        })
+        .catch((err) =>
+        {
+            console.log("getWeeks failed");
+            console.log(err);
+            res.status(422).json(err)
+        });
+    },
     getAllForWeek: function(req, res) {
-        console.log("getAllForWeek weekNumber: ");
-        console.log(req.params.weekNumber);
         db.sequelize.query(`select g.id as id,
         g.gameTime,
 	    tH.Key as homeTeamCode,
@@ -81,13 +95,15 @@ module.exports = {
         tA.FullName as awayFullName,
         tA.WikipediaLogoUrl as awayLogoUrl,
         tA.WikipediaWordMarkUrl as awayWordMarkUrl,
-        g.preGameSpread, g.favoredTeamCode
+        g.preGameSpread,
+        g.favoredTeamCode,
+        g.homeTeamScore,
+        g.awayTeamScore,
+        g.spreadCovered
             from games g
                 join teams tH on g.homeTeamCode=tH.Key
                 join teams tA on g.awayTeamCode=tA.Key
             where weekNumber=${req.params.weekNumber}`)
-        // db.Game
-        //   .find({weekNumber: req.params.weekNumber })
         .then(dbModel => res.json(dbModel))
         .catch(err => res.status(422).json(err));
     },
@@ -137,6 +153,7 @@ module.exports = {
 
         var lastUpdate;
 
+        console.log("updateGames.... ")
         if (!force) // if user is not forcing, let's see if it's been more than 1 day since last update.
         {
             db.Game.findAll({order: [['updatedAt', 'desc']], attributes: ['updatedAt']})
@@ -152,20 +169,15 @@ module.exports = {
         {
             console.log("FORCING UPDATES");
             axios.get("https://api.sportsdata.io/v3/nfl/scores/json/Scores/2019?key=" + process.env.API_KEY_SDIO)
-            .then(function(req, res)
+            .then(function(res)
             {
-                Promise.all(doUpdateGames(res.data[0]))
-                .then(function(req, res)
-                {
-                    console.log("SENDING SUCCESS");
-                    res.send("Success");
-                });
+                Promise.all(doUpdateGames(res.data))
+                .catch(err => console.log(err));
             })
             .catch(err => res.send(err));
         }
         else
         {
-            console.log("NO UPDATES, SENDING SUCCESS");
             res.send("Success");
         }
     }

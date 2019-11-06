@@ -5,8 +5,8 @@ export default
     getUsers: function() {
         return axios.get("/api/users");
     },
-    getUser: function(id) {
-        return axios.get("/api/users/" + id);
+    getUser: function(screenname) {
+        return axios.get("/api/users/" + screenname);
     },
     deleteUser: function(id) {
         return axios.delete("/api/users/" + id);
