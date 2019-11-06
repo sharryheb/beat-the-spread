@@ -1,6 +1,6 @@
 import React from "react";
-import { Nav } from 'react-bootstrap';
 
+import { Nav } from 'react-bootstrap';
 import "./style.css";
 import authAPI from "../../utils/authAPI";
 
@@ -8,6 +8,7 @@ import authAPI from "../../utils/authAPI";
 function logOut(event) {
   event.preventDefault();
   authAPI.logOut();
+  window.location.pathname = '/SignIn';
 }
 
 function Navme() {
