@@ -12,6 +12,7 @@ import Cookies from 'universal-cookie';
 const cookies = new Cookies();
 
 
+
 // MATT:
 // I have no idea if the following method (onSubmit) works, but this should be how you
 // login a user - should call "loginUser" on the "authAPI" client-side file,
@@ -35,20 +36,8 @@ class SignIn extends Component {
         authAPI.loginUser(this.state)
             .then(response => {
                 let logInSuccessOrErrorMsgCookieObj = cookies.get('logInSuccessOrErrorMsg');
-                console.log(logInSuccessOrErrorMsgCookieObj);
                 if(response.data && logInSuccessOrErrorMsgCookieObj.success) {
-                    this.setState({
-                        errorOrSuccessMsg: {
-                            successMsg: logInSuccessOrErrorMsgCookieObj.success.message,
-                            userInfo: {
-                                email: logInSuccessOrErrorMsgCookieObj.success.email,
-                                screename: logInSuccessOrErrorMsgCookieObj.success.screenname,
-                                avatar: logInSuccessOrErrorMsgCookieObj.success.avatar,
-                                favoriteTeamCode: logInSuccessOrErrorMsgCookieObj.favoriteTeamCode
-                            }
-                        },
-                        password: ''
-                    });
+                    this.props.history.push('/');
                 } else {
                     this.setState({
                         errorOrSuccessMsg: {
@@ -65,23 +54,25 @@ class SignIn extends Component {
     }
 
     render() {
-        let successOrFailureMsg;
-        console.log(this.state.errorOrSuccessMsg);
 
-        if(this.state.errorOrSuccessMsg.successMsg) {
-            successOrFailureMsg = <p>Success</p>;
-        } else if (this.state.errorOrSuccessMsg.failMsg) {
-            successOrFailureMsg = <p>Fail</p>;
+        const registerSuccess =  cookies.get('registerSuccess');
+        const failMsg = this.state.errorOrSuccessMsg.failMsg;
+        let successOrErrorMsg;
+
+        if(registerSuccess) {
+            successOrErrorMsg = <p style={{color: 'green'}}>{registerSuccess}</p>;
+        } else if(failMsg) {
+            successOrErrorMsg = <p style={{color: 'green'}}>{failMsg}</p>;
         }
-
+        
         return (
 
             <div className="SignIn">
             <Navme />
+
             <h2 id="sign">Sign In</h2>
-            {successOrFailureMsg}
-            {(this.state.errorOrSuccessMsg.failMsg === 'undefined') && <p>{successOrFailureMsg}</p>}
-            {(this.state.errorOrSuccessMsg.success === 'undefined') && <p>{successOrFailureMsg}</p>}
+
+            {successOrErrorMsg}
 
             <Form style={{ width: '18rem' }}>
                     <Form.Group controlId="formBasicEmail">

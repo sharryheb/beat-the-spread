@@ -33,9 +33,7 @@ class SignUp extends Component {
         authAPI.registerUser(this.state)
             .then(response => {
                 if(response.data && cookies.get('registerSuccess')) {
-                    this.setState({
-                        errorOrSuccessMsg: cookies.get('registerSuccess')
-                    });
+                    this.props.history.push('/SignIn');
                 } else {
                     this.setState({
                         errorOrSuccessMsg: cookies.get('registerFail')
