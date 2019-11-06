@@ -36,8 +36,7 @@ class Schedule extends React.Component
     getGames = () =>
     {
         // SET force = 1 IF YOU WANT TO FORCE THE SPREADS/SCORES OF GAMES TO UPDATE
-        var force = 0;  // 0 means ONLY update games if it's been more than 24 hours since last update
-        console.log("in getGames");
+        var force = 1;  // 0 means ONLY update games if it's been more than 24 hours since last update
         gamesAPI.updateGames(force)
         .then((req, res) =>
         {

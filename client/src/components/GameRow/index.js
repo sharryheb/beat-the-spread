@@ -20,7 +20,7 @@ class GameRow extends React.Component
         var gameTime = new Date(this.props.game.gameTime).toLocaleString();
         return (
             <tr className="p0">
-            <td>{gameTime}<br/>gameId: {this.props.game.id}</td>
+            <td>{gameTime}</td>
             <td>
                 <div className="d-flex flex-column align-items-center">
                 <Image src={this.props.game.awayLogoUrl} className="imgSize" />
