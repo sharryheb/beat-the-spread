@@ -56,9 +56,13 @@ class SignUp extends Component {
             <Row>
             <Col md={{ span: 5, offset: 2 }}>
              <h2> Create a New Account</h2>
-             <p style={{ color: 'blue' }}>Sign up for a user account to start making a game bet!</p>
-             {this.state.errorOrSuccessMsg && <p style={{ color: 'green' }}>{this.state.errorOrSuccessMsg}</p>}
+             
         <Form>
+             <Form.Group as={Col}>
+             <p style={{ color: 'orange' }}>Sign up for a user account to start making a game bet!</p>
+             {this.state.errorOrSuccessMsg && <p style={{ color: 'green' }}>{this.state.errorOrSuccessMsg}</p>}
+             </Form.Group>
+             
              <Form.Group as={Col}>
              <Form.Label>Username</Form.Label>
              <Form.Control type="text" placeholder="Enter a username" name="screenname" onChange={this.handleChange} />
@@ -133,29 +137,31 @@ class SignUp extends Component {
              <Form.Control type="password" placeholder="Re-type your password" />
              </Form.Group>
 
+             <Form.Group as={Col} controlId="formGridRecaptcha">
              <Form.Label>Please verify you are a human.</Form.Label>
              <ReCAPTCHA
                 sitekey={process.env.REACT_APP_GOOGLE_RECAPTCHA_SITE_KEY}
             />
+            </Form.Group>
 
+            <Form.Group as={Col} controlId="formGridSubmit">
              <Button variant="primary" type="submit" onClick={this.handleSubmitToSaveUser}>
                  Sign Up
              </Button>
+             </Form.Group>
              
 
-             <Form.Row>
+             <Form.Group as={Col}>
                 <h5>Already have an account?</h5>
+            </Form.Group>
+
+            <Form.Group as={Col}>
                 <Button href="/SignIn" variant="primary" type="submit">
                  Log In
                  </Button>
-             </Form.Row>
+             </Form.Group>
 
-             <Form.Row>
-                <h5>Forgot Password?</h5>
-                <Button variant="primary" type="submit">
-                 Reset your password
-                 </Button>
-             </Form.Row>
+             
          </Form>
          </Col>
 
