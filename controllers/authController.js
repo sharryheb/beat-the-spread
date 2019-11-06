@@ -7,6 +7,9 @@ let cookieOptions = require('../authentication/cookie-options');
 module.exports = {
 
   logOut: (req, res) => {
+    res.clearCookie('registerFail');
+    res.clearCookie('registerSuccess');
+    res.clearCookie('logInSuccessOrErrorMsg');
     req.logOut();
     res.redirect('/');
   },
