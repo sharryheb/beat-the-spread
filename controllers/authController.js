@@ -11,7 +11,7 @@ module.exports = {
     res.clearCookie('registerSuccess');
     res.clearCookie('logInSuccessOrErrorMsg');
     req.logOut();
-    res.redirect('/');
+    res.redirect('/SignIn');
   },
 
   loginUser: (req, res, next) => {

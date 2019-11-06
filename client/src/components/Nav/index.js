@@ -10,8 +10,6 @@ function logOut(event) {
   authAPI.logOut();
 }
 
-
-
 function Navme() {
     return (
       <Nav className="topbar" defaultActiveKey="/" as="ul">
