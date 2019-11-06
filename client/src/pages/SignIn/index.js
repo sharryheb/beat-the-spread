@@ -78,7 +78,7 @@ class SignIn extends Component {
 
             <div className="SignIn">
             <Navme />
-            <p id="sign">Sign In</p>
+            <h2 id="sign">Sign In</h2>
             {successOrFailureMsg}
             {(this.state.errorOrSuccessMsg.failMsg === 'undefined') && <p>{successOrFailureMsg}</p>}
             {(this.state.errorOrSuccessMsg.success === 'undefined') && <p>{successOrFailureMsg}</p>}
@@ -115,7 +115,7 @@ class SignIn extends Component {
                         </Button>
                     </Col>
                     </Row>
-                    <p>---------------------OR--------------------</p>
+                    <p style={{color:'white'}}>---------------------OR--------------------</p>
                     <Row>
 
                     </Row>
