@@ -2,20 +2,15 @@ import React from "react";
 import { Nav } from 'react-bootstrap';
 
 import "./style.css";
+import authAPI from "../../utils/authAPI";
 
-import Cookies from 'universal-cookie';
-const cookies = new Cookies();
 
-const logInSuccessOrErrorMsgCookieObj = cookies.get('logInSuccessOrErrorMsg');
-let logOutNav;
-
-if(logInSuccessOrErrorMsgCookieObj.success) {
-  logOutNav = (
-    <Nav.Item as="li">
-      <Nav.Link className="topitems" href="/SignOut">Log Out</Nav.Link>
-    </Nav.Item>
-  );
+function logOut(event) {
+  event.preventDefault();
+  authAPI.logOut();
 }
+
+
 
 function Navme() {
     return (
@@ -29,7 +24,9 @@ function Navme() {
         <Nav.Item as="li">
           <Nav.Link className="topitems" href="/SignIn">Log In</Nav.Link>
         </Nav.Item>
-        {logOutNav}
+        <Nav.Item as="li">
+          <Nav.Link className="topitems" href="/SignOut" onClick={logOut}>Log Out</Nav.Link>
+        </Nav.Item>
         <Nav.Item as="li">
           <Nav.Link className="topitems" href="/about">About</Nav.Link>
         </Nav.Item>

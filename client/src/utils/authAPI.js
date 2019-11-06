@@ -6,7 +6,7 @@ export default {
         return axios.post("/api/auth/loginUser", authData);
     },
     logOut: function() {
-        return axios.get("/api/auth/logoutUser");
+        return axios.get("/api/sign-out");
     },
     registerUser: function(authData) {
         return axios.post("/api/auth/registerUser", authData);
