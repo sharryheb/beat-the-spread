@@ -21,7 +21,7 @@ module.exports = {
         res.clearCookie('registerFail');
         res.clearCookie('registerSuccess');
         res.clearCookie('logInSuccessOrErrorMsg');
-        res.cookie('logInSuccessOrErrorMsg', logInSuccessOrErrorMsg, cookieOptions);
+        res.cookie('logInSuccessOrErrorMsg', logInSuccessOrErrorMsg, cookieOptions).send('Login failure');
       } else {
         console.log('user: ', user);
         if(err) {
@@ -32,13 +32,13 @@ module.exports = {
           res.clearCookie('registerFail');
           res.clearCookie('registerSuccess');
           res.clearCookie('logInSuccessOrErrorMsg');
-          res.cookie('logInSuccessOrErrorMsg', logInSuccessOrErrorMsg, cookieOptions);
+          res.cookie('logInSuccessOrErrorMsg', logInSuccessOrErrorMsg, cookieOptions).send('Login failure');
         }
         if(info !== undefined) {
           res.clearCookie('registerFail');
           res.clearCookie('registerSuccess');
           res.clearCookie('logInSuccessOrErrorMsg');
-          res.cookie('logInSuccessOrErrorMsg', logInSuccessOrErrorMsg, cookieOptions);
+          res.cookie('logInSuccessOrErrorMsg', logInSuccessOrErrorMsg, cookieOptions).send('Login failure');
         } else {
           req.logIn(user, err => {
             db.User.findOne({
@@ -58,7 +58,7 @@ module.exports = {
               res.clearCookie('registerFail');
               res.clearCookie('registerSuccess');
               res.clearCookie('logInSuccessOrErrorMsg');
-              res.cookie('logInSuccessOrErrorMsg', logInSuccessOrErrorMsg, cookieOptions);
+              res.cookie('logInSuccessOrErrorMsg', logInSuccessOrErrorMsg, cookieOptions).send('Login success');
             });
           });
         }
@@ -73,7 +73,7 @@ module.exports = {
         res.clearCookie('registerFail');
         res.clearCookie('registerSuccess');
         res.clearCookie('logInSuccessOrErrorMsg');
-        res.cookie('registerFail', registerSuccessOrErrorMsg, cookieOptions);
+        res.cookie('registerFail', registerSuccessOrErrorMsg, cookieOptions).send('Register failure');
       } else {
         if(err) {
           console.log(err);
@@ -93,11 +93,11 @@ module.exports = {
                 email: data.email
               },
             }).then(() => {
-              registerSuccessOrErrorMsg = 'New accout created. Please login';
+              registerSuccessOrErrorMsg = 'New accout created. Please login.';
               res.clearCookie('registerFail');
               res.clearCookie('registerSuccess');
               res.clearCookie('logInSuccessOrErrorMsg');
-              res.cookie('registerSuccess', registerSuccessOrErrorMsg, cookieOptions);
+              res.cookie('registerSuccess', registerSuccessOrErrorMsg, cookieOptions).send('Registration success!');
             });
           });
         }
