@@ -53,6 +53,41 @@ function g_saveBulk(games) {
         {
             where: { homeTeamCode: game.homeTeamCode, awayTeamCode: game.awayTeamCode }
         })
+        .then(() =>
+        {
+            // find gameId of the game just updated
+            db.Game.findAll({where: { homeTeamCode: game.homeTeamCode, awayTeamCode: game.awayTeamCode }})
+            .then((dbModelCurrentGame) =>
+            {
+                var currentGame = dbModelCurrentGame[0].dataValues;
+                var currentGameId = currentGame.id;
+                // find all predictions with that gameId
+                db.Prediction.findAll({where: {GameId: currentGameId}})
+                .then((dbModelPredictionsForGame) =>
+                {
+                    for (prediction of dbModelPredictionsForGame)
+                    {
+                        var currentPrediction = prediction.dataValues;
+                        var predictionCorrect = 0;
+                        console.log("************ processing prediction ****************")
+                        console.log("currentGame.spreadCovered: " + currentGame.spreadCovered);
+                        console.log("currentPrediction.preGamePrediction: " + currentPrediction.preGamePrediction);
+                        if ( // spreadCovered && agreed with prediction, user's prediction was correct
+                            // OR spread NOT covered && disagreed with prediction, user's prediction was correct
+                            (currentGame.spreadCovered && currentPrediction.preGamePrediction) ||
+                            (!currentGame.spreadCovered && !currentPrediction.preGamePrediction))
+                            {
+                                console.log("setting predictionCorrect to 1");
+                                predictionCorrect = 1;
+                            }
+                        promises.push(
+                            db.Prediction
+                            .update({predictionCorrect: predictionCorrect},{where: { GameId: currentGameId }})
+                            .catch(err => console.log(err)));
+                    }
+                })
+            });
+        })
         .catch(err => console.log(err)));
     }
     return promises;
@@ -76,8 +111,6 @@ module.exports = {
         })
         .catch((err) =>
         {
-            console.log("getWeeks failed");
-            console.log(err);
             res.status(422).json(err)
         });
     },
@@ -153,7 +186,6 @@ module.exports = {
 
         var lastUpdate;
 
-        console.log("updateGames.... ")
         if (!force) // if user is not forcing, let's see if it's been more than 1 day since last update.
         {
             db.Game.findAll({order: [['updatedAt', 'desc']], attributes: ['updatedAt']})
@@ -175,6 +207,7 @@ module.exports = {
                 .catch(err => console.log(err));
             })
             .catch(err => res.send(err));
+            res.send("Success");
         }
         else
         {

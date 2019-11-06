@@ -5,10 +5,8 @@ import GameRow from "../GameRow"
 
 import "./style.css";
 
-// class GameHeader extends React.Component
 const GameHeader = (props) =>
 {
-    console.log("props: ", props);
     return (
         <Table striped bordered>
             <thead>
@@ -20,7 +18,6 @@ const GameHeader = (props) =>
                 <th>Prediction</th>
                 </tr>
             </thead>
-
             <tbody>
             {
                 props.games && props.games.length ? (
@@ -36,6 +33,5 @@ const GameHeader = (props) =>
             </tbody>
         </Table>
     );
-
 }
 export default GameHeader;
