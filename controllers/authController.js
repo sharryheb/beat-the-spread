@@ -7,8 +7,11 @@ let cookieOptions = require('../authentication/cookie-options');
 module.exports = {
 
   logOut: (req, res) => {
+    res.clearCookie('registerFail');
+    res.clearCookie('registerSuccess');
+    res.clearCookie('logInSuccessOrErrorMsg');
     req.logOut();
-    res.redirect('/');
+    res.redirect('/SignIn');
   },
 
   loginUser: (req, res, next) => {
@@ -93,7 +96,7 @@ module.exports = {
                 email: data.email
               },
             }).then(() => {
-              registerSuccessOrErrorMsg = 'New accout created';
+              registerSuccessOrErrorMsg = 'New accout created. Please login.';
               res.clearCookie('registerFail');
               res.clearCookie('registerSuccess');
               res.clearCookie('logInSuccessOrErrorMsg');
