@@ -80,7 +80,7 @@ class SignUp extends Component {
 
              <Form.Group as={Col}>
                  
-             <h3>List of NFL Football Team Codes</h3>
+             <h3> NFL Football Team Code List</h3>
              <Dropdown>
                  <Dropdown.Toggle variant="success" id="dropdown-light">
                      Select
@@ -90,37 +90,37 @@ class SignUp extends Component {
 
                      <Dropdown.Item href="#/action-1">Arizona Cardinals (ARI)</Dropdown.Item>
                      <Dropdown.Item href="#/action-2">Atlanta Falcons (ATL)</Dropdown.Item>
-                     <Dropdown.Item href="#/action-3">Baltimore Ravens(BAL)</Dropdown.Item>
-                     <Dropdown.Item href="#/action-4">Buffalo Bills(BUF)</Dropdown.Item>
-                     <Dropdown.Item href="#/action-5">Carolina Panthers(CAR)</Dropdown.Item>
-                     <Dropdown.Item href="#/action-6">Chicago Bears(CHI)</Dropdown.Item>
-                     <Dropdown.Item href="#/action-7">Cincinnati Bengals(CIN)</Dropdown.Item>
-                     <Dropdown.Item href="#/action-8">Cleveland Browns(CLE)</Dropdown.Item>
-                     <Dropdown.Item href="#/action-9">Dallas Cowboys(DAL)</Dropdown.Item>                   
-                     <Dropdown.Item href="#/action-10">Denver Broncos(DEN)</Dropdown.Item>
-                     <Dropdown.Item href="#/action-11">Detroit Lions(DET)</Dropdown.Item>
-                     <Dropdown.Item href="#/action-12">Green Bay Packers(GB)</Dropdown.Item>
-                     <Dropdown.Item href="#/action-13">Houston Texans(HOU)</Dropdown.Item>
-                     <Dropdown.Item href="#/action-14">Indianapolis Colts(IND)</Dropdown.Item>
-                     <Dropdown.Item href="#/action-15">Jacksonville Jaguars(JAX)</Dropdown.Item>
-                     <Dropdown.Item href="#/action-16">Kansas City Chiefs(KC)</Dropdown.Item>
-                     <Dropdown.Item href="#/action-17">Los Angeles Chargers(LAC)</Dropdown.Item>
-                     <Dropdown.Item href="#/action-18">Los Angeles Rams(LAR)</Dropdown.Item>
-                     <Dropdown.Item href="#/action-19">Miami Dolphins(MIA)</Dropdown.Item>
-                     <Dropdown.Item href="#/action-20">Minnesota Vikings(MIN)</Dropdown.Item>
-                     <Dropdown.Item href="#/action-21">New England Patriots(NE)</Dropdown.Item>
-                     <Dropdown.Item href="#/action-22">New Orleans Saints(NO)</Dropdown.Item>
-                     <Dropdown.Item href="#/action-23">New York Giants(NYG)</Dropdown.Item>
+                     <Dropdown.Item href="#/action-3">Baltimore Ravens (BAL)</Dropdown.Item>
+                     <Dropdown.Item href="#/action-4">Buffalo Bills (BUF)</Dropdown.Item>
+                     <Dropdown.Item href="#/action-5">Carolina Panthers (CAR)</Dropdown.Item>
+                     <Dropdown.Item href="#/action-6">Chicago Bears (CHI)</Dropdown.Item>
+                     <Dropdown.Item href="#/action-7">Cincinnati Bengals (CIN)</Dropdown.Item>
+                     <Dropdown.Item href="#/action-8">Cleveland Browns (CLE)</Dropdown.Item>
+                     <Dropdown.Item href="#/action-9">Dallas Cowboys (DAL)</Dropdown.Item>                   
+                     <Dropdown.Item href="#/action-10">Denver Broncos (DEN)</Dropdown.Item>
+                     <Dropdown.Item href="#/action-11">Detroit Lions (DET)</Dropdown.Item>
+                     <Dropdown.Item href="#/action-12">Green Bay Packers (GB)</Dropdown.Item>
+                     <Dropdown.Item href="#/action-13">Houston Texans (HOU)</Dropdown.Item>
+                     <Dropdown.Item href="#/action-14">Indianapolis Colts (IND)</Dropdown.Item>
+                     <Dropdown.Item href="#/action-15">Jacksonville Jaguars (JAX)</Dropdown.Item>
+                     <Dropdown.Item href="#/action-16">Kansas City Chiefs (KC)</Dropdown.Item>
+                     <Dropdown.Item href="#/action-17">Los Angeles Chargers (LAC)</Dropdown.Item>
+                     <Dropdown.Item href="#/action-18">Los Angeles Rams (LAR)</Dropdown.Item>
+                     <Dropdown.Item href="#/action-19">Miami Dolphins (MIA)</Dropdown.Item>
+                     <Dropdown.Item href="#/action-20">Minnesota Vikings (MIN)</Dropdown.Item>
+                     <Dropdown.Item href="#/action-21">New England Patriots (NE)</Dropdown.Item>
+                     <Dropdown.Item href="#/action-22">New Orleans Saints (NO)</Dropdown.Item>
+                     <Dropdown.Item href="#/action-23">New York Giants (NYG)</Dropdown.Item>
                      <Dropdown.Item href="#/action-24">New York Jets (NYJ)</Dropdown.Item>
-                     <Dropdown.Item href="#/action-25">Oakland Raiders(OAK)</Dropdown.Item>
-                     <Dropdown.Item href="#/action-26">Philadelphia Eagles(PHI)</Dropdown.Item>
-                     <Dropdown.Item href="#/action-27">Pittsburgh Steelers(PIT)</Dropdown.Item>
+                     <Dropdown.Item href="#/action-25">Oakland Raiders (OAK)</Dropdown.Item>
+                     <Dropdown.Item href="#/action-26">Philadelphia Eagles (PHI)</Dropdown.Item>
+                     <Dropdown.Item href="#/action-27">Pittsburgh Steelers (PIT)</Dropdown.Item>
                      <Dropdown.Item href="#/action-28">Seattle Seahawks (SEA)</Dropdown.Item>
-                     <Dropdown.Item href="#/action-29">San Francisco 49ers(SF)</Dropdown.Item>
+                     <Dropdown.Item href="#/action-29">San Francisco 49ers (SF)</Dropdown.Item>
 
-                     <Dropdown.Item href="#/action-30">Tampa Bay Buccaneers(TB)</Dropdown.Item>
-                     <Dropdown.Item href="#/action-31">Tennessee Titans(TEN)</Dropdown.Item>
-                     <Dropdown.Item href="#/action-32">Washington Redskins(WAS)</Dropdown.Item>
+                     <Dropdown.Item href="#/action-30">Tampa Bay Buccaneers (TB)</Dropdown.Item>
+                     <Dropdown.Item href="#/action-31">Tennessee Titans (TEN)</Dropdown.Item>
+                     <Dropdown.Item href="#/action-32">Washington Redskins (WAS)</Dropdown.Item>
                  </Dropdown.Menu>
              </Dropdown>
              <Form.Label>Favorite Team (Code)</Form.Label>
