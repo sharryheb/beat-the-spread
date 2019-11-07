@@ -2,7 +2,6 @@ import React from "react";
 import { Table } from 'react-bootstrap';
 import GameRow from "../GameRow"
 
-
 import "./style.css";
 
 const GameHeader = (props) =>

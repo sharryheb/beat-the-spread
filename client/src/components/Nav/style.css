@@ -5,11 +5,45 @@
     padding:5px;
     border: 3px solid navy ;
     background-color: paleturquoise
-
+    
 }
 
 .topitems{
     font-weight: bold;
     margin-right: 50px;
     color:darkgreen;
+    font-size: 25px;
 }
+
+
+
+a.social:hover {
+    transform: translateY(-2px);
+  }
+  a.youtube {
+    color: #eb3223;
+    float: right;
+    margin-top:  8px;
+  }
+  
+  a.facebook {
+    color: #4968ad;
+    float: right;
+    padding-right: 20px;
+    margin-top:  8px;
+  }
+  a.twitter {
+    color: #49a1eb;
+    float: right;
+    padding-right: 20px;
+    margin-top:  8px;
+  }
+  
+  a.instagram {
+    color: black;
+    float: right;
+    padding-right: 20px;
+    margin-top:  8px;
+    margin-left:520px;
+  }
+  

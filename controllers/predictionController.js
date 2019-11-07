@@ -14,7 +14,8 @@ module.exports = {
 
                 from users u
                 join teams t on t.Key = u.favoriteTeamCode
-                order by totalCorrect DESC`
+                order by totalCorrect DESC
+                limit 5`
         )
       .then(dbModel => res.json(dbModel[0]))
       .catch(err => res.status(422).json(err));

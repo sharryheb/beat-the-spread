@@ -1,23 +1,13 @@
 import React, { Component } from "react";
-
-import Navme from "../../components/Nav";
-
 import { Form, Button, Row, Col } from 'react-bootstrap';
+import Cookies from 'universal-cookie';
 
 import authAPI from "../../utils/authAPI";
 
 import "./style.css";
 
-import Cookies from 'universal-cookie';
 const cookies = new Cookies();
 
-
-
-// MATT:
-// I have no idea if the following method (onSubmit) works, but this should be how you
-// login a user - should call "loginUser" on the "authAPI" client-side file,
-// which in turn will make an axios call to our server. look at the signUp to
-// see what I mean - I fixed that one up to be how it should work. Let me know if ??? -sharry
 class SignIn extends Component {
     state = {
         email: '',
@@ -64,70 +54,44 @@ class SignIn extends Component {
         } else if(failMsg) {
             successOrErrorMsg = <p style={{color: 'green'}}>{failMsg}</p>;
         }
-        
+
         return (
+            <div className="m-0 p-0 w-100">
+            <h2 id="sign" className="bg-white">Sign In</h2>
+            <h4>{successOrErrorMsg}</h4>
+            <Form style={{ width: '50vw' }}>
+                <Form.Group controlId="formBasicEmail">
+                    <Form.Control type="text" placeholder="Email" name="email" onChange={this.handleChange} />
+                </Form.Group>
 
-            <div className="SignIn">
-            <Navme />
+                <Form.Group controlId="formBasicPassword">
+                    <Form.Control type="password" placeholder="Password" name="password" onChange={this.handleChange} />
+                </Form.Group>
+                <Row>
+                    <Col>
+                        <Form.Group controlId="formBasicCheckbox">
+                            <Form.Check type="checkbox" label="Remember Me" />
+                        </Form.Group>
+                    </Col>
+                    <Col>
 
-            <h2 id="sign">Sign In</h2>
-
-            {successOrErrorMsg}
-
-            <Form style={{ width: '18rem' }}>
-                    <Form.Group controlId="formBasicEmail">
-
-                        <Form.Control type="text" placeholder="Email" name="email" onChange={this.handleChange} />
-
-                    </Form.Group>
-
-                    <Form.Group controlId="formBasicPassword">
-
-                        <Form.Control type="password" placeholder="Password" name="password" onChange={this.handleChange} />
-                    </Form.Group>
-                    <Row>
-                        <Col>
-                            <Form.Group controlId="formBasicCheckbox">
-                                <Form.Check type="checkbox" label="Remember Me" />
-                            </Form.Group>
-                        </Col>
-                        <Col>
-
-                            <Button variant="warning" type="submit" onClick={this.onSubmit}>
-                                Log In
-                            </Button>
-                        </Col>
-                    
-
-                    <Col md={10}>
-                        <h5>Forgot your password?</h5>
-                        <Button variant="warning" type="submit">
-                        Reset Password
+                        <Button variant="warning" type="submit" onClick={this.onSubmit}>
+                            Log In
                         </Button>
                     </Col>
                     </Row>
-                    <p style={{color:'white'}}>---------------------OR--------------------</p>
                     <Row>
-
-                    </Row>
-                    <Row>
-
-                        <Col md={8}>
+                    <Col md={6}>
+                        <h5>Forgot your password?</h5>
+                        <Button variant="warning" type="submit">Reset Password</Button>
+                    </Col>
+                    <Col md={6}>
                         <h5>First Time? </h5>
-                        <Button variant="warning" href="/SignUp">
-                        Create an account
-                        </Button>
-                        </Col>
-
-
-                    </Row>
-
-
+                        <Button variant="warning" href="/SignUp">Create an account</Button>
+                    </Col>
+                </Row>
             </Form>
-
-
             </div>
-
         );
     }
 }
