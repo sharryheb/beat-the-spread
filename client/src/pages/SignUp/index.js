@@ -16,7 +16,7 @@ class SignUp extends Component {
         screenname: '',
         email: '',
         avatar: '',
-        favoriteTeamCode: 'SEA',
+        favoriteTeamCode: '',
         errorOrSuccessMsg: ''
     };
 
@@ -120,7 +120,7 @@ class SignUp extends Component {
                  </Dropdown.Menu>
              </Dropdown>
              <Form.Label>Favorite Team (Code)</Form.Label>
-             <Form.Control type="text" placeholder="Favorite Team (Code)" name="favoriteTeamCode" defaultValue="SEA" />
+             <Form.Control type="text" placeholder="Favorite Team (Code)" name="favoriteTeamCode" onChange={this.handleChange} />
              </Form.Group>
 
              <Form.Group as={Col} controlId="formGridPassword">
