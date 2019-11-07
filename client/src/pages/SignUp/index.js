@@ -1,14 +1,13 @@
 import React from "react";
+import { Component } from "react";
 import ReCAPTCHA from "react-google-recaptcha";
-import Navme from "../../components/Nav";
+import Cookies from 'universal-cookie';
+import { Form, Button, Container, Row, Col, Dropdown } from 'react-bootstrap';
 
-import { Form, Button, Container, Row, Col, Dropdown/*, Image*/ } from 'react-bootstrap';
-import authAPI from "../../utils/authAPI";  // use this to get Team data from DB
+import authAPI from "../../utils/authAPI";
 
 import "./style.css";
-import { Component } from "react";
 
-import Cookies from 'universal-cookie';
 const cookies = new Cookies();
 
 class SignUp extends Component {
@@ -49,7 +48,6 @@ class SignUp extends Component {
     render() {
         return (
             <div className="SignUp m-0 p-0 w-100">
-                {/* <Navme /> */}
                 <Container>
             <Row>
             <Col md={{ span: 5, offset: 2 }}>

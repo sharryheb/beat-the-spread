@@ -1,28 +1,18 @@
 import React from "react";
 import { Table, Card } from 'react-bootstrap';
-import Cookies from 'universal-cookie';
-
-import Navme from "../../components/Nav";
 import FanStanding from "../../components/FanStanding";
 import Schedule from "../../components/Schedule";
 
 import "./style.css";
-
-const cookies = new Cookies();
 
 class Home extends React.Component
 {
 
 render()
 {
-// Use this to get object of user data
-    var userCookie = cookies.get('logInSuccessOrErrorMsg');
-    console.log("userCookie", userCookie);
-    var userLoggedIn =  (userCookie && userCookie.success) ? true : false;
     return (
       <div className="Home m-0 p-0 w-100">
-       {/* <Navme user={userLoggedIn} /> */}
-       <Card className="fs" user={userLoggedIn ? userCookie : null}>
+       <Card className="fs">
             <Card.Body className="p-0">
                 <Card.Title><h3>Fan Standings Leaderboard</h3></Card.Title>
                     <Table  striped bordered className="mb-0">
@@ -39,10 +29,10 @@ render()
                     </Table>
             </Card.Body>
         </Card>
-        {((userLoggedIn) ?
-            (<Schedule user={userLoggedIn} />)
+        {((this.props.user && this.props.user.success) ?
+            (<Schedule user={this.props.user} />)
         :
-            (<h3 className="m-3">Log in to start playing!</h3>))}
+            (<h3 className="text-center">Log in to start playing!</h3>))}
       </div>
   );
 }

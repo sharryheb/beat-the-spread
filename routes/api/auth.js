@@ -15,6 +15,7 @@ router.get('/profile', (req, res, next) => {
 });
 
 router.get('/sign-out', (req, res) => {
+    console.log("server side signout api");
   authController.logOut(req, res);
 });
 

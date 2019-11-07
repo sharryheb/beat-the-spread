@@ -7,11 +7,11 @@ let cookieOptions = require('../authentication/cookie-options');
 module.exports = {
 
   logOut: (req, res) => {
+      console.log("server side signout contoller");
     res.clearCookie('registerFail');
     res.clearCookie('registerSuccess');
     res.clearCookie('logInSuccessOrErrorMsg');
-    req.logOut();
-    res.redirect('/SignIn');
+    res.send();
   },
 
   loginUser: (req, res, next) => {

@@ -3,7 +3,6 @@ import { Image } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import "./style.css";
 
-
 import predictionsAPI from '../../utils/predictionsAPI';
 const { getStandings } = predictionsAPI;
 

@@ -1,14 +1,11 @@
 import React, { Component } from "react";
-
-import Navme from "../../components/Nav";
-
 import { Form, Button, Row, Col } from 'react-bootstrap';
+import Cookies from 'universal-cookie';
 
 import authAPI from "../../utils/authAPI";
 
 import "./style.css";
 
-import Cookies from 'universal-cookie';
 const cookies = new Cookies();
 
 class SignIn extends Component {
@@ -59,12 +56,10 @@ class SignIn extends Component {
         }
 
         return (
-            <div className="SignIn m-0 p-0 w-100">
-            {/* <Navme /> */}
-
-            <h2 id="sign">Sign In</h2>
+            <div className="m-0 p-0 w-100">
+            <h2 id="sign" className="bg-white">Sign In</h2>
             <h4>{successOrErrorMsg}</h4>
-            <Form style={{ width: '18rem' }}>
+            <Form style={{ width: '50vw' }}>
                 <Form.Group controlId="formBasicEmail">
                     <Form.Control type="text" placeholder="Email" name="email" onChange={this.handleChange} />
                 </Form.Group>
@@ -84,18 +79,13 @@ class SignIn extends Component {
                             Log In
                         </Button>
                     </Col>
-                    <Col md={10}>
+                    </Row>
+                    <Row>
+                    <Col md={6}>
                         <h5>Forgot your password?</h5>
                         <Button variant="warning" type="submit">Reset Password</Button>
                     </Col>
-                </Row>
-                <Row>
-                    <Col md={12}>
-                        <p style={{color:'white'}}>----------- OR -----------</p>
-                    </Col>
-                </Row>
-                <Row>
-                    <Col md={12}>
+                    <Col md={6}>
                         <h5>First Time? </h5>
                         <Button variant="warning" href="/SignUp">Create an account</Button>
                     </Col>

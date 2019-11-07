@@ -1,25 +1,31 @@
 import React from "react";
 import { Table, DropdownButton, Dropdown, Card } from 'react-bootstrap';
+import GameHeader from "../GameHeader";
+
 import gamesAPI from "../../utils/gamesAPI"
 import usersAPI from "../../utils/usersAPI"
 import predictionsAPI from "../../utils/predictionsAPI"
 
 import "./style.css";
-import GameHeader from "../GameHeader";
-
 
 class Schedule extends React.Component
 {
     state = { weeks: null, selectedWeek: null, weekTitle: "Select Week", user: null, games: null, predictions: null };
+
     componentDidMount()
     {
+        var loggedInUser = {
+            screenname: (this.props.user && this.props.user.success ? this.props.user.success.screenname : ""),
+            avatar: (this.props.user && this.props.user.success ? this.props.user.success.avatar : "")
+        }
+
         gamesAPI.getWeeks()
         .then((res =>
         {
             this.setState({weeks: res.data}, this.getGames);
         }));
 
-        usersAPI.getUser("sharryheb")
+        usersAPI.getUser(loggedInUser.screenname)
         .then(res =>
         {
             this.setState({user: res.data}, () => this.getPredictions(res.data));
